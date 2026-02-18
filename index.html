@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living Restorations | Ecological Design & Coastal Restoration</title>
+<meta name="description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay and beyond.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #e8dcc8;
+    --deep: #1a2e1e;
+    --moss: #3d5a3e;
+    --sage: #7a9e7e;
+    --salt: #f4f0e8;
+    --tide: #4a7c6f;
+    --accent: #c4713a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--salt);
+    color: var(--deep);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(26,46,30,0.92);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--sand);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--sand);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+
+  .nav-links a:hover { opacity: 1; }
+
+  .nav-cta {
+    background: var(--accent);
+    color: white !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 2px;
+    opacity: 1 !important;
+  }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 3rem 5rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      linear-gradient(to bottom, rgba(26,46,30,0.3) 0%, rgba(26,46,30,0.7) 100%),
+      linear-gradient(135deg, #3d5a3e 0%, #1a2e1e 40%, #4a7c6f 100%);
+  }
+
+  /* Organic texture overlay */
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(122,158,126,0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(74,124,111,0.25) 0%, transparent 40%),
+      radial-gradient(ellipse at 60% 80%, rgba(196,113,58,0.15) 0%, transparent 35%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    color: var(--sand);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--sage);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(232,220,200,0.8);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--accent);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(196,113,58,0.4);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    right: 3rem;
+    color: rgba(232,220,200,0.5);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* INTRO STRIP */
+  .intro-strip {
+    background: var(--deep);
+    padding: 3rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .intro-stat {
+    padding: 2rem 2.5rem;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .intro-stat:last-child { border-right: none; }
+
+  .intro-stat .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--sage);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .intro-stat p {
+    font-size: 0.85rem;
+    color: rgba(232,220,200,0.6);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 7rem 3rem;
+    background: var(--salt);
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.15;
+    color: var(--deep);
+    max-width: 600px;
+    margin-bottom: 4rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--deep);
+    border: 1.5px solid var(--deep);
+  }
+
+  .service-card {
+    background: var(--salt);
+    padding: 2.5rem 2rem;
+    transition: background 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--moss);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-card:hover { background: #eee9dc; }
+
+  .service-icon {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--deep);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .service-card p {
+    font-size: 0.88rem;
+    color: #5a6b5b;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* ABOUT SPLIT */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+  }
+
+  .about-visual {
+    background: linear-gradient(135deg, var(--moss) 0%, var(--tide) 50%, var(--deep) 100%);
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+  }
+
+  .about-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 30% 60%, rgba(122,158,126,0.4) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .about-visual-text {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    right: 3rem;
+    z-index: 2;
+  }
+
+  .about-visual-text blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--sand);
+    line-height: 1.4;
+  }
+
+  .about-content {
+    background: var(--deep);
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-content .section-label { color: var(--sage); }
+
+  .about-content .section-title {
+    color: var(--sand);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content p {
+    color: rgba(232,220,200,0.7);
+    line-height: 1.8;
+    font-size: 0.95rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+
+  /* SERVICE AREAS */
+  .areas {
+    padding: 6rem 3rem;
+    background: var(--sand);
+  }
+
+  .areas-inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .areas-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+
+  .area-tag {
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(26,46,30,0.25);
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    color: var(--deep);
+    border-radius: 1px;
+    background: rgba(255,255,255,0.4);
+  }
+
+  /* RFP / CONTACT */
+  .rfp {
+    padding: 8rem 3rem;
+    background: var(--moss);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .rfp::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 50% 0%, rgba(74,124,111,0.6) 0%, transparent 60%),
+      radial-gradient(ellipse at 100% 100%, rgba(26,46,30,0.8) 0%, transparent 50%);
+  }
+
+  .rfp-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .rfp .section-label { color: var(--sage); }
+
+  .rfp h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: var(--sand);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+
+  .rfp p {
+    color: rgba(232,220,200,0.75);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .rfp-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .rfp-form input,
+  .rfp-form select,
+  .rfp-form textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(232,220,200,0.25);
+    color: var(--sand);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .rfp-form input::placeholder,
+  .rfp-form select option,
+  .rfp-form textarea::placeholder { color: rgba(232,220,200,0.5); }
+
+  .rfp-form input:focus,
+  .rfp-form select:focus,
+  .rfp-form textarea:focus { border-color: var(--sage); }
+
+  .rfp-form .full { grid-column: 1 / -1; }
+
+  .rfp-form textarea { height: 120px; resize: vertical; }
+
+  .rfp-submit {
+    grid-column: 1 / -1;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .rfp-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(196,113,58,0.5);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--deep);
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer .logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--sand);
+    font-size: 1.1rem;
+  }
+
+  footer p {
+    color: rgba(232,220,200,0.4);
+    font-size: 0.8rem;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.8s ease 0.2s both; }
+  .hero h1 { animation: fadeUp 0.8s ease 0.4s both; }
+  .hero-sub { animation: fadeUp 0.8s ease 0.6s both; }
+  .hero-cta { animation: fadeUp 0.8s ease 0.8s both; }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 0 1.5rem 4rem; }
+    .intro-strip { grid-template-columns: 1fr; }
+    .intro-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .services { padding: 4rem 1.5rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .about { grid-template-columns: 1fr; }
+    .about-visual { min-height: 300px; }
+    .about-content { padding: 3rem 1.5rem; }
+    .areas { padding: 4rem 1.5rem; }
+    .areas-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .rfp { padding: 5rem 1.5rem; }
+    .rfp-form { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Living Restorations</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#areas">Service Areas</a></li>
+    <li><a href="#rfp" class="nav-cta">Request Proposal</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Ecological Design & Coastal Restoration — Florida</p>
+    <h1>We restore <em>what belongs</em> here.</h1>
+    <p class="hero-sub">Invasive removal, living shorelines, dune systems, and native habitat design — built around Florida's ecosystems, not against them.</p>
+    <a href="#rfp" class="hero-cta">Request a Proposal →</a>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="intro-strip">
+  <div class="intro-stat reveal">
+    <div class="number">7</div>
+    <p>Core restoration services from dune systems to living shorelines</p>
+  </div>
+  <div class="intro-stat reveal">
+    <div class="number">FL</div>
+    <p>Serving coastal and inland ecosystems statewide</p>
+  </div>
+  <div class="intro-stat reveal">
+    <div class="number">RFP</div>
+    <p>Every project starts with a proposal tailored to your site</p>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <p class="section-label reveal">What We Do</p>
+  <h2 class="section-title reveal">Restoration that works with the land, not over it.</h2>
+  
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-icon">🌿</span>
+      <h3>Invasive Removal</h3>
+      <p>Strategic removal of invasive species to give native ecosystems room to recover and thrive on their own terms.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🏖️</span>
+      <h3>Dune Systems</h3>
+      <p>Design and restoration of coastal dune habitat — the first line of defense for Florida's shorelines.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🌊</span>
+      <h3>Coastal Restoration</h3>
+      <p>Comprehensive ecological restoration of coastal environments, from tidal zones to upland transition areas.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🌱</span>
+      <h3>Plant Sourcing</h3>
+      <p>Florida-native plant sourcing for restoration and design projects — the right species for the right place.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">✏️</span>
+      <h3>Environmental Design</h3>
+      <p>Thoughtful site design that integrates ecological function with human use and long-term habitat value.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🪨</span>
+      <h3>Living Shoreline Design & Install</h3>
+      <p>Sustainable shoreline stabilization using natural materials — protecting property while restoring habitat.</p>
+    </div>
+    <div class="service-card reveal" style="grid-column: span 3;">
+      <span class="service-icon">🔭</span>
+      <h3>Maintenance & Monitoring</h3>
+      <p>Long-term stewardship keeps your restoration on track. We monitor, adapt, and maintain so your investment grows stronger over time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SPLIT -->
+<section class="about" id="about">
+  <div class="about-visual">
+    <div class="about-visual-text">
+      <blockquote>"A restored shoreline isn't just beautiful — it's doing work."</blockquote>
+    </div>
+  </div>
+  <div class="about-content">
+    <p class="section-label">Our Approach</p>
+    <h2 class="section-title reveal">Science-backed. Site-specific. Built to last.</h2>
+    <p>We don't install generic landscapes. Every Living Restorations project starts with a deep read of your site — the soil, the hydrology, the existing species, the pressures it faces.</p>
+    <p>Then we design and build something that will establish itself, adapt, and become more resilient over time. That's what ecological design actually means.</p>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="areas" id="areas">
+  <div class="areas-inner">
+    <div>
+      <p class="section-label reveal">Where We Work</p>
+      <h2 class="section-title reveal">Serving Florida's coasts and communities.</h2>
+    </div>
+    <div>
+      <div class="areas-tags reveal">
+        <span class="area-tag">Tampa Bay</span>
+        <span class="area-tag">Pinellas County</span>
+        <span class="area-tag">Hillsborough County</span>
+        <span class="area-tag">Pasco County</span>
+        <span class="area-tag">Manatee County</span>
+        <span class="area-tag">Sarasota</span>
+        <span class="area-tag">Miami-Dade</span>
+        <span class="area-tag">Broward County</span>
+        <span class="area-tag">Palm Beach</span>
+        <span class="area-tag">Orange County</span>
+        <span class="area-tag">Tallahassee</span>
+        <span class="area-tag">Jacksonville</span>
+        <span class="area-tag">Pensacola</span>
+        <span class="area-tag">Destin</span>
+        <span class="area-tag">Panama City</span>
+        <span class="area-tag">Fort Walton Beach</span>
+        <span class="area-tag">Apalachicola</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RFP -->
+<section class="rfp" id="rfp">
+  <div class="rfp-inner">
+    <p class="section-label">Start Here</p>
+    <h2>Tell us about your site.</h2>
+    <p>Every restoration project is different. Fill out this form and we'll follow up with a proposal tailored to your specific location, goals, and budget.</p>
+    
+    <form class="rfp-form">
+      <input type="text" placeholder="First & Last Name" />
+      <input type="email" placeholder="Email Address" />
+      <input type="tel" placeholder="Phone Number" />
+      <input type="text" placeholder="Project Location / County" />
+      <select>
+        <option value="" disabled selected>Type of Service Needed</option>
+        <option>Invasive Removal</option>
+        <option>Dune Systems</option>
+        <option>Coastal Restoration</option>
+        <option>Plant Sourcing</option>
+        <option>Environmental Design</option>
+        <option>Living Shoreline</option>
+        <option>Maintenance & Monitoring</option>
+        <option>Not sure — need assessment</option>
+      </select>
+      <input type="text" placeholder="Approximate Site Size" />
+      <textarea class="full" placeholder="Tell us about your site and what you're hoping to achieve..."></textarea>
+      <button type="submit" class="rfp-submit">Submit Request for Proposal</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">Living Restorations</div>
+  <p>© 2025 Living Restorations LLC · Florida Ecological Design & Restoration</p>
+  <p>(000) 000-0000 · info@livingrestorations.com</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Service area grid fix for last card
+  const grid = document.querySelector('.services-grid');
+  const lastCard = grid.lastElementChild;
+  if (window.innerWidth > 900) {
+    lastCard.style.gridColumn = 'span 3';
+  }
+</script>
+</body>
+</html>
