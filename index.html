@@ -3,721 +3,747 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Living Restorations | Ecological Design & Coastal Restoration</title>
-<meta name="description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay and beyond.">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Living Restorations | Ecological Design & Coastal Restoration — Florida</title>
+<meta name="description" content="Florida's ecological design and coastal restoration specialists. Living shorelines, dune systems, invasive removal, and native habitat design across Tampa Bay and beyond.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Living Restorations | Ecological Design & Coastal Restoration">
+<meta property="og:description" content="Restore the natural beauty of the Florida you grew up with. Coastal restoration, living shorelines, dune systems, and invasive removal statewide.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://livingrestorations.com">
+<meta property="og:image" content="assets/img/og-image.jpg">
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Living Restorations",
+  "description": "Ecological design and coastal restoration specialists serving Florida",
+  "telephone": "+17277107400",
+  "url": "https://livingrestorations.com",
+  "areaServed": "Florida",
+  "serviceType": ["Coastal Restoration","Living Shoreline","Dune Restoration","Invasive Removal","Environmental Design","Plant Sourcing","Maintenance and Monitoring"]
+}
+</script>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --sand: #e8dcc8;
-    --deep: #1a2e1e;
-    --moss: #3d5a3e;
-    --sage: #7a9e7e;
-    --salt: #f4f0e8;
-    --tide: #4a7c6f;
-    --accent: #c4713a;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--salt);
-    color: var(--deep);
-    overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 1.25rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(26,46,30,0.92);
-    backdrop-filter: blur(8px);
-  }
-
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: var(--sand);
-    letter-spacing: 0.02em;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    color: var(--sand);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0.8;
-    transition: opacity 0.2s;
-  }
-
-  .nav-links a:hover { opacity: 1; }
-
-  .nav-cta {
-    background: var(--accent);
-    color: white !important;
-    padding: 0.6rem 1.4rem;
-    border-radius: 2px;
-    opacity: 1 !important;
-  }
-
-  /* HERO */
-  .hero {
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    padding: 0 3rem 5rem;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background: 
-      linear-gradient(to bottom, rgba(26,46,30,0.3) 0%, rgba(26,46,30,0.7) 100%),
-      linear-gradient(135deg, #3d5a3e 0%, #1a2e1e 40%, #4a7c6f 100%);
-  }
-
-  /* Organic texture overlay */
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: 
-      radial-gradient(ellipse at 20% 50%, rgba(122,158,126,0.3) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 20%, rgba(74,124,111,0.25) 0%, transparent 40%),
-      radial-gradient(ellipse at 60% 80%, rgba(196,113,58,0.15) 0%, transparent 35%);
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-  }
-
-  .hero-eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--sage);
-    margin-bottom: 1.25rem;
-    font-weight: 500;
-  }
-
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 6vw, 5.5rem);
-    line-height: 1.05;
-    color: var(--sand);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero h1 em {
-    font-style: italic;
-    color: var(--sage);
-  }
-
-  .hero-sub {
-    font-size: 1.05rem;
-    color: rgba(232,220,200,0.8);
-    max-width: 520px;
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-  }
-
-  .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: var(--accent);
-    color: white;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    border-radius: 2px;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .hero-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(196,113,58,0.4);
-  }
-
-  .scroll-hint {
-    position: absolute;
-    bottom: 2rem;
-    right: 3rem;
-    color: rgba(232,220,200,0.5);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    writing-mode: vertical-rl;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  /* INTRO STRIP */
-  .intro-strip {
-    background: var(--deep);
-    padding: 3rem 3rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
-
-  .intro-stat {
-    padding: 2rem 2.5rem;
-    border-right: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .intro-stat:last-child { border-right: none; }
-
-  .intro-stat .number {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    color: var(--sage);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-
-  .intro-stat p {
-    font-size: 0.85rem;
-    color: rgba(232,220,200,0.6);
-    line-height: 1.5;
-    font-weight: 300;
-  }
-
-  /* SERVICES */
-  .services {
-    padding: 7rem 3rem;
-    background: var(--salt);
-  }
-
-  .section-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    font-weight: 500;
-  }
-
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    line-height: 1.15;
-    color: var(--deep);
-    max-width: 600px;
-    margin-bottom: 4rem;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5px;
-    background: var(--deep);
-    border: 1.5px solid var(--deep);
-  }
-
-  .service-card {
-    background: var(--salt);
-    padding: 2.5rem 2rem;
-    transition: background 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--moss);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-
-  .service-card:hover::before { transform: scaleX(1); }
-
-  .service-card:hover { background: #eee9dc; }
-
-  .service-icon {
-    font-size: 2rem;
-    margin-bottom: 1.25rem;
-    display: block;
-  }
-
-  .service-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;
-    color: var(--deep);
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
-  }
-
-  .service-card p {
-    font-size: 0.88rem;
-    color: #5a6b5b;
-    line-height: 1.65;
-    font-weight: 300;
-  }
-
-  /* ABOUT SPLIT */
-  .about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 600px;
-  }
-
-  .about-visual {
-    background: linear-gradient(135deg, var(--moss) 0%, var(--tide) 50%, var(--deep) 100%);
-    position: relative;
-    overflow: hidden;
-    min-height: 500px;
-  }
-
-  .about-visual::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-      radial-gradient(ellipse at 30% 60%, rgba(122,158,126,0.4) 0%, transparent 50%),
-      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  }
-
-  .about-visual-text {
-    position: absolute;
-    bottom: 3rem;
-    left: 3rem;
-    right: 3rem;
-    z-index: 2;
-  }
-
-  .about-visual-text blockquote {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-style: italic;
-    color: var(--sand);
-    line-height: 1.4;
-  }
-
-  .about-content {
-    background: var(--deep);
-    padding: 5rem 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .about-content .section-label { color: var(--sage); }
-
-  .about-content .section-title {
-    color: var(--sand);
-    margin-bottom: 1.5rem;
-  }
-
-  .about-content p {
-    color: rgba(232,220,200,0.7);
-    line-height: 1.8;
-    font-size: 0.95rem;
-    font-weight: 300;
-    margin-bottom: 1rem;
-  }
-
-  /* SERVICE AREAS */
-  .areas {
-    padding: 6rem 3rem;
-    background: var(--sand);
-  }
-
-  .areas-inner {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .areas-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 1rem;
-  }
-
-  .area-tag {
-    padding: 0.4rem 1rem;
-    border: 1px solid rgba(26,46,30,0.25);
-    font-size: 0.78rem;
-    letter-spacing: 0.05em;
-    color: var(--deep);
-    border-radius: 1px;
-    background: rgba(255,255,255,0.4);
-  }
-
-  /* RFP / CONTACT */
-  .rfp {
-    padding: 8rem 3rem;
-    background: var(--moss);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .rfp::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-      radial-gradient(ellipse at 50% 0%, rgba(74,124,111,0.6) 0%, transparent 60%),
-      radial-gradient(ellipse at 100% 100%, rgba(26,46,30,0.8) 0%, transparent 50%);
-  }
-
-  .rfp-inner {
-    position: relative;
-    z-index: 2;
-    max-width: 640px;
-    margin: 0 auto;
-  }
-
-  .rfp .section-label { color: var(--sage); }
-
-  .rfp h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    color: var(--sand);
-    line-height: 1.15;
-    margin-bottom: 1.25rem;
-  }
-
-  .rfp p {
-    color: rgba(232,220,200,0.75);
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-  }
-
-  .rfp-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    text-align: left;
-  }
-
-  .rfp-form input,
-  .rfp-form select,
-  .rfp-form textarea {
-    width: 100%;
-    padding: 0.85rem 1rem;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(232,220,200,0.25);
-    color: var(--sand);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem;
-    border-radius: 2px;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .rfp-form input::placeholder,
-  .rfp-form select option,
-  .rfp-form textarea::placeholder { color: rgba(232,220,200,0.5); }
-
-  .rfp-form input:focus,
-  .rfp-form select:focus,
-  .rfp-form textarea:focus { border-color: var(--sage); }
-
-  .rfp-form .full { grid-column: 1 / -1; }
-
-  .rfp-form textarea { height: 120px; resize: vertical; }
-
-  .rfp-submit {
-    grid-column: 1 / -1;
-    background: var(--accent);
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    border-radius: 2px;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .rfp-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(196,113,58,0.5);
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--deep);
-    padding: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  footer .logo {
-    font-family: 'Playfair Display', serif;
-    color: var(--sand);
-    font-size: 1.1rem;
-  }
-
-  footer p {
-    color: rgba(232,220,200,0.4);
-    font-size: 0.8rem;
-  }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-eyebrow { animation: fadeUp 0.8s ease 0.2s both; }
-  .hero h1 { animation: fadeUp 0.8s ease 0.4s both; }
-  .hero-sub { animation: fadeUp 0.8s ease 0.6s both; }
-  .hero-cta { animation: fadeUp 0.8s ease 0.8s both; }
-
-  /* SCROLL REVEAL */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    .hero { padding: 0 1.5rem 4rem; }
-    .intro-strip { grid-template-columns: 1fr; }
-    .intro-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .services { padding: 4rem 1.5rem; }
-    .services-grid { grid-template-columns: 1fr; }
-    .about { grid-template-columns: 1fr; }
-    .about-visual { min-height: 300px; }
-    .about-content { padding: 3rem 1.5rem; }
-    .areas { padding: 4rem 1.5rem; }
-    .areas-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .rfp { padding: 5rem 1.5rem; }
-    .rfp-form { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; }
-  }
+:root {
+  --green: #3d7e6e;
+  --deep: #1b3a2f;
+  --light: #f5f2ec;
+  --white: #ffffff;
+  --tan: #c8b89a;
+  --accent: #3d7e6e;
+  --text: #2a2a2a;
+  --muted: #6b7b6e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 4%;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(61,126,110,0.12);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.nav-logo img { height: 44px; }
+.nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+.nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--deep); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+.nav-links a:hover { color: var(--green); }
+.nav-call {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: var(--green); color: white !important;
+  padding: 0.65rem 1.4rem; border-radius: 3px;
+  font-size: 0.85rem; font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-call:hover { background: var(--deep) !important; transform: translateY(-1px); }
+.nav-call svg { width: 14px; height: 14px; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--deep); transition: 0.3s; }
+
+/* ── HERO ── */
+.hero {
+  height: 100vh; min-height: 600px;
+  position: relative; display: flex; align-items: flex-end;
+  padding: 0 4% 8%;
+}
+.hero-bg {
+  position: absolute; inset: 0; overflow: hidden;
+  background: var(--deep);
+}
+.hero-bg-img {
+  width: 100%; height: 100%; object-fit: cover; opacity: 0.6;
+  /* Placeholder — swap for real image */
+  background: linear-gradient(135deg, #1b3a2f 0%, #3d7e6e 40%, #2a5a4a 70%, #0d2218 100%);
+}
+.hero-video-placeholder {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #1b3a2f 0%, #3d7e6e 40%, #2a5a4a 70%, #0d2218 100%);
+  display: flex; align-items: center; justify-content: center;
+}
+.play-btn {
+  width: 80px; height: 80px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.5);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.3s;
+  background: rgba(255,255,255,0.1);
+}
+.play-btn:hover { background: rgba(255,255,255,0.2); transform: scale(1.05); }
+.play-btn svg { width: 28px; height: 28px; fill: white; margin-left: 4px; }
+.video-label { color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 1rem; }
+
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(27,58,47,0.92) 0%, rgba(27,58,47,0.3) 60%, transparent 100%);
+}
+.hero-content { position: relative; z-index: 2; max-width: 760px; }
+.hero-tag {
+  display: inline-block; background: rgba(61,126,110,0.3);
+  border: 1px solid rgba(61,126,110,0.5);
+  color: rgba(255,255,255,0.9); font-size: 0.72rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 0.4rem 1rem; border-radius: 2px; margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.08; color: white; margin-bottom: 1.25rem; font-weight: 600;
+}
+.hero h1 em { font-style: italic; color: #a8d4c8; }
+.hero-sub {
+  font-size: 1rem; color: rgba(255,255,255,0.75); font-weight: 300;
+  line-height: 1.7; max-width: 500px; margin-bottom: 2.5rem;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: var(--green); color: white;
+  padding: 1rem 2rem; border-radius: 3px;
+  font-size: 0.9rem; font-weight: 500; text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-primary:hover { background: #2d6a5a; transform: translateY(-2px); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  border: 1px solid rgba(255,255,255,0.4); color: white;
+  padding: 1rem 2rem; border-radius: 3px;
+  font-size: 0.9rem; font-weight: 400; text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
+.scroll-indicator {
+  position: absolute; bottom: 2.5rem; right: 4%;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  color: rgba(255,255,255,0.4); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+}
+.scroll-line { width: 1px; height: 50px; background: rgba(255,255,255,0.2); animation: scrollPulse 2s infinite; }
+@keyframes scrollPulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+/* ── PHONE BAR ── */
+.phone-bar {
+  background: var(--deep); padding: 1rem 4%;
+  display: flex; align-items: center; justify-content: center; gap: 2rem;
+  flex-wrap: wrap;
+}
+.phone-bar p { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+.phone-bar a {
+  display: flex; align-items: center; gap: 0.6rem;
+  color: white; text-decoration: none; font-size: 1.1rem; font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.phone-bar a svg { width: 18px; height: 18px; }
+.phone-bar a:hover { color: #a8d4c8; }
+
+/* ── SERVICES ── */
+.services { padding: 7rem 4%; background: var(--light); }
+.section-eyebrow {
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--green); font-weight: 500; margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  line-height: 1.15; color: var(--deep); margin-bottom: 1rem; font-weight: 600;
+}
+.section-sub { font-size: 0.95rem; color: var(--muted); line-height: 1.7; max-width: 520px; margin-bottom: 3.5rem; font-weight: 300; }
+
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.service-card {
+  background: white; border-radius: 4px; overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: default;
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(27,58,47,0.12); }
+.service-img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover;
+  background: linear-gradient(135deg, #3d7e6e, #1b3a2f);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.service-img-placeholder {
+  width: 100%; aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #d4e8e0 0%, #a8c8be 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.5rem; color: var(--green); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+}
+.service-img-placeholder svg { width: 32px; height: 32px; opacity: 0.5; }
+.service-body { padding: 1.5rem; }
+.service-body h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+  color: var(--deep); margin-bottom: 0.5rem; font-weight: 600;
+}
+.service-body p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+/* ── ABOUT / VIDEO ── */
+.about { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
+.about-video {
+  background: var(--deep); position: relative;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 1rem; min-height: 400px;
+}
+.about-video-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #1b3a2f 0%, #3d7e6e 100%);
+  opacity: 0.8;
+}
+.about-video-inner { position: relative; z-index: 2; text-align: center; }
+.about-content {
+  background: var(--deep); padding: 5rem 4rem;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.about-content .section-eyebrow { color: #a8d4c8; }
+.about-content .section-title { color: white; margin-bottom: 1.25rem; }
+.about-content p { color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 0.92rem; font-weight: 300; margin-bottom: 1rem; }
+.about-cta {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  color: #a8d4c8; text-decoration: none; font-size: 0.88rem;
+  font-weight: 500; margin-top: 1rem; border-bottom: 1px solid rgba(168,212,200,0.3);
+  padding-bottom: 0.25rem; transition: border-color 0.2s;
+}
+.about-cta:hover { border-color: #a8d4c8; }
+
+/* ── GALLERY STRIP ── */
+.gallery-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; background: var(--deep); }
+.gallery-item {
+  aspect-ratio: 1; overflow: hidden; position: relative;
+  background: linear-gradient(135deg, #3d7e6e, #1b3a2f);
+  cursor: pointer;
+}
+.gallery-item-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #3d7e6e22, #1b3a2f44);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.2); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+  transition: background 0.3s;
+}
+.gallery-item:hover .gallery-item-placeholder { background: linear-gradient(135deg, #3d7e6e44, #1b3a2f66); }
+
+/* ── SERVICE AREAS ── */
+.areas { padding: 7rem 4%; background: white; }
+.areas-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.areas-left {}
+.area-dropdown-wrap { margin-top: 2rem; }
+.area-dropdown-wrap label { display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+.area-select {
+  width: 100%; padding: 0.85rem 1.1rem;
+  border: 1.5px solid rgba(61,126,110,0.3); border-radius: 3px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--deep);
+  background: white; appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233d7e6e' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 1rem center;
+  transition: border-color 0.2s;
+}
+.area-select:focus { outline: none; border-color: var(--green); }
+.area-result { margin-top: 1rem; padding: 1rem 1.25rem; background: var(--light); border-radius: 3px; border-left: 3px solid var(--green); display: none; }
+.area-result.show { display: block; }
+.area-result p { font-size: 0.85rem; color: var(--deep); line-height: 1.6; }
+.area-result a { color: var(--green); text-decoration: none; font-weight: 500; }
+
+/* Florida map */
+.fl-map-wrap { position: relative; }
+.fl-map-wrap svg { width: 100%; height: auto; }
+.map-dot {
+  cursor: pointer; transition: r 0.2s;
+}
+.map-dot circle { transition: all 0.2s; }
+.map-dot:hover circle { r: 8; }
+.map-tooltip {
+  position: absolute; background: var(--deep); color: white;
+  padding: 0.4rem 0.8rem; border-radius: 3px; font-size: 0.75rem;
+  pointer-events: none; opacity: 0; transition: opacity 0.2s; white-space: nowrap;
+  transform: translate(-50%, -120%);
+}
+.map-tooltip.show { opacity: 1; }
+
+/* ── CONTACT / CTA ── */
+.cta-section {
+  padding: 8rem 4%; background: var(--green);
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.08) 0%, transparent 60%);
+}
+.cta-inner { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
+.cta-section .section-eyebrow { color: rgba(255,255,255,0.6); }
+.cta-section .section-title { color: white; margin-bottom: 1rem; }
+.cta-section p { color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; font-weight: 300; }
+.cta-phone {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  background: white; color: var(--deep);
+  padding: 1.1rem 2.5rem; border-radius: 3px;
+  font-size: 1.2rem; font-weight: 500; text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.02em;
+}
+.cta-phone:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.2); }
+.cta-phone svg { width: 22px; height: 22px; color: var(--green); }
+.cta-note { color: rgba(255,255,255,0.55); font-size: 0.8rem; margin-top: 1.25rem; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--deep); padding: 3rem 4%;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo img { height: 36px; filter: brightness(0) invert(1); opacity: 0.8; }
+footer p { color: rgba(255,255,255,0.35); font-size: 0.78rem; }
+footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+footer a:hover { color: rgba(255,255,255,0.8); }
+
+/* ── ANIMATIONS ── */
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-up.visible { opacity: 1; transform: none; }
+.fade-up:nth-child(2) { transition-delay: 0.1s; }
+.fade-up:nth-child(3) { transition-delay: 0.2s; }
+
+@keyframes heroIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
+.hero-tag { animation: heroIn 0.8s ease 0.2s both; }
+.hero h1 { animation: heroIn 0.8s ease 0.4s both; }
+.hero-sub { animation: heroIn 0.8s ease 0.6s both; }
+.hero-actions { animation: heroIn 0.8s ease 0.8s both; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: white; padding: 1.5rem; border-bottom: 1px solid #eee; gap: 1.25rem; }
+  .hamburger { display: flex; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .about { grid-template-columns: 1fr; }
+  .about-content { padding: 3rem 4%; }
+  .gallery-strip { grid-template-columns: repeat(2, 1fr); }
+  .areas-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .phone-bar { flex-direction: column; gap: 0.5rem; }
+}
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .gallery-strip { grid-template-columns: repeat(2, 1fr); }
+  footer { flex-direction: column; text-align: center; }
+}
 </style>
 </head>
 <body>
 
-<nav>
-<img src="assets/img/logo.png" alt="Living Restorations" style="height: 38px;">
-  <ul class="nav-links">
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo"><img src="assets/img/logo.png" alt="Living Restorations"></div>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="#about">Our Work</a></li>
     <li><a href="#areas">Service Areas</a></li>
-    <li><a href="#rfp" class="nav-cta">Request Proposal</a></li>
+    <li><a href="sms:7277107400?body=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20restoration%20project%20on%20my%20property." class="nav-call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      Text Us
+    </a></li>
   </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Ecological Design & Coastal Restoration — Florida</p>
-    <h1>We restore <em>what belongs</em> here.</h1>
-    <p class="hero-sub">Invasive removal, living shorelines, dune systems, and native habitat design — built around Florida's ecosystems, not against them.</p>
-    <a href="#rfp" class="hero-cta">Request a Proposal →</a>
+  <div class="hero-bg">
+    <div class="hero-video-placeholder">
+      <!-- VIDEO PLACEHOLDER — drop <video> tag here with her footage -->
+      <div style="text-align:center; position:relative; z-index:2;">
+        <div class="play-btn" onclick="alert('Video coming soon')">
+          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <p class="video-label" style="margin-top:0.75rem;">Watch Our Work</p>
+      </div>
+    </div>
   </div>
-  <div class="scroll-hint">Scroll</div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-tag">Ecological Design & Coastal Restoration — Florida</span>
+    <h1>Restore the natural beauty of the <em>Florida you grew up with.</em></h1>
+    <p class="hero-sub">Living shorelines, dune systems, invasive removal, and native habitat design—built around Florida's ecosystems—not against them.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary" onclick="openSMS(event)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Text Us About Your Project
+      </a>
+      <a href="#services" class="btn-secondary">See Our Services ↓</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
 </section>
 
-<!-- STATS STRIP -->
-<div class="intro-strip">
-  <div class="intro-stat reveal">
-    <div class="number">7</div>
-    <p>Core restoration services from dune systems to living shorelines</p>
-  </div>
-  <div class="intro-stat reveal">
-    <div class="number">FL</div>
-    <p>Serving coastal and inland ecosystems statewide</p>
-  </div>
-  <div class="intro-stat reveal">
-    <div class="number">RFP</div>
-    <p>Every project starts with a proposal tailored to your site</p>
-  </div>
+<!-- PHONE BAR -->
+<div class="phone-bar">
+  <p>Ready to restore your site? We'd love to hear from you.</p>
+  <a href="#" onclick="openSMS(event)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    Text Us
+  </a>
 </div>
 
 <!-- SERVICES -->
 <section class="services" id="services">
-  <p class="section-label reveal">What We Do</p>
-  <h2 class="section-title reveal">Restoration that works with the land, not over it.</h2>
-  
+  <p class="section-eyebrow fade-up">What We Do</p>
+  <h2 class="section-title fade-up">Every service, built around your ecosystem.</h2>
+  <p class="section-sub fade-up">We don't install generic landscapes. Every project starts with a deep read of your site — the soil, the hydrology, the species that belong there.</p>
+
   <div class="services-grid">
-    <div class="service-card reveal">
-      <span class="service-icon">🌿</span>
-      <h3>Invasive Removal</h3>
-      <p>Strategic removal of invasive species to give native ecosystems room to recover and thrive on their own terms.</p>
+
+    <div class="service-card fade-up">
+      <div class="service-img-placeholder">
+        <!-- IMAGE PLACEHOLDER: Invasive removal project photo -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+        <span>Photo: Invasive Removal</span>
+      </div>
+      <div class="service-body">
+        <h3>Invasive Removal</h3>
+        <p>Strategic removal of invasive species to give native ecosystems room to recover — and stay recovered.</p>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <span class="service-icon">🏖️</span>
-      <h3>Dune Systems</h3>
-      <p>Design and restoration of coastal dune habitat — the first line of defense for Florida's shorelines.</p>
+
+    <div class="service-card fade-up">
+      <div class="service-img-placeholder">
+        <!-- IMAGE PLACEHOLDER: Dune system project photo -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17c3-3 6-5 9-5s6 2 9 5"/><path d="M3 12c3-4 6-6 9-6s6 2 9 6"/></svg>
+        <span>Photo: Dune System</span>
+      </div>
+      <div class="service-body">
+        <h3>Dune Systems</h3>
+        <p>Design and restoration of coastal dune habitat — Florida's first line of defense against erosion and storm surge.</p>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <span class="service-icon">🌊</span>
-      <h3>Coastal Restoration</h3>
-      <p>Comprehensive ecological restoration of coastal environments, from tidal zones to upland transition areas.</p>
+
+    <div class="service-card fade-up">
+      <div class="service-img-placeholder">
+        <!-- IMAGE PLACEHOLDER: Coastal restoration photo -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span>Photo: Coastal Restoration</span>
+      </div>
+      <div class="service-body">
+        <h3>Coastal Restoration</h3>
+        <p>Comprehensive ecological restoration from tidal zones to upland transition areas — the full picture.</p>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <span class="service-icon">🌱</span>
-      <h3>Plant Sourcing</h3>
-      <p>Florida-native plant sourcing for restoration and design projects — the right species for the right place.</p>
+
+    <div class="service-card fade-up">
+      <div class="service-img-placeholder">
+        <!-- IMAGE PLACEHOLDER: Native plants photo -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V12M12 12C12 7 7 3 2 3c0 5 4 9 10 9zM12 12c0-5 5-9 10-9 0 5-4 9-10 9z"/></svg>
+        <span>Photo: Plant Sourcing</span>
+      </div>
+      <div class="service-body">
+        <h3>Native Plant Sourcing</h3>
+        <p>Florida-native plant sourcing for restoration and design — the right species for the right place, every time.</p>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <span class="service-icon">✏️</span>
-      <h3>Environmental Design</h3>
-      <p>Thoughtful site design that integrates ecological function with human use and long-term habitat value.</p>
+
+    <div class="service-card fade-up">
+      <div class="service-img-placeholder">
+        <!-- IMAGE PLACEHOLDER: Environmental design project -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <span>Photo: Environmental Design</span>
+      </div>
+      <div class="service-body">
+        <h3>Environmental Design</h3>
+        <p>Thoughtful site design that integrates ecological function with human use and lasting habitat value.</p>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <span class="service-icon">🪨</span>
-      <h3>Living Shoreline Design & Install</h3>
-      <p>Sustainable shoreline stabilization using natural materials — protecting property while restoring habitat.</p>
+
+    <div class="service-card fade-up">
+      <div class="service-img-placeholder">
+        <!-- IMAGE PLACEHOLDER: Living shoreline install -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M6 20V10M12 20V4M18 20V14"/></svg>
+        <span>Photo: Living Shoreline</span>
+      </div>
+      <div class="service-body">
+        <h3>Living Shoreline Design & Install</h3>
+        <p>Natural shoreline stabilization using oyster reefs, native grasses, and organic materials — protecting property while restoring habitat.</p>
+      </div>
     </div>
-    <div class="service-card reveal" style="grid-column: span 3;">
-      <span class="service-icon">🔭</span>
-      <h3>Maintenance & Monitoring</h3>
-      <p>Long-term stewardship keeps your restoration on track. We monitor, adapt, and maintain so your investment grows stronger over time.</p>
+
+    <div class="service-card fade-up" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 2fr; gap: 0;">
+      <div class="service-img-placeholder" style="aspect-ratio: auto; min-height: 200px;">
+        <!-- IMAGE PLACEHOLDER: Monitoring/maintenance photo -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span>Photo: Monitoring</span>
+      </div>
+      <div class="service-body" style="display:flex; flex-direction:column; justify-content:center; padding: 2rem 2.5rem;">
+        <h3>Maintenance & Monitoring</h3>
+        <p>Long-term stewardship keeps your restoration on track. We monitor, adapt, and maintain so your investment grows stronger over time — not just for one season, but for years.</p>
+      </div>
     </div>
+
   </div>
 </section>
 
-<!-- ABOUT SPLIT -->
+<!-- ABOUT + VIDEO -->
 <section class="about" id="about">
-  <div class="about-visual">
-    <div class="about-visual-text">
-      <blockquote>"A restored shoreline isn't just beautiful — it's doing work."</blockquote>
+  <div class="about-video">
+    <div class="about-video-bg"></div>
+    <div class="about-video-inner">
+      <!-- VIDEO PLACEHOLDER — embed YouTube or host video here -->
+      <div class="play-btn" style="width:90px; height:90px;" onclick="alert('Video coming soon')">
+        <svg viewBox="0 0 24 24" style="width:32px; height:32px; fill:white; margin-left:5px;"><polygon points="5,3 19,12 5,21"/></svg>
+      </div>
+      <p class="video-label" style="color:rgba(255,255,255,0.6); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; margin-top:1rem;">Watch Our Work</p>
+      <p style="color:rgba(255,255,255,0.4); font-size:0.72rem; margin-top:0.5rem;">[ YouTube embed goes here ]</p>
     </div>
   </div>
   <div class="about-content">
-    <p class="section-label">Our Approach</p>
-    <h2 class="section-title reveal">Science-backed. Site-specific. Built to last.</h2>
+    <p class="section-eyebrow">Our Approach</p>
+    <h2 class="section-title fade-up">Science-backed.<br>Site-specific.<br>Built to last.</h2>
     <p>We don't install generic landscapes. Every Living Restorations project starts with a deep read of your site — the soil, the hydrology, the existing species, the pressures it faces.</p>
-    <p>Then we design and build something that will establish itself, adapt, and become more resilient over time. That's what ecological design actually means.</p>
+    <p>Then we design and build something that establishes itself, adapts, and becomes more resilient over time. That's what ecological design actually means.</p>
+    <a href="#" onclick="openSMS(event)" class="about-cta">Text us about your site →</a>
   </div>
 </section>
+
+<!-- GALLERY STRIP -->
+<div class="gallery-strip">
+  <!-- IMAGE PLACEHOLDERS — swap in real project photos -->
+  <div class="gallery-item"><div class="gallery-item-placeholder">Project Photo 1</div></div>
+  <div class="gallery-item"><div class="gallery-item-placeholder">Project Photo 2</div></div>
+  <div class="gallery-item"><div class="gallery-item-placeholder">Project Photo 3</div></div>
+  <div class="gallery-item"><div class="gallery-item-placeholder">Project Photo 4</div></div>
+</div>
 
 <!-- SERVICE AREAS -->
 <section class="areas" id="areas">
   <div class="areas-inner">
-    <div>
-      <p class="section-label reveal">Where We Work</p>
-      <h2 class="section-title reveal">Serving Florida's coasts and communities.</h2>
-    </div>
-    <div>
-      <div class="areas-tags reveal">
-        <span class="area-tag">Tampa Bay</span>
-        <span class="area-tag">Pinellas County</span>
-        <span class="area-tag">Hillsborough County</span>
-        <span class="area-tag">Pasco County</span>
-        <span class="area-tag">Manatee County</span>
-        <span class="area-tag">Sarasota</span>
-        <span class="area-tag">Miami-Dade</span>
-        <span class="area-tag">Broward County</span>
-        <span class="area-tag">Palm Beach</span>
-        <span class="area-tag">Orange County</span>
-        <span class="area-tag">Tallahassee</span>
-        <span class="area-tag">Jacksonville</span>
-        <span class="area-tag">Pensacola</span>
-        <span class="area-tag">Destin</span>
-        <span class="area-tag">Panama City</span>
-        <span class="area-tag">Fort Walton Beach</span>
-        <span class="area-tag">Apalachicola</span>
+    <div class="areas-left">
+      <p class="section-eyebrow fade-up">Where We Work</p>
+      <h2 class="section-title fade-up">Serving Florida's coasts and communities.</h2>
+      <p class="section-sub fade-up">From Tampa Bay to the Panhandle, we work across Florida wherever the coast needs care.</p>
+
+      <div class="area-dropdown-wrap fade-up">
+        <label for="areaSelect">Find your area</label>
+        <select class="area-select" id="areaSelect" onchange="showArea(this.value)">
+          <option value="">— Select a region —</option>
+          <optgroup label="Tampa Bay Region">
+            <option value="pinellas">Pinellas County</option>
+            <option value="hillsborough">Hillsborough County</option>
+            <option value="pasco">Pasco County</option>
+            <option value="manatee">Manatee County</option>
+          </optgroup>
+          <optgroup label="South Florida">
+            <option value="miamidade">Miami-Dade County</option>
+            <option value="broward">Broward County</option>
+            <option value="palmbeach">Palm Beach</option>
+            <option value="orange">Orange County</option>
+          </optgroup>
+          <optgroup label="Panhandle">
+            <option value="pensacola">Pensacola</option>
+            <option value="destin">Destin</option>
+            <option value="panamacity">Panama City</option>
+            <option value="fortwalt">Fort Walton Beach</option>
+            <option value="apalachicola">Apalachicola</option>
+            <option value="tallahassee">Tallahassee</option>
+          </optgroup>
+          <optgroup label="Northeast Florida">
+            <option value="jacksonville">Jacksonville</option>
+          </optgroup>
+        </select>
+        <div class="area-result" id="areaResult">
+          <p id="areaResultText"></p>
+        </div>
       </div>
     </div>
+
+    <!-- FLORIDA MAP -->
+    <div class="fl-map-wrap fade-up">
+      <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+        <!-- Simplified Florida outline -->
+        <path d="M80,20 L220,20 L230,40 L240,80 L245,120 L250,160 L248,200 L240,240 L220,270 L200,295 L180,315 L165,330 L155,345 L148,360 L142,375 L138,385 L134,375 L130,360 L128,348 L120,335 L108,320 L95,305 L80,285 L65,260 L55,235 L50,210 L48,185 L50,160 L55,130 L60,100 L65,70 L70,45 Z"
+          fill="#e8f4f0" stroke="#3d7e6e" stroke-width="1.5"/>
+        <!-- Panhandle -->
+        <path d="M80,20 L20,20 L20,60 L80,60 Z" fill="#e8f4f0" stroke="#3d7e6e" stroke-width="1.5"/>
+
+        <!-- Map dots for service areas -->
+        <g class="map-dot" data-city="Tampa Bay" onclick="highlightArea('pinellas')">
+          <circle cx="90" cy="200" r="6" fill="#3d7e6e" opacity="0.8"/>
+          <circle cx="90" cy="200" r="12" fill="#3d7e6e" opacity="0.15"/>
+          <text x="100" y="204" font-size="9" fill="#1b3a2f" font-family="DM Sans">Tampa Bay</text>
+        </g>
+        <g class="map-dot" data-city="Miami" onclick="highlightArea('miamidade')">
+          <circle cx="195" cy="340" r="6" fill="#3d7e6e" opacity="0.8"/>
+          <circle cx="195" cy="340" r="12" fill="#3d7e6e" opacity="0.15"/>
+          <text x="205" y="344" font-size="9" fill="#1b3a2f" font-family="DM Sans">Miami</text>
+        </g>
+        <g class="map-dot" data-city="Jacksonville" onclick="highlightArea('jacksonville')">
+          <circle cx="190" cy="60" r="6" fill="#3d7e6e" opacity="0.8"/>
+          <circle cx="190" cy="60" r="12" fill="#3d7e6e" opacity="0.15"/>
+          <text x="200" y="64" font-size="9" fill="#1b3a2f" font-family="DM Sans">Jacksonville</text>
+        </g>
+        <g class="map-dot" data-city="Pensacola" onclick="highlightArea('pensacola')">
+          <circle cx="30" cy="40" r="6" fill="#3d7e6e" opacity="0.8"/>
+          <circle cx="30" cy="40" r="12" fill="#3d7e6e" opacity="0.15"/>
+          <text x="40" y="44" font-size="9" fill="#1b3a2f" font-family="DM Sans">Pensacola</text>
+        </g>
+        <g class="map-dot" data-city="Orlando" onclick="highlightArea('orange')">
+          <circle cx="160" cy="180" r="6" fill="#3d7e6e" opacity="0.8"/>
+          <circle cx="160" cy="180" r="12" fill="#3d7e6e" opacity="0.15"/>
+          <text x="170" y="184" font-size="9" fill="#1b3a2f" font-family="DM Sans">Orlando</text>
+        </g>
+      </svg>
+    </div>
   </div>
 </section>
 
-<!-- RFP -->
-<section class="rfp" id="rfp">
-  <div class="rfp-inner">
-    <p class="section-label">Start Here</p>
-    <h2>Tell us about your site.</h2>
-    <p>Every restoration project is different. Fill out this form and we'll follow up with a proposal tailored to your specific location, goals, and budget.</p>
-    
-    <form class="rfp-form">
-      <input type="text" placeholder="First & Last Name" />
-      <input type="email" placeholder="Email Address" />
-      <input type="tel" placeholder="Phone Number" />
-      <input type="text" placeholder="Project Location / County" />
-      <select>
-        <option value="" disabled selected>Type of Service Needed</option>
-        <option>Invasive Removal</option>
-        <option>Dune Systems</option>
-        <option>Coastal Restoration</option>
-        <option>Plant Sourcing</option>
-        <option>Environmental Design</option>
-        <option>Living Shoreline</option>
-        <option>Maintenance & Monitoring</option>
-        <option>Not sure — need assessment</option>
-      </select>
-      <input type="text" placeholder="Approximate Site Size" />
-      <textarea class="full" placeholder="Tell us about your site and what you're hoping to achieve..."></textarea>
-      <button type="submit" class="rfp-submit">Submit Request for Proposal</button>
-    </form>
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <p class="section-eyebrow">Start Here</p>
+    <h2 class="section-title fade-up">Tell us about your site.</h2>
+    <p>Every restoration project is different. Give us a call and we'll talk through what your land needs — no jargon, no pressure.</p>
+    <a href="#" onclick="openSMS(event)" class="cta-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      Text Us About Your Project
+    </a>
+    <p class="cta-note">We respond within one business day.</p>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="logo">Living Restorations</div>
-  <p>© 2025 Living Restorations LLC · Florida Ecological Design & Restoration</p>
-  <p>(000) 000-0000 · info@livingrestorations.com</p>
+  <div class="footer-logo"><img src="assets/img/logo.png" alt="Living Restorations"></div>
+  <p>© 2025 Living Restorations LLC · Ecological Design & Restoration · Florida</p>
+  <p><a href="#" onclick="openSMS(event)">Text Us</a></p>
 </footer>
 
-<script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
+<!-- SMS MODAL -->
+<div id="smsModal" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+  <div style="background:white; border-radius:6px; padding:2.5rem; max-width:480px; width:90%; position:relative;">
+    <button onclick="closeSMS()" style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#999;">×</button>
+    <p style="font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:0.5rem;">Get in Touch</p>
+    <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--deep); margin-bottom:0.5rem;">What brings you here?</h3>
+    <p style="font-size:0.85rem; color:var(--muted); margin-bottom:1.5rem; line-height:1.6;">Choose a message below and we'll open your texts—ready to send.</p>
+    <div style="display:flex; flex-direction:column; gap:0.75rem;">
+      <a href="sms:7277107400?body=Hi%21+I%27d+like+to+talk+about+a+coastal+restoration+project+on+my+property." class="sms-option">🌊 I have a coastal restoration project</a>
+      <a href="sms:7277107400?body=Hi%21+I%27m+dealing+with+invasive+species+on+my+property+and+need+help." class="sms-option">🌿 I need invasive species removed</a>
+      <a href="sms:7277107400?body=Hi%21+I%27m+interested+in+a+living+shoreline+for+my+property." class="sms-option">🪨 I want to learn about living shorelines</a>
+      <a href="sms:7277107400?body=Hi%21+I%27d+like+to+talk+about+dune+restoration+on+my+property." class="sms-option">🏖️ I need dune restoration</a>
+      <a href="sms:7277107400?body=Hi%21+I%27m+not+sure+what+I+need+yet—can+we+talk+about+my+property%3F" class="sms-option">💬 I'm not sure yet—let's talk</a>
+    </div>
+  </div>
+</div>
 
-  // Service area grid fix for last card
-  const grid = document.querySelector('.services-grid');
-  const lastCard = grid.lastElementChild;
-  if (window.innerWidth > 900) {
-    lastCard.style.gridColumn = 'span 3';
+<style>
+.sms-option {
+  display:block; padding:0.85rem 1.1rem;
+  border:1.5px solid rgba(61,126,110,0.2); border-radius:3px;
+  color:var(--deep); text-decoration:none; font-size:0.88rem;
+  transition:background 0.2s, border-color 0.2s;
+  line-height:1.4;
+}
+.sms-option:hover { background:var(--light); border-color:var(--green); }
+</style>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Mobile menu
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// SMS modal
+function openSMS(e) {
+  e.preventDefault();
+  const modal = document.getElementById('smsModal');
+  modal.style.display = 'flex';
+}
+function closeSMS() {
+  document.getElementById('smsModal').style.display = 'none';
+}
+document.getElementById('smsModal').addEventListener('click', function(e) {
+  if (e.target === this) closeSMS();
+});
+
+// Fade up observer
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 100);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// Area dropdown
+const areaInfo = {
+  pinellas: "Pinellas County — Tampa Bay Region. We regularly work on living shoreline projects, invasive removal, and dune restoration throughout Pinellas. <a href='#' onclick='openSMS(event)'>Text us about your project →</a>",
+  hillsborough: "Hillsborough County — Tampa Bay Region. Native habitat design, invasive removal, and coastal restoration along Tampa Bay's shores. <a href='#' onclick='openSMS(event)'>Text us →</a>",
+  pasco: "Pasco County — Tampa Bay Region. Restoration services from the coast inland—dune systems, plant sourcing, and environmental design. <a href='#' onclick='openSMS(event)'>Text us →</a>",
+  manatee: "Manatee County — serving Anna Maria Island, Bradenton, and surrounding coastal communities. <a href='#' onclick='openSMS(event)'>Text us →</a>",
+  miamidade: "Miami-Dade County — South Florida coastal and inland restoration, including mangrove and shoreline work. <a href='#' onclick='openSMS(event)'>Text us →</a>",
+  broward: "Broward County — coastal restoration and living shoreline design throughout the Fort Lauderdale area. <a href='#' onclick='openSMS(event)'>Text us →</a>",
+  palmbeach: "Palm Beach — native habitat restoration, invasive removal, and environmental design for residential and commercial sites. <a href='#' onclick='openSMS(event)'>Text us →</a>",
+  orange: "Orange County / Orlando area — inland restoration, plant sourcing, and environmental design. <a href='#' onclick='openSMS(event)'>Text us →</a>",
+  pensacola: "Pensacola — Panhandle coastal restoration, dune systems, and invasive removal. <a href='#' onclick='openSMS(event)'>Text us →</a>",
+  destin: "Destin — specializing in dune system restoration and coastal habitat work along the Emerald Coast. <a href='#' onclick='openSMS(event)'>Text us →</a>",
+  panamacity: "Panama City / Panama City Beach — dune and coastal habitat restoration for residential, municipal, and commercial sites. <a href='#' onclick='openSMS(event)'>Text us →</a>",
+  fortwalt: "Fort Walton Beach — coastal and dune restoration throughout the Okaloosa County area. <a href='#' onclick='openSMS(event)'>Text us →</a>",
+  apalachicola: "Apalachicola — bay and estuarine restoration in one of Florida's most ecologically significant regions. <a href='#' onclick='openSMS(event)'>Text us →</a>",
+  tallahassee: "Tallahassee — inland habitat restoration, native plant installation, and environmental design. <a href='#' onclick='openSMS(event)'>Text us →</a>",
+  jacksonville: "Jacksonville — Northeast Florida coastal and inland restoration services. <a href='#' onclick='openSMS(event)'>Text us →</a>"
+};
+
+function showArea(val) {
+  const result = document.getElementById('areaResult');
+  const text = document.getElementById('areaResultText');
+  if (val && areaInfo[val]) {
+    text.innerHTML = areaInfo[val];
+    result.classList.add('show');
+  } else {
+    result.classList.remove('show');
   }
+}
+
+function highlightArea(area) {
+  document.getElementById('areaSelect').value = area;
+  showArea(area);
+  document.getElementById('areaSelect').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
 </script>
 </body>
 </html>
