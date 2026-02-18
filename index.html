@@ -3,15 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Living Restorations | Ecological Design & Coastal Restoration — Florida</title>
-<meta name="description" content="Florida's ecological design and coastal restoration specialists. Living shorelines, dune systems, invasive removal, and native habitat design across Tampa Bay and beyond.">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Living Restorations | Ecological Design & Coastal Restoration">
-<meta property="og:description" content="Restore the natural beauty of the Florida you grew up with. Coastal restoration, living shorelines, dune systems, and invasive removal statewide.">
+<!-- HTML Meta Tags -->
+<title>Ecological Design - Natural Restoration | Florida</title>
+<meta name="description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay and beyond. Text us your project now.">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://living-restorations.vercel.app/">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://livingrestorations.com">
-<meta property="og:image" content="assets/img/og-image.jpg">
+<meta property="og:title" content="Ecological Design - Natural Restoration | Florida">
+<meta property="og:description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay and beyond. Text us your project now.">
+<meta property="og:image" content="https://living-restorations.vercel.app/assets/living-resto-og-image.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="living-restorations.vercel.app">
+<meta property="twitter:url" content="https://living-restorations.vercel.app/">
+<meta name="twitter:title" content="Ecological Design - Natural Restoration | Florida">
+<meta name="twitter:description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay and beyond. Text us your project now.">
+<meta name="twitter:image" content="https://living-restorations.vercel.app/assets/living-resto-og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.png">
+<link rel="apple-touch-icon" href="assets/img/logo.png">
 
 <!-- Schema -->
 <script type="application/ld+json">
@@ -21,14 +35,11 @@
   "name": "Living Restorations",
   "description": "Ecological design and coastal restoration specialists serving Florida",
   "telephone": "+17277107400",
-  "url": "https://livingrestorations.com",
+  "url": "https://living-restorations.vercel.app",
   "areaServed": "Florida",
   "serviceType": ["Coastal Restoration","Living Shoreline","Dune Restoration","Invasive Removal","Environmental Design","Plant Sourcing","Maintenance and Monitoring"]
 }
 </script>
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="assets/img/logo.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -72,7 +83,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
 }
 .nav-call:hover { background: var(--deep) !important; transform: translateY(-1px); }
 .nav-call svg { width: 14px; height: 14px; }
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 0.5rem; }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--deep); transition: 0.3s; }
 
 /* ── HERO ── */
@@ -84,11 +95,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
 .hero-bg {
   position: absolute; inset: 0; overflow: hidden;
   background: var(--deep);
-}
-.hero-bg-img {
-  width: 100%; height: 100%; object-fit: cover; opacity: 0.6;
-  /* Placeholder — swap for real image */
-  background: linear-gradient(135deg, #1b3a2f 0%, #3d7e6e 40%, #2a5a4a 70%, #0d2218 100%);
 }
 .hero-video-placeholder {
   position: absolute; inset: 0;
@@ -128,7 +134,22 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
   font-size: 1rem; color: rgba(255,255,255,0.75); font-weight: 300;
   line-height: 1.7; max-width: 500px; margin-bottom: 2.5rem;
 }
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ── HERO BUTTONS — FIXED FLEXBOX ── */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.hero-actions .btn-primary,
+.hero-actions .btn-secondary {
+  flex: 1 1 auto;
+  min-width: 200px;
+  text-align: center;
+  justify-content: center;
+  white-space: nowrap;
+}
 .btn-primary {
   display: inline-flex; align-items: center; gap: 0.6rem;
   background: var(--green); color: white;
@@ -190,12 +211,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
   cursor: default;
 }
 .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(27,58,47,0.12); }
-.service-img {
-  width: 100%; aspect-ratio: 4/3; object-fit: cover;
-  background: linear-gradient(135deg, #3d7e6e, #1b3a2f);
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-}
 .service-img-placeholder {
   width: 100%; aspect-ratio: 4/3;
   background: linear-gradient(135deg, #d4e8e0 0%, #a8c8be 100%);
@@ -257,7 +272,6 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
 /* ── SERVICE AREAS ── */
 .areas { padding: 7rem 4%; background: white; }
 .areas-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-.areas-left {}
 .area-dropdown-wrap { margin-top: 2rem; }
 .area-dropdown-wrap label { display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
 .area-select {
@@ -278,18 +292,9 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
 /* Florida map */
 .fl-map-wrap { position: relative; }
 .fl-map-wrap svg { width: 100%; height: auto; }
-.map-dot {
-  cursor: pointer; transition: r 0.2s;
-}
+.map-dot { cursor: pointer; transition: r 0.2s; }
 .map-dot circle { transition: all 0.2s; }
 .map-dot:hover circle { r: 8; }
-.map-tooltip {
-  position: absolute; background: var(--deep); color: white;
-  padding: 0.4rem 0.8rem; border-radius: 3px; font-size: 0.75rem;
-  pointer-events: none; opacity: 0; transition: opacity 0.2s; white-space: nowrap;
-  transform: translate(-50%, -120%);
-}
-.map-tooltip.show { opacity: 1; }
 
 /* ── CONTACT / CTA ── */
 .cta-section {
@@ -326,6 +331,42 @@ footer p { color: rgba(255,255,255,0.35); font-size: 0.78rem; }
 footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
 footer a:hover { color: rgba(255,255,255,0.8); }
 
+/* ── SMS MODAL ── */
+.sms-overlay {
+  display: none; position: fixed; inset: 0; z-index: 999;
+  background: rgba(0,0,0,0.5);
+  align-items: center; justify-content: center;
+}
+.sms-overlay.open { display: flex; }
+.sms-modal {
+  background: white; border-radius: 6px; padding: 2.5rem;
+  max-width: 480px; width: 90%; position: relative;
+}
+.sms-close {
+  position: absolute; top: 1rem; right: 1rem;
+  background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999;
+  width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; transition: background 0.2s;
+}
+.sms-close:hover { background: var(--light); color: var(--deep); }
+.sms-modal .section-eyebrow { margin-bottom: 0.5rem; }
+.sms-modal h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.6rem;
+  color: var(--deep); margin-bottom: 0.5rem;
+}
+.sms-modal .sms-sub {
+  font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6;
+}
+.sms-options { display: flex; flex-direction: column; gap: 0.75rem; }
+.sms-option {
+  display: block; padding: 0.85rem 1.1rem;
+  border: 1.5px solid rgba(61,126,110,0.2); border-radius: 3px;
+  color: var(--deep); text-decoration: none; font-size: 0.88rem;
+  transition: background 0.2s, border-color 0.2s;
+  line-height: 1.4;
+}
+.sms-option:hover { background: var(--light); border-color: var(--green); }
+
 /* ── ANIMATIONS ── */
 .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-up.visible { opacity: 1; transform: none; }
@@ -341,14 +382,30 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
   .nav-links { display: none; }
-  .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: white; padding: 1.5rem; border-bottom: 1px solid #eee; gap: 1.25rem; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 70px; left: 0; right: 0;
+    background: white; padding: 1.5rem;
+    border-bottom: 1px solid #eee; gap: 1.25rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
   .hamburger { display: flex; }
   .services-grid { grid-template-columns: 1fr 1fr; }
+  .service-card-wide { grid-template-columns: 1fr !important; }
   .about { grid-template-columns: 1fr; }
   .about-content { padding: 3rem 4%; }
   .gallery-strip { grid-template-columns: repeat(2, 1fr); }
   .areas-inner { grid-template-columns: 1fr; gap: 3rem; }
   .phone-bar { flex-direction: column; gap: 0.5rem; }
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    min-width: unset;
+    width: 100%;
+  }
 }
 @media (max-width: 600px) {
   .services-grid { grid-template-columns: 1fr; }
@@ -356,6 +413,7 @@ footer a:hover { color: rgba(255,255,255,0.8); }
   footer { flex-direction: column; text-align: center; }
 }
 </style>
+
 </head>
 <body>
 
@@ -366,21 +424,20 @@ footer a:hover { color: rgba(255,255,255,0.8); }
     <li><a href="#services">Services</a></li>
     <li><a href="#about">Our Work</a></li>
     <li><a href="#areas">Service Areas</a></li>
-    <li><a href="sms:7277107400?body=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20restoration%20project%20on%20my%20property." class="nav-call">
+    <li><a href="#" onclick="openSMS(event)" class="nav-call">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
       Text Us
     </a></li>
   </ul>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg">
     <div class="hero-video-placeholder">
-      <!-- VIDEO PLACEHOLDER — drop <video> tag here with her footage -->
       <div style="text-align:center; position:relative; z-index:2;">
         <div class="play-btn" onclick="alert('Video coming soon')">
           <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
@@ -427,7 +484,6 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
     <div class="service-card fade-up">
       <div class="service-img-placeholder">
-        <!-- IMAGE PLACEHOLDER: Invasive removal project photo -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
         <span>Photo: Invasive Removal</span>
       </div>
@@ -439,7 +495,6 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
     <div class="service-card fade-up">
       <div class="service-img-placeholder">
-        <!-- IMAGE PLACEHOLDER: Dune system project photo -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17c3-3 6-5 9-5s6 2 9 5"/><path d="M3 12c3-4 6-6 9-6s6 2 9 6"/></svg>
         <span>Photo: Dune System</span>
       </div>
@@ -451,7 +506,6 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
     <div class="service-card fade-up">
       <div class="service-img-placeholder">
-        <!-- IMAGE PLACEHOLDER: Coastal restoration photo -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
         <span>Photo: Coastal Restoration</span>
       </div>
@@ -463,7 +517,6 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
     <div class="service-card fade-up">
       <div class="service-img-placeholder">
-        <!-- IMAGE PLACEHOLDER: Native plants photo -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V12M12 12C12 7 7 3 2 3c0 5 4 9 10 9zM12 12c0-5 5-9 10-9 0 5-4 9-10 9z"/></svg>
         <span>Photo: Plant Sourcing</span>
       </div>
@@ -475,7 +528,6 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
     <div class="service-card fade-up">
       <div class="service-img-placeholder">
-        <!-- IMAGE PLACEHOLDER: Environmental design project -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
         <span>Photo: Environmental Design</span>
       </div>
@@ -487,7 +539,6 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
     <div class="service-card fade-up">
       <div class="service-img-placeholder">
-        <!-- IMAGE PLACEHOLDER: Living shoreline install -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M6 20V10M12 20V4M18 20V14"/></svg>
         <span>Photo: Living Shoreline</span>
       </div>
@@ -497,9 +548,8 @@ footer a:hover { color: rgba(255,255,255,0.8); }
       </div>
     </div>
 
-    <div class="service-card fade-up" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 2fr; gap: 0;">
+    <div class="service-card service-card-wide fade-up" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 2fr; gap: 0;">
       <div class="service-img-placeholder" style="aspect-ratio: auto; min-height: 200px;">
-        <!-- IMAGE PLACEHOLDER: Monitoring/maintenance photo -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         <span>Photo: Monitoring</span>
       </div>
@@ -517,7 +567,6 @@ footer a:hover { color: rgba(255,255,255,0.8); }
   <div class="about-video">
     <div class="about-video-bg"></div>
     <div class="about-video-inner">
-      <!-- VIDEO PLACEHOLDER — embed YouTube or host video here -->
       <div class="play-btn" style="width:90px; height:90px;" onclick="alert('Video coming soon')">
         <svg viewBox="0 0 24 24" style="width:32px; height:32px; fill:white; margin-left:5px;"><polygon points="5,3 19,12 5,21"/></svg>
       </div>
@@ -536,7 +585,6 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
 <!-- GALLERY STRIP -->
 <div class="gallery-strip">
-  <!-- IMAGE PLACEHOLDERS — swap in real project photos -->
   <div class="gallery-item"><div class="gallery-item-placeholder">Project Photo 1</div></div>
   <div class="gallery-item"><div class="gallery-item-placeholder">Project Photo 2</div></div>
   <div class="gallery-item"><div class="gallery-item-placeholder">Project Photo 3</div></div>
@@ -588,34 +636,31 @@ footer a:hover { color: rgba(255,255,255,0.8); }
     <!-- FLORIDA MAP -->
     <div class="fl-map-wrap fade-up">
       <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
-        <!-- Simplified Florida outline -->
         <path d="M80,20 L220,20 L230,40 L240,80 L245,120 L250,160 L248,200 L240,240 L220,270 L200,295 L180,315 L165,330 L155,345 L148,360 L142,375 L138,385 L134,375 L130,360 L128,348 L120,335 L108,320 L95,305 L80,285 L65,260 L55,235 L50,210 L48,185 L50,160 L55,130 L60,100 L65,70 L70,45 Z"
           fill="#e8f4f0" stroke="#3d7e6e" stroke-width="1.5"/>
-        <!-- Panhandle -->
         <path d="M80,20 L20,20 L20,60 L80,60 Z" fill="#e8f4f0" stroke="#3d7e6e" stroke-width="1.5"/>
 
-        <!-- Map dots for service areas -->
-        <g class="map-dot" data-city="Tampa Bay" onclick="highlightArea('pinellas')">
+        <g class="map-dot" onclick="highlightArea('pinellas')">
           <circle cx="90" cy="200" r="6" fill="#3d7e6e" opacity="0.8"/>
           <circle cx="90" cy="200" r="12" fill="#3d7e6e" opacity="0.15"/>
           <text x="100" y="204" font-size="9" fill="#1b3a2f" font-family="DM Sans">Tampa Bay</text>
         </g>
-        <g class="map-dot" data-city="Miami" onclick="highlightArea('miamidade')">
+        <g class="map-dot" onclick="highlightArea('miamidade')">
           <circle cx="195" cy="340" r="6" fill="#3d7e6e" opacity="0.8"/>
           <circle cx="195" cy="340" r="12" fill="#3d7e6e" opacity="0.15"/>
           <text x="205" y="344" font-size="9" fill="#1b3a2f" font-family="DM Sans">Miami</text>
         </g>
-        <g class="map-dot" data-city="Jacksonville" onclick="highlightArea('jacksonville')">
+        <g class="map-dot" onclick="highlightArea('jacksonville')">
           <circle cx="190" cy="60" r="6" fill="#3d7e6e" opacity="0.8"/>
           <circle cx="190" cy="60" r="12" fill="#3d7e6e" opacity="0.15"/>
           <text x="200" y="64" font-size="9" fill="#1b3a2f" font-family="DM Sans">Jacksonville</text>
         </g>
-        <g class="map-dot" data-city="Pensacola" onclick="highlightArea('pensacola')">
+        <g class="map-dot" onclick="highlightArea('pensacola')">
           <circle cx="30" cy="40" r="6" fill="#3d7e6e" opacity="0.8"/>
           <circle cx="30" cy="40" r="12" fill="#3d7e6e" opacity="0.15"/>
           <text x="40" y="44" font-size="9" fill="#1b3a2f" font-family="DM Sans">Pensacola</text>
         </g>
-        <g class="map-dot" data-city="Orlando" onclick="highlightArea('orange')">
+        <g class="map-dot" onclick="highlightArea('orange')">
           <circle cx="160" cy="180" r="6" fill="#3d7e6e" opacity="0.8"/>
           <circle cx="160" cy="180" r="12" fill="#3d7e6e" opacity="0.15"/>
           <text x="170" y="184" font-size="9" fill="#1b3a2f" font-family="DM Sans">Orlando</text>
@@ -642,75 +687,76 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo"><img src="assets/img/logo.png" alt="Living Restorations"></div>
-  <p>© 2025 Living Restorations LLC · Ecological Design & Restoration · Florida</p>
+  <p>&copy; 2025 Living Restorations LLC &middot; Ecological Design & Restoration &middot; Florida</p>
   <p><a href="#" onclick="openSMS(event)">Text Us</a></p>
 </footer>
 
 <!-- SMS MODAL -->
-<div id="smsModal" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
-  <div style="background:white; border-radius:6px; padding:2.5rem; max-width:480px; width:90%; position:relative;">
-    <button onclick="closeSMS()" style="position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#999;">×</button>
-    <p style="font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:0.5rem;">Get in Touch</p>
-    <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--deep); margin-bottom:0.5rem;">What brings you here?</h3>
-    <p style="font-size:0.85rem; color:var(--muted); margin-bottom:1.5rem; line-height:1.6;">Choose a message below and we'll open your texts—ready to send.</p>
-    <div style="display:flex; flex-direction:column; gap:0.75rem;">
-      <a href="sms:7277107400?body=Hi%21+I%27d+like+to+talk+about+a+coastal+restoration+project+on+my+property." class="sms-option">🌊 I have a coastal restoration project</a>
-      <a href="sms:7277107400?body=Hi%21+I%27m+dealing+with+invasive+species+on+my+property+and+need+help." class="sms-option">🌿 I need invasive species removed</a>
-      <a href="sms:7277107400?body=Hi%21+I%27m+interested+in+a+living+shoreline+for+my+property." class="sms-option">🪨 I want to learn about living shorelines</a>
-      <a href="sms:7277107400?body=Hi%21+I%27d+like+to+talk+about+dune+restoration+on+my+property." class="sms-option">🏖️ I need dune restoration</a>
-      <a href="sms:7277107400?body=Hi%21+I%27m+not+sure+what+I+need+yet—can+we+talk+about+my+property%3F" class="sms-option">💬 I'm not sure yet—let's talk</a>
+<div class="sms-overlay" id="smsModal">
+  <div class="sms-modal">
+    <button class="sms-close" onclick="closeSMS()" aria-label="Close">&times;</button>
+    <p class="section-eyebrow">Get in Touch</p>
+    <h3>What brings you here?</h3>
+    <p class="sms-sub">Choose a message below and we'll open your texts—ready to send.</p>
+    <div class="sms-options">
+      <a href="sms:7277107400?body=Hi!%20I'd%20like%20to%20talk%20about%20a%20coastal%20restoration%20project%20on%20my%20property." class="sms-option">🌊 I have a coastal restoration project</a>
+      <a href="sms:7277107400?body=Hi!%20I'm%20dealing%20with%20invasive%20species%20on%20my%20property%20and%20need%20help." class="sms-option">🌿 I need invasive species removed</a>
+      <a href="sms:7277107400?body=Hi!%20I'm%20interested%20in%20a%20living%20shoreline%20for%20my%20property." class="sms-option">🪨 I want to learn about living shorelines</a>
+      <a href="sms:7277107400?body=Hi!%20I'd%20like%20to%20talk%20about%20dune%20restoration%20on%20my%20property." class="sms-option">🏖️ I need dune restoration</a>
+      <a href="sms:7277107400?body=Hi!%20I'm%20not%20sure%20what%20I%20need%20yet%E2%80%94can%20we%20talk%20about%20my%20property?" class="sms-option">💬 I'm not sure yet—let's talk</a>
     </div>
   </div>
 </div>
 
-<style>
-.sms-option {
-  display:block; padding:0.85rem 1.1rem;
-  border:1.5px solid rgba(61,126,110,0.2); border-radius:3px;
-  color:var(--deep); text-decoration:none; font-size:0.88rem;
-  transition:background 0.2s, border-color 0.2s;
-  line-height:1.4;
-}
-.sms-option:hover { background:var(--light); border-color:var(--green); }
-</style>
-
 <script>
-// Nav scroll
-window.addEventListener('scroll', () => {
+// Nav scroll shadow
+window.addEventListener('scroll', function() {
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
 });
 
-// Mobile menu
+// Mobile menu toggle
 function toggleMenu() {
   document.getElementById('navLinks').classList.toggle('open');
 }
 
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
 // SMS modal
 function openSMS(e) {
-  e.preventDefault();
-  const modal = document.getElementById('smsModal');
-  modal.style.display = 'flex';
+  if (e) e.preventDefault();
+  document.getElementById('smsModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 function closeSMS() {
-  document.getElementById('smsModal').style.display = 'none';
+  document.getElementById('smsModal').classList.remove('open');
+  document.body.style.overflow = '';
 }
 document.getElementById('smsModal').addEventListener('click', function(e) {
   if (e.target === this) closeSMS();
 });
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeSMS();
+});
 
 // Fade up observer
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e, i) {
     if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 100);
+      setTimeout(function() { e.target.classList.add('visible'); }, i * 100);
       obs.unobserve(e.target);
     }
   });
 }, { threshold: 0.12 });
-document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
 
 // Area dropdown
-const areaInfo = {
+var areaInfo = {
   pinellas: "Pinellas County — Tampa Bay Region. We regularly work on living shoreline projects, invasive removal, and dune restoration throughout Pinellas. <a href='#' onclick='openSMS(event)'>Text us about your project →</a>",
   hillsborough: "Hillsborough County — Tampa Bay Region. Native habitat design, invasive removal, and coastal restoration along Tampa Bay's shores. <a href='#' onclick='openSMS(event)'>Text us →</a>",
   pasco: "Pasco County — Tampa Bay Region. Restoration services from the coast inland—dune systems, plant sourcing, and environmental design. <a href='#' onclick='openSMS(event)'>Text us →</a>",
@@ -729,8 +775,8 @@ const areaInfo = {
 };
 
 function showArea(val) {
-  const result = document.getElementById('areaResult');
-  const text = document.getElementById('areaResultText');
+  var result = document.getElementById('areaResult');
+  var text = document.getElementById('areaResultText');
   if (val && areaInfo[val]) {
     text.innerHTML = areaInfo[val];
     result.classList.add('show');
@@ -745,5 +791,6 @@ function highlightArea(area) {
   document.getElementById('areaSelect').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 </script>
+
 </body>
 </html>
