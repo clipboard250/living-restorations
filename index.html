@@ -9,19 +9,19 @@
 <meta name="description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay and beyond. Text us your project now.">
 
 <!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://living-restorations.vercel.app/">
+<meta property="og:url" content="https://www.livingrestorations.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ecological Design - Natural Restoration | Florida">
 <meta property="og:description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay and beyond. Text us your project now.">
-<meta property="og:image" content="https://living-restorations.vercel.app/assets/living-resto-og-image.png">
+<meta property="og:image" content="https://www.livingrestorations.com/assets/living-resto-og-image.png">
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:domain" content="living-restorations.vercel.app">
-<meta property="twitter:url" content="https://living-restorations.vercel.app/">
+<meta property="twitter:domain" content="livingrestorations.com">
+<meta property="twitter:url" content="https://www.livingrestorations.com/">
 <meta name="twitter:title" content="Ecological Design - Natural Restoration | Florida">
 <meta name="twitter:description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay and beyond. Text us your project now.">
-<meta name="twitter:image" content="https://living-restorations.vercel.app/assets/living-resto-og-image.png">
+<meta name="twitter:image" content="https://www.livingrestorations.com/assets/living-resto-og-image.png">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="assets/LR-favicon.png">
@@ -35,26 +35,27 @@
   "name": "Living Restorations",
   "description": "Ecological design and coastal restoration specialists serving Florida",
   "telephone": "+17277107400",
-  "url": "https://living-restorations.vercel.app",
+  "url": "https://www.livingrestorations.com",
   "areaServed": "Florida",
   "serviceType": ["Coastal Restoration","Living Shoreline","Dune Restoration","Invasive Removal","Environmental Design","Plant Sourcing","Maintenance and Monitoring"]
 }
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --green: #3d7e6e;
-  --deep: #1b3a2f;
-  --light: #f5f2ec;
+  --terracotta: #a5423b;
+  --teal: #6ca698;
+  --sand: #a69689;
+  --cream: #fbf6ed;
+  --charcoal: #3b3836;
   --white: #ffffff;
-  --text: #2a2a2a;
-  --muted: #6b7b6e;
+  --muted: #7a6f6a;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+body { font-family: 'Poppins', sans-serif; color: var(--charcoal); background: var(--white); overflow-x: hidden; }
 
 /* ── NAV ── */
 nav {
@@ -63,25 +64,25 @@ nav {
   padding: 1rem 4%;
   background: rgba(255,255,255,0.96);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(61,126,110,0.12);
+  border-bottom: 1px solid rgba(108,166,152,0.15);
   transition: box-shadow 0.3s;
 }
 nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
 .nav-logo img { height: 44px; }
 .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
-.nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--deep); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
-.nav-links a:hover { color: var(--green); }
+.nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--charcoal); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--teal); }
 .nav-call {
   display: flex; align-items: center; gap: 0.5rem;
-  background: var(--green); color: white !important;
+  background: var(--teal); color: white !important;
   padding: 0.65rem 1.4rem; border-radius: 3px;
-  font-size: 0.85rem; font-weight: 500;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
   transition: background 0.2s, transform 0.2s;
 }
-.nav-call:hover { background: var(--deep) !important; transform: translateY(-1px); }
+.nav-call:hover { background: var(--terracotta) !important; transform: translateY(-1px); }
 .nav-call svg { width: 14px; height: 14px; }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 0.5rem; }
-.hamburger span { display: block; width: 24px; height: 2px; background: var(--deep); transition: 0.3s; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--charcoal); transition: 0.3s; }
 
 /* ── HERO ── */
 .hero {
@@ -89,10 +90,10 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
   position: relative; display: flex; align-items: flex-end;
   padding: 0 4% 8%;
 }
-.hero-bg { position: absolute; inset: 0; overflow: hidden; background: var(--deep); }
+.hero-bg { position: absolute; inset: 0; overflow: hidden; background: var(--charcoal); }
 .hero-video-placeholder {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, #1b3a2f 0%, #3d7e6e 40%, #2a5a4a 70%, #0d2218 100%);
+  background: linear-gradient(135deg, #2a1f1e 0%, #a5423b 40%, #6ca698 70%, #1a1210 100%);
   display: flex; align-items: center; justify-content: center;
 }
 .play-btn {
@@ -104,28 +105,28 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
 }
 .play-btn:hover { background: rgba(255,255,255,0.2); transform: scale(1.05); }
 .play-btn svg { width: 28px; height: 28px; fill: white; margin-left: 4px; }
-.video-label { color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 1rem; }
+.video-label { color: rgba(255,255,255,0.6); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 1rem; font-weight: 500; }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(27,58,47,0.92) 0%, rgba(27,58,47,0.3) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(59,56,54,0.92) 0%, rgba(59,56,54,0.3) 60%, transparent 100%);
 }
 .hero-content { position: relative; z-index: 2; max-width: 760px; }
 .hero-tag {
-  display: inline-block; background: rgba(61,126,110,0.3);
-  border: 1px solid rgba(61,126,110,0.5);
-  color: rgba(255,255,255,0.9); font-size: 0.72rem;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  padding: 0.4rem 1rem; border-radius: 2px; margin-bottom: 1.5rem;
+  display: inline-block; background: rgba(108,166,152,0.25);
+  border: 1px solid rgba(108,166,152,0.5);
+  color: rgba(255,255,255,0.9); font-size: 0.68rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 0.4rem 1rem; border-radius: 2px; margin-bottom: 1.5rem; font-weight: 600;
 }
 .hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  line-height: 1.08; color: white; margin-bottom: 1.25rem; font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+  line-height: 1.1; color: white; margin-bottom: 1.25rem; font-weight: 700;
 }
-.hero h1 em { font-style: italic; color: #a8d4c8; }
+.hero h1 em { font-style: italic; color: #b8d8d3; font-weight: 300; }
 .hero-sub {
-  font-size: 1rem; color: rgba(255,255,255,0.75); font-weight: 300;
-  line-height: 1.7; max-width: 500px; margin-bottom: 2.5rem;
+  font-size: 0.95rem; color: rgba(255,255,255,0.75); font-weight: 300;
+  line-height: 1.8; max-width: 500px; margin-bottom: 2.5rem;
 }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: stretch; }
 .hero-actions .btn-primary,
@@ -135,97 +136,97 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
 }
 .btn-primary {
   display: inline-flex; align-items: center; gap: 0.6rem;
-  background: var(--green); color: white;
+  background: var(--teal); color: white;
   padding: 1rem 2rem; border-radius: 3px;
-  font-size: 0.9rem; font-weight: 500; text-decoration: none;
+  font-size: 0.85rem; font-weight: 600; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
   transition: background 0.2s, transform 0.2s;
 }
-.btn-primary:hover { background: #2d6a5a; transform: translateY(-2px); }
+.btn-primary:hover { background: var(--terracotta); transform: translateY(-2px); }
 .btn-secondary {
   display: inline-flex; align-items: center; gap: 0.6rem;
   border: 1px solid rgba(255,255,255,0.4); color: white;
   padding: 1rem 2rem; border-radius: 3px;
-  font-size: 0.9rem; font-weight: 400; text-decoration: none;
+  font-size: 0.85rem; font-weight: 400; text-decoration: none; letter-spacing: 0.03em;
   transition: border-color 0.2s, background 0.2s;
 }
 .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
 
 /* ── SERVICES ── */
-.services { padding: 7rem 4%; background: var(--light); }
-.section-eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); font-weight: 500; margin-bottom: 0.75rem; }
-.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.15; color: var(--deep); margin-bottom: 1rem; font-weight: 600; }
-.section-sub { font-size: 0.95rem; color: var(--muted); line-height: 1.7; max-width: 520px; margin-bottom: 3.5rem; font-weight: 300; }
+.services { padding: 7rem 4%; background: var(--cream); }
+.section-eyebrow { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-bottom: 0.75rem; }
+.section-title { font-family: 'Poppins', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.2; color: var(--charcoal); margin-bottom: 1rem; font-weight: 700; }
+.section-sub { font-size: 0.9rem; color: var(--muted); line-height: 1.8; max-width: 520px; margin-bottom: 3.5rem; font-weight: 300; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .service-card { background: white; border-radius: 4px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; cursor: default; }
-.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(27,58,47,0.12); }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(59,56,54,0.12); }
 .service-img-placeholder {
   width: 100%; aspect-ratio: 4/3;
-  background: linear-gradient(135deg, #d4e8e0 0%, #a8c8be 100%);
+  background: linear-gradient(135deg, #e8ddd6 0%, #c8b8ae 100%);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 0.5rem; color: var(--green); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  gap: 0.5rem; color: var(--sand); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
 }
 .service-img-placeholder svg { width: 32px; height: 32px; opacity: 0.5; }
 .service-body { padding: 1.5rem; }
-.service-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--deep); margin-bottom: 0.5rem; font-weight: 600; }
-.service-body p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+.service-body h3 { font-family: 'Poppins', sans-serif; font-size: 1rem; color: var(--charcoal); margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.service-body p { font-size: 0.83rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
 
 /* ── ABOUT / VIDEO ── */
 .about { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
-.about-video { background: var(--deep); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; min-height: 400px; }
-.about-video-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #1b3a2f 0%, #3d7e6e 100%); opacity: 0.8; }
+.about-video { background: var(--charcoal); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; min-height: 400px; }
+.about-video-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #2a1f1e 0%, #a5423b 100%); opacity: 0.8; }
 .about-video-inner { position: relative; z-index: 2; text-align: center; }
-.about-content { background: var(--deep); padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
-.about-content .section-eyebrow { color: #a8d4c8; }
+.about-content { background: var(--charcoal); padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
+.about-content .section-eyebrow { color: var(--teal); }
 .about-content .section-title { color: white; margin-bottom: 1.25rem; }
-.about-content p { color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 0.92rem; font-weight: 300; margin-bottom: 1rem; }
-.about-cta { display: inline-flex; align-items: center; gap: 0.6rem; color: #a8d4c8; text-decoration: none; font-size: 0.88rem; font-weight: 500; margin-top: 1rem; border-bottom: 1px solid rgba(168,212,200,0.3); padding-bottom: 0.25rem; transition: border-color 0.2s; }
-.about-cta:hover { border-color: #a8d4c8; }
+.about-content p { color: rgba(255,255,255,0.7); line-height: 1.9; font-size: 0.88rem; font-weight: 300; margin-bottom: 1rem; }
+.about-cta { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--teal); text-decoration: none; font-size: 0.82rem; font-weight: 600; margin-top: 1rem; border-bottom: 1px solid rgba(108,166,152,0.3); padding-bottom: 0.25rem; transition: border-color 0.2s; letter-spacing: 0.05em; text-transform: uppercase; }
+.about-cta:hover { border-color: var(--teal); }
 
 /* ── GALLERY STRIP ── */
-.gallery-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; background: var(--deep); }
-.gallery-item { aspect-ratio: 1; overflow: hidden; position: relative; background: linear-gradient(135deg, #3d7e6e, #1b3a2f); cursor: pointer; }
-.gallery-item-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, #3d7e6e22, #1b3a2f44); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.2); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.3s; }
-.gallery-item:hover .gallery-item-placeholder { background: linear-gradient(135deg, #3d7e6e44, #1b3a2f66); }
+.gallery-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; background: var(--charcoal); }
+.gallery-item { aspect-ratio: 1; overflow: hidden; position: relative; background: linear-gradient(135deg, #6ca698, #3b3836); cursor: pointer; }
+.gallery-item-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, #6ca69822, #3b383644); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.2); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: background 0.3s; }
+.gallery-item:hover .gallery-item-placeholder { background: linear-gradient(135deg, #6ca69844, #3b383666); }
 
 /* ── SERVICE AREAS ── */
 .areas { padding: 7rem 4%; background: white; }
 .areas-inner { max-width: 1100px; margin: 0 auto; }
 .areas-top { margin-bottom: 3rem; max-width: 520px; }
 .areas-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-.area-dropdown-wrap label { display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+.area-dropdown-wrap label { display: block; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; font-weight: 600; }
 .area-select {
   width: 100%; padding: 0.85rem 1.1rem;
-  border: 1.5px solid rgba(61,126,110,0.3); border-radius: 3px;
-  font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--deep);
+  border: 1.5px solid rgba(108,166,152,0.3); border-radius: 3px;
+  font-family: 'Poppins', sans-serif; font-size: 0.85rem; color: var(--charcoal);
   background: white; appearance: none; cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233d7e6e' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236ca698' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 1rem center;
   transition: border-color 0.2s;
 }
-.area-select:focus { outline: none; border-color: var(--green); }
-.area-result { margin-top: 1rem; padding: 1rem 1.25rem; background: var(--light); border-radius: 3px; border-left: 3px solid var(--green); display: none; }
+.area-select:focus { outline: none; border-color: var(--teal); }
+.area-result { margin-top: 1rem; padding: 1rem 1.25rem; background: var(--cream); border-radius: 3px; border-left: 3px solid var(--teal); display: none; }
 .area-result.show { display: block; }
-.area-result p { font-size: 0.85rem; color: var(--deep); line-height: 1.6; }
-.area-result a { color: var(--green); text-decoration: none; font-weight: 500; }
-.map-wrap { border-radius: 4px; overflow: hidden; border: 1px solid rgba(61,126,110,0.15); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.area-result p { font-size: 0.83rem; color: var(--charcoal); line-height: 1.6; }
+.area-result a { color: var(--teal); text-decoration: none; font-weight: 600; }
+.map-wrap { border-radius: 4px; overflow: hidden; border: 1px solid rgba(108,166,152,0.15); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
 .map-wrap iframe { display: block; width: 100%; height: 400px; border: 0; }
 
 /* ── CTA ── */
-.cta-section { padding: 8rem 4%; background: var(--green); text-align: center; position: relative; overflow: hidden; }
+.cta-section { padding: 8rem 4%; background: var(--teal); text-align: center; position: relative; overflow: hidden; }
 .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.08) 0%, transparent 60%); }
 .cta-inner { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
-.cta-section .section-eyebrow { color: rgba(255,255,255,0.6); }
+.cta-section .section-eyebrow { color: rgba(255,255,255,0.7); }
 .cta-section .section-title { color: white; margin-bottom: 1rem; }
-.cta-section p { color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; font-weight: 300; }
-.cta-phone { display: inline-flex; align-items: center; gap: 0.75rem; background: white; color: var(--deep); padding: 1.1rem 2.5rem; border-radius: 3px; font-size: 1.2rem; font-weight: 500; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; letter-spacing: 0.02em; }
+.cta-section p { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; }
+.cta-phone { display: inline-flex; align-items: center; gap: 0.75rem; background: white; color: var(--charcoal); padding: 1.1rem 2.5rem; border-radius: 3px; font-size: 0.9rem; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; letter-spacing: 0.08em; text-transform: uppercase; }
 .cta-phone:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.2); }
-.cta-phone svg { width: 22px; height: 22px; color: var(--green); }
-.cta-note { color: rgba(255,255,255,0.55); font-size: 0.8rem; margin-top: 1.25rem; }
+.cta-phone svg { width: 20px; height: 20px; color: var(--teal); }
+.cta-note { color: rgba(255,255,255,0.6); font-size: 0.75rem; margin-top: 1.25rem; font-weight: 300; letter-spacing: 0.05em; }
 
 /* ── FOOTER ── */
-footer { background: var(--deep); padding: 3rem 4%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+footer { background: var(--charcoal); padding: 3rem 4%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
 .footer-logo img { height: 36px; }
-footer p { color: rgba(255,255,255,0.35); font-size: 0.78rem; }
+footer p { color: rgba(255,255,255,0.35); font-size: 0.75rem; font-weight: 300; }
 footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
 footer a:hover { color: rgba(255,255,255,0.8); }
 
@@ -234,13 +235,13 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 .sms-overlay.open { display: flex; }
 .sms-modal { background: white; border-radius: 6px; padding: 2.5rem; max-width: 480px; width: 90%; position: relative; }
 .sms-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; }
-.sms-close:hover { background: var(--light); color: var(--deep); }
+.sms-close:hover { background: var(--cream); color: var(--charcoal); }
 .sms-modal .section-eyebrow { margin-bottom: 0.5rem; }
-.sms-modal h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--deep); margin-bottom: 0.5rem; }
-.sms-modal .sms-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; }
+.sms-modal h3 { font-family: 'Poppins', sans-serif; font-size: 1.4rem; color: var(--charcoal); margin-bottom: 0.5rem; font-weight: 700; }
+.sms-modal .sms-sub { font-size: 0.83rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; font-weight: 300; }
 .sms-options { display: flex; flex-direction: column; gap: 0.75rem; }
-.sms-option { display: block; padding: 0.85rem 1.1rem; border: 1.5px solid rgba(61,126,110,0.2); border-radius: 3px; color: var(--deep); text-decoration: none; font-size: 0.88rem; transition: background 0.2s, border-color 0.2s; line-height: 1.4; }
-.sms-option:hover { background: var(--light); border-color: var(--green); }
+.sms-option { display: block; padding: 0.85rem 1.1rem; border: 1.5px solid rgba(108,166,152,0.2); border-radius: 3px; color: var(--charcoal); text-decoration: none; font-size: 0.85rem; transition: background 0.2s, border-color 0.2s; line-height: 1.4; font-weight: 400; }
+.sms-option:hover { background: var(--cream); border-color: var(--teal); }
 
 /* ── ANIMATIONS ── */
 .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -277,7 +278,7 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="nav-logo"><img src="assets/LR-favicon.png" alt="Living Restorations"></div>
+  <div class="nav-logo"><img src="assets/LR-logo-teal.png" alt="Living Restorations"></div>
   <ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
     <li><a href="#about">Our Work</a></li>
@@ -290,7 +291,7 @@ footer a:hover { color: rgba(255,255,255,0.8); }
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO — no scroll indicator, no phone bar -->
+<!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg">
     <div class="hero-video-placeholder">
@@ -321,7 +322,7 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 <section class="services" id="services">
   <p class="section-eyebrow fade-up">What We Do</p>
   <h2 class="section-title fade-up">Every service, built around your ecosystem.</h2>
-  <p class="section-sub fade-up">We don't install generic landscapes. Every project starts with a deep read of your site — the soil, the hydrology, the species that belong there.</p>
+  <p class="section-sub fade-up">We don't install generic designs. Every project starts with a deep read of your site — the soil, the hydrology, the species that belong there.</p>
   <div class="services-grid">
     <div class="service-card fade-up">
       <div class="service-img-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M15 9l-6 6M9 9l6 6"/></svg><span>Photo: Invasive Removal</span></div>
@@ -362,13 +363,13 @@ footer a:hover { color: rgba(255,255,255,0.8); }
       <div class="play-btn" style="width:90px; height:90px;" onclick="alert('Video coming soon')">
         <svg viewBox="0 0 24 24" style="width:32px; height:32px; fill:white; margin-left:5px;"><polygon points="5,3 19,12 5,21"/></svg>
       </div>
-      <p class="video-label" style="color:rgba(255,255,255,0.6); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; margin-top:1rem;">Watch Our Work</p>
+      <p class="video-label" style="margin-top:1rem;">Watch Our Work</p>
     </div>
   </div>
   <div class="about-content">
     <p class="section-eyebrow">Our Approach</p>
     <h2 class="section-title fade-up">Science-backed.<br>Site-specific.<br>Built to last.</h2>
-    <p>We don't install generic landscapes. Every Living Restorations project starts with a deep read of your site — the soil, the hydrology, the existing species, the pressures it faces.</p>
+    <p>We don't install generic designs. Every Living Restorations project starts with a deep read of your site — the soil, the hydrology, the existing species, the pressures it faces.</p>
     <p>Then we design and build something that establishes itself, adapts, and becomes more resilient over time. That's what ecological design actually means.</p>
     <a href="#" onclick="openSMS(event)" class="about-cta">Text us about your site →</a>
   </div>
@@ -382,7 +383,7 @@ footer a:hover { color: rgba(255,255,255,0.8); }
   <div class="gallery-item"><div class="gallery-item-placeholder">Project Photo 4</div></div>
 </div>
 
-<!-- SERVICE AREAS — Google Map, no SVG nightmare -->
+<!-- SERVICE AREAS -->
 <section class="areas" id="areas">
   <div class="areas-inner">
     <div class="areas-top">
@@ -444,7 +445,7 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><img src="assets/LR-favicon.png" alt="Living Restorations"></div>
+  <div class="footer-logo"><img src="assets/LR-logo-sand.png" alt="Living Restorations"></div>
   <p>&copy; 2025 Living Restorations LLC &middot; Ecological Design & Restoration &middot; Florida</p>
   <p><a href="#" onclick="openSMS(event)">Text Us</a></p>
 </footer>
@@ -455,13 +456,13 @@ footer a:hover { color: rgba(255,255,255,0.8); }
     <button class="sms-close" onclick="closeSMS()" aria-label="Close">&times;</button>
     <p class="section-eyebrow">Get in Touch</p>
     <h3>What brings you here?</h3>
-    <p class="sms-sub">Choose a message below and we'll open your texts—ready to send.</p>
+    <p class="sms-sub">Choose a message below and we'll open your texts — ready to send.</p>
     <div class="sms-options">
       <a href="sms:7277107400?body=Hi!%20I'd%20like%20to%20talk%20about%20a%20coastal%20restoration%20project%20on%20my%20property." class="sms-option">🌊 I have a coastal restoration project</a>
       <a href="sms:7277107400?body=Hi!%20I'm%20dealing%20with%20invasive%20species%20on%20my%20property%20and%20need%20help." class="sms-option">🌿 I need invasive species removed</a>
       <a href="sms:7277107400?body=Hi!%20I'm%20interested%20in%20a%20living%20shoreline%20for%20my%20property." class="sms-option">🪨 I want to learn about living shorelines</a>
       <a href="sms:7277107400?body=Hi!%20I'd%20like%20to%20talk%20about%20dune%20restoration%20on%20my%20property." class="sms-option">🏖️ I need dune restoration</a>
-      <a href="sms:7277107400?body=Hi!%20I'm%20not%20sure%20what%20I%20need%20yet%E2%80%94can%20we%20talk%20about%20my%20property?" class="sms-option">💬 I'm not sure yet—let's talk</a>
+      <a href="sms:7277107400?body=Hi!%20I'm%20not%20sure%20what%20I%20need%20yet%E2%80%94can%20we%20talk%20about%20my%20property?" class="sms-option">💬 I'm not sure yet — let's talk</a>
     </div>
   </div>
 </div>
