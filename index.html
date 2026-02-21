@@ -4,15 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- SEO FIX #1: Canonical URL -->
+<link rel="canonical" href="https://www.livingrestorations.com/">
+
 <!-- HTML Meta Tags -->
 <title>Ecological Design - Natural Restoration | Florida</title>
-<meta name="description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay and beyond. Text us your project now.">
+<!-- SEO FIX #2: Meta description shortened to under 160 chars -->
+<meta name="description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay.">
 
 <!-- Facebook Meta Tags -->
 <meta property="og:url" content="https://www.livingrestorations.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ecological Design - Natural Restoration | Florida">
-<meta property="og:description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay and beyond. Text us your project now.">
+<meta property="og:description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay.">
 <meta property="og:image" content="https://www.livingrestorations.com/assets/living-resto-og-image.png">
 
 <!-- Twitter Meta Tags -->
@@ -20,7 +24,7 @@
 <meta property="twitter:domain" content="livingrestorations.com">
 <meta property="twitter:url" content="https://www.livingrestorations.com/">
 <meta name="twitter:title" content="Ecological Design - Natural Restoration | Florida">
-<meta name="twitter:description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay and beyond. Text us your project now.">
+<meta name="twitter:description" content="Florida's ecological design and coastal restoration specialists. Invasive removal, living shorelines, dune systems, and native plant sourcing across Tampa Bay.">
 <meta name="twitter:image" content="https://www.livingrestorations.com/assets/living-resto-og-image.png">
 
 <!-- Favicon -->
@@ -91,24 +95,9 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
   padding: 0 4% 8%;
 }
 .hero-bg { position: absolute; inset: 0; overflow: hidden; background: #6ca698; }
-.hero-video-placeholder {
-  position: absolute; inset: 0;
-  background: linear-gradient(135deg, #2a1f1e 0%, #a5423b 40%, #6ca698 70%, #1a1210 100%);
-  display: flex; align-items: center; justify-content: center;
-}
-.play-btn {
-  width: 80px; height: 80px; border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.5);
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: all 0.3s;
-  background: rgba(255,255,255,0.1);
-}
-.play-btn:hover { background: rgba(255,255,255,0.2); transform: scale(1.05); }
-.play-btn svg { width: 28px; height: 28px; fill: white; margin-left: 4px; }
-.video-label { color: rgba(255,255,255,0.6); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 1rem; font-weight: 500; }
 .hero-overlay {
   position: absolute; inset: 0;
-background: rgba(59,56,54,0.55);
+  background: rgba(59,56,54,0.55);
 }
 .hero-content { position: relative; z-index: 2; max-width: 760px; }
 .hero-tag {
@@ -159,13 +148,6 @@ background: rgba(59,56,54,0.55);
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .service-card { background: white; border-radius: 4px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; cursor: default; }
 .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(59,56,54,0.12); }
-.service-img-placeholder {
-  width: 100%; aspect-ratio: 4/3;
-  background: linear-gradient(135deg, #e8ddd6 0%, #c8b8ae 100%);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 0.5rem; color: var(--sand); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
-}
-.service-img-placeholder svg { width: 32px; height: 32px; opacity: 0.5; }
 .service-body { padding: 1.5rem; }
 .service-body h3 { font-family: 'Poppins', sans-serif; font-size: 1rem; color: var(--charcoal); margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
 .service-body p { font-size: 0.83rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
@@ -173,8 +155,6 @@ background: rgba(59,56,54,0.55);
 /* ── ABOUT / VIDEO ── */
 .about { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
 .about-video { background: var(--charcoal); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; min-height: 400px; }
-.about-video-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #2a1f1e 0%, #a5423b 100%); opacity: 0.8; }
-.about-video-inner { position: relative; z-index: 2; text-align: center; }
 .about-content { background: var(--charcoal); padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center; }
 .about-content .section-eyebrow { color: var(--teal); }
 .about-content .section-title { color: white; margin-bottom: 1.25rem; }
@@ -185,8 +165,6 @@ background: rgba(59,56,54,0.55);
 /* ── GALLERY STRIP ── */
 .gallery-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; background: var(--charcoal); }
 .gallery-item { aspect-ratio: 1; overflow: hidden; position: relative; background: linear-gradient(135deg, #6ca698, #3b3836); cursor: pointer; }
-.gallery-item-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, #6ca69822, #3b383644); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.2); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: background 0.3s; }
-.gallery-item:hover .gallery-item-placeholder { background: linear-gradient(135deg, #6ca69844, #3b383666); }
 
 /* ── SERVICE AREAS ── */
 .areas { padding: 7rem 4%; background: white; }
@@ -220,7 +198,6 @@ background: rgba(59,56,54,0.55);
 .cta-section p { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; }
 .cta-phone { display: inline-flex; align-items: center; gap: 0.75rem; background: white; color: var(--charcoal); padding: 1.1rem 2.5rem; border-radius: 3px; font-size: 0.9rem; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; letter-spacing: 0.08em; text-transform: uppercase; }
 .cta-phone:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.2); }
-.cta-phone svg { width: 20px; height: 20px; color: var(--teal); }
 .cta-note { color: rgba(255,255,255,0.6); font-size: 0.75rem; margin-top: 1.25rem; font-weight: 300; letter-spacing: 0.05em; }
 
 /* ── FOOTER ── */
@@ -244,13 +221,14 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 .sms-option:hover { background: var(--cream); border-color: var(--teal); }
 
 /* ── ANIMATIONS ── */
-.fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.fade-up.visible { opacity: 1; transform: none; }
+/* SEO FIX #7: Content visible by default for crawlers. JS adds .js-ready to enable animations */
+.js-ready .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.js-ready .fade-up.visible { opacity: 1; transform: none; }
 @keyframes heroIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
-.hero-tag { animation: heroIn 0.8s ease 0.2s both; }
-.hero h1 { animation: heroIn 0.8s ease 0.4s both; }
-.hero-sub { animation: heroIn 0.8s ease 0.6s both; }
-.hero-actions { animation: heroIn 0.8s ease 0.8s both; }
+.js-ready .hero-tag { animation: heroIn 0.8s ease 0.2s both; }
+.js-ready .hero h1 { animation: heroIn 0.8s ease 0.4s both; }
+.js-ready .hero-sub { animation: heroIn 0.8s ease 0.6s both; }
+.js-ready .hero-actions { animation: heroIn 0.8s ease 0.8s both; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
@@ -278,14 +256,13 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
 <!-- NAV -->
 <nav id="nav">
-  <div class="nav-logo"><img src="assets/LR-logo-teal.png" alt="Living Restorations"></div>
+  <div class="nav-logo"><img src="assets/LR-logo-teal.png" alt="Living Restorations" title="Living Restorations" width="220" height="54" loading="eager"></div>
   <ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
     <li><a href="#about">Our Work</a></li>
     <li><a href="#areas">Service Areas</a></li>
-    <li><a href="#" onclick="openSMS(event)" class="nav-call">
-      Text Us
-    </a></li>
+    <!-- SEO FIX #8: sms: href as fallback instead of # -->
+    <li><a href="sms:7277107400" onclick="openSMS(event)" class="nav-call">Text Us</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -293,7 +270,8 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg">
-    <img src="assets/LR-temp-hero.webp" alt="Living Restorations team restoring coastal dune habitat" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 55%;">
+    <!-- SEO FIX #3/#4/#5: width, height, loading="eager", title -->
+    <img src="assets/LR-temp-hero.webp" alt="Living Restorations team restoring coastal dune habitat" title="Coastal dune habitat restoration in Florida" width="1920" height="1080" loading="eager" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 55%;">
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -301,9 +279,7 @@ footer a:hover { color: rgba(255,255,255,0.8); }
     <h1>Restore the natural beauty of the <em>Florida you grew up with.</em></h1>
     <p class="hero-sub">Living shorelines, dune systems, invasive removal, and native habitat design—built around Florida's ecosystems—not against them.</p>
     <div class="hero-actions">
-      <a href="#" class="btn-primary" onclick="openSMS(event)">
-        Text Us About Your Project
-      </a>
+      <a href="sms:7277107400" class="btn-primary" onclick="openSMS(event)">Text Us About Your Project</a>
       <a href="#services" class="btn-secondary">See Our Services</a>
     </div>
   </div>
@@ -316,31 +292,31 @@ footer a:hover { color: rgba(255,255,255,0.8); }
   <p class="section-sub fade-up">We don't install generic designs. Every project starts with a deep read of your site — the soil, the hydrology, the species that belong there.</p>
   <div class="services-grid">
     <div class="service-card fade-up">
-<img src="assets/invasive-removal-01.jpg" alt="Native Florida plant with red berries — invasive removal service" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; object-position: 70% center;">
+      <img src="assets/invasive-removal-01.jpg" alt="Native Florida plant with red berries — invasive removal service" title="Invasive species removal" width="800" height="600" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block; object-position: 70% center;">
       <div class="service-body"><h3>Invasive Removal</h3><p>Strategic removal of invasive species to give native ecosystems room to recover — and stay recovered.</p></div>
     </div>
     <div class="service-card fade-up">
-<img src="assets/project-photo-001.jpg" alt="Dune system restoration" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
+      <img src="assets/project-photo-001.jpg" alt="Dune system restoration" title="Dune system restoration" width="800" height="600" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
       <div class="service-body"><h3>Dune Systems</h3><p>Design and restoration of coastal dune habitat — Florida's first line of defense against erosion and storm surge.</p></div>
     </div>
     <div class="service-card fade-up">
-<img src="assets/project-photo-002.jpg" alt="Coastal restoration project" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
+      <img src="assets/project-photo-002.jpg" alt="Coastal restoration project" title="Coastal restoration project" width="800" height="600" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
       <div class="service-body"><h3>Coastal Restoration</h3><p>Comprehensive ecological restoration from tidal zones to upland transition areas — the full picture.</p></div>
     </div>
     <div class="service-card fade-up">
-<img src="assets/plant-sourcing-001.jpg" alt="Native Florida plant sourcing" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
+      <img src="assets/plant-sourcing-001.jpg" alt="Native Florida plant sourcing" title="Native Florida plant sourcing" width="800" height="600" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
       <div class="service-body"><h3>Native Plant Sourcing</h3><p>Florida-native plant sourcing for restoration and design — the right species for the right place, every time.</p></div>
     </div>
     <div class="service-card fade-up">
-  <img src="assets/environmental-design-001.jpg" alt="Environmental design landscape plan by Living Restorations" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
+      <img src="assets/environmental-design-001.jpg" alt="Environmental design landscape plan by Living Restorations" title="Environmental design landscape plan" width="800" height="600" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
       <div class="service-body"><h3>Environmental Design</h3><p>Thoughtful site design that integrates ecological function with human use and lasting habitat value.</p></div>
     </div>
     <div class="service-card fade-up">
-<img src="assets/living-shoreline-001.jpg" alt="Living shoreline design and installation" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
+      <img src="assets/living-shoreline-001.jpg" alt="Living shoreline design and installation" title="Living shoreline design and installation" width="800" height="600" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; display:block;">
       <div class="service-body"><h3>Living Shoreline Design & Install</h3><p>Natural shoreline stabilization using oyster reefs, native grasses, and organic materials — protecting property while restoring habitat.</p></div>
     </div>
     <div class="service-card service-card-wide fade-up" style="grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 2fr; gap: 0;">
-<img src="assets/monitoring.jpg" alt="Restoration maintenance and monitoring" style="width:100%; height:200px; object-fit:cover; object-position: center; display:block;">
+      <img src="assets/monitoring.jpg" alt="Restoration maintenance and monitoring" title="Restoration maintenance and monitoring" width="800" height="200" loading="lazy" style="width:100%; height:200px; object-fit:cover; object-position: center; display:block;">
       <div class="service-body" style="display:flex; flex-direction:column; justify-content:center; padding: 2rem 2.5rem;"><h3>Maintenance & Monitoring</h3><p>Long-term stewardship keeps your restoration on track. We monitor, adapt, and maintain so your investment grows stronger over time — not just for one season, but for years.</p></div>
     </div>
   </div>
@@ -348,32 +324,24 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
 <!-- ABOUT + VIDEO -->
 <section class="about" id="about">
-<div class="about-video" style="padding:0; overflow:hidden; position:relative; min-height:400px;">
-    <iframe
-src="https://www.youtube.com/embed/J9QdDdRWdZ8?rel=0&modestbranding=1&loop=1&playlist=J9QdDdRWdZ8"
-      title="Dune Restoration at Redington Beach | Living Restorations"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-      style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;">
-    </iframe>
+  <div class="about-video" style="padding:0; overflow:hidden; position:relative; min-height:400px;">
+    <iframe src="https://www.youtube.com/embed/J9QdDdRWdZ8?rel=0&modestbranding=1&loop=1&playlist=J9QdDdRWdZ8" title="Dune Restoration at Redington Beach | Living Restorations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" width="800" height="450" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"></iframe>
   </div>
   <div class="about-content">
     <p class="section-eyebrow">Our Approach</p>
     <h2 class="section-title fade-up">Science-backed.<br>Site-specific.<br>Built to last.</h2>
     <p>We don't install generic designs. Every Living Restorations project starts with a deep read of your site — the soil, the hydrology, the existing species, the pressures it faces.</p>
     <p>Then we design and build something that establishes itself, adapts, and becomes more resilient over time. That's what ecological design actually means.</p>
-    <a href="#" onclick="openSMS(event)" class="about-cta">Text us about your site →</a>
+    <a href="sms:7277107400" onclick="openSMS(event)" class="about-cta">Text us about your site →</a>
   </div>
 </section>
 
 <!-- GALLERY STRIP -->
 <div class="gallery-strip">
-  <div class="gallery-item"><img src="assets/project-photo-001.jpg" alt="Restoration project" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
-  <div class="gallery-item"><img src="assets/project-photo-002.jpg" alt="Restoration project" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
-  <div class="gallery-item"><img src="assets/project-photo-003.jpg" alt="Restoration project" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
-  <div class="gallery-item"><img src="assets/project-photo-004.jpg" alt="Restoration project" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+  <div class="gallery-item"><img src="assets/project-photo-001.jpg" alt="Restoration project" title="Living Restorations project" width="600" height="600" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+  <div class="gallery-item"><img src="assets/project-photo-002.jpg" alt="Restoration project" title="Living Restorations project" width="600" height="600" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+  <div class="gallery-item"><img src="assets/project-photo-003.jpg" alt="Restoration project" title="Living Restorations project" width="600" height="600" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
+  <div class="gallery-item"><img src="assets/project-photo-004.jpg" alt="Restoration project" title="Living Restorations project" width="600" height="600" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;"></div>
 </div>
 
 <!-- SERVICE AREAS -->
@@ -416,7 +384,7 @@ src="https://www.youtube.com/embed/J9QdDdRWdZ8?rel=0&modestbranding=1&loop=1&pla
         <div class="area-result" id="areaResult"><p id="areaResultText"></p></div>
       </div>
       <div class="map-wrap fade-up">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583000!2d-83.5!3d28.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c1766591562abf%3A0xf72e13d35bc74ed0!2sFlorida!5e0!3m2!1sen!2sus!4v1708300000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Living Restorations service area — Florida"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583000!2d-83.5!3d28.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c1766591562abf%3A0xf72e13d35bc74ed0!2sFlorida!5e0!3m2!1sen!2sus!4v1708300000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Living Restorations service area — Florida" width="600" height="400"></iframe>
       </div>
     </div>
   </div>
@@ -428,18 +396,16 @@ src="https://www.youtube.com/embed/J9QdDdRWdZ8?rel=0&modestbranding=1&loop=1&pla
     <p class="section-eyebrow">Start Here</p>
     <h2 class="section-title fade-up">Tell us about your site.</h2>
     <p>Every restoration project is different. Text us and we'll talk through what your land needs — no jargon, no pressure.</p>
-    <a href="#" onclick="openSMS(event)" class="cta-phone">
-      Text Us About Your Project
-    </a>
+    <a href="sms:7277107400" onclick="openSMS(event)" class="cta-phone">Text Us About Your Project</a>
     <p class="cta-note">We respond within one business day.</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><img src="assets/LR-logo-sand.png" alt="Living Restorations"></div>
+  <div class="footer-logo"><img src="assets/LR-logo-sand.png" alt="Living Restorations" title="Living Restorations" width="180" height="44" loading="lazy"></div>
   <p>&copy; 2026 Living Restorations Inc. &middot; Ecological Design & Restoration &middot; Florida</p>
-  <p><a href="#" onclick="openSMS(event)">Text Us</a></p>
+  <p><a href="sms:7277107400" onclick="openSMS(event)">Text Us</a></p>
 </footer>
 
 <!-- SMS MODAL -->
@@ -460,6 +426,9 @@ src="https://www.youtube.com/embed/J9QdDdRWdZ8?rel=0&modestbranding=1&loop=1&pla
 </div>
 
 <script>
+/* SEO FIX #7: Add js-ready so animations only hide content when JS runs — crawlers see everything */
+document.documentElement.classList.add('js-ready');
+
 window.addEventListener('scroll', function() { document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40); });
 function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
 document.querySelectorAll('.nav-links a').forEach(function(link) { link.addEventListener('click', function() { document.getElementById('navLinks').classList.remove('open'); }); });
@@ -470,21 +439,21 @@ document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close
 var obs = new IntersectionObserver(function(entries) { entries.forEach(function(e, i) { if (e.isIntersecting) { setTimeout(function() { e.target.classList.add('visible'); }, i * 100); obs.unobserve(e.target); } }); }, { threshold: 0.12 });
 document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
 var areaInfo = {
-  pinellas: "Pinellas County — Tampa Bay Region. We regularly work on living shoreline projects, invasive removal, and dune restoration throughout Pinellas. <a href='#' onclick='openSMS(event)'>Text us about your project →</a>",
-  hillsborough: "Hillsborough County — Tampa Bay Region. Native habitat design, invasive removal, and coastal restoration along Tampa Bay's shores. <a href='#' onclick='openSMS(event)'>Text us →</a>",
-  pasco: "Pasco County — Tampa Bay Region. Restoration services from the coast inland—dune systems, plant sourcing, and environmental design. <a href='#' onclick='openSMS(event)'>Text us →</a>",
-  manatee: "Manatee County — serving Anna Maria Island, Bradenton, and surrounding coastal communities. <a href='#' onclick='openSMS(event)'>Text us →</a>",
-  miamidade: "Miami-Dade County — South Florida coastal and inland restoration, including mangrove and shoreline work. <a href='#' onclick='openSMS(event)'>Text us →</a>",
-  broward: "Broward County — coastal restoration and living shoreline design throughout the Fort Lauderdale area. <a href='#' onclick='openSMS(event)'>Text us →</a>",
-  palmbeach: "Palm Beach — native habitat restoration, invasive removal, and environmental design for residential and commercial sites. <a href='#' onclick='openSMS(event)'>Text us →</a>",
-  orange: "Orange County / Orlando area — inland restoration, plant sourcing, and environmental design. <a href='#' onclick='openSMS(event)'>Text us →</a>",
-  pensacola: "Pensacola — Panhandle coastal restoration, dune systems, and invasive removal. <a href='#' onclick='openSMS(event)'>Text us →</a>",
-  destin: "Destin — specializing in dune system restoration and coastal habitat work along the Emerald Coast. <a href='#' onclick='openSMS(event)'>Text us →</a>",
-  panamacity: "Panama City / Panama City Beach — dune and coastal habitat restoration for residential, municipal, and commercial sites. <a href='#' onclick='openSMS(event)'>Text us →</a>",
-  fortwalt: "Fort Walton Beach — coastal and dune restoration throughout the Okaloosa County area. <a href='#' onclick='openSMS(event)'>Text us →</a>",
-  apalachicola: "Apalachicola — bay and estuarine restoration in one of Florida's most ecologically significant regions. <a href='#' onclick='openSMS(event)'>Text us →</a>",
-  tallahassee: "Tallahassee — inland habitat restoration, native plant installation, and environmental design. <a href='#' onclick='openSMS(event)'>Text us →</a>",
-  jacksonville: "Jacksonville — Northeast Florida coastal and inland restoration services. <a href='#' onclick='openSMS(event)'>Text us →</a>"
+  pinellas: "Pinellas County — Tampa Bay Region. We regularly work on living shoreline projects, invasive removal, and dune restoration throughout Pinellas. <a href='sms:7277107400' onclick='openSMS(event)'>Text us about your project →</a>",
+  hillsborough: "Hillsborough County — Tampa Bay Region. Native habitat design, invasive removal, and coastal restoration along Tampa Bay's shores. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
+  pasco: "Pasco County — Tampa Bay Region. Restoration services from the coast inland—dune systems, plant sourcing, and environmental design. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
+  manatee: "Manatee County — serving Anna Maria Island, Bradenton, and surrounding coastal communities. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
+  miamidade: "Miami-Dade County — South Florida coastal and inland restoration, including mangrove and shoreline work. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
+  broward: "Broward County — coastal restoration and living shoreline design throughout the Fort Lauderdale area. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
+  palmbeach: "Palm Beach — native habitat restoration, invasive removal, and environmental design for residential and commercial sites. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
+  orange: "Orange County / Orlando area — inland restoration, plant sourcing, and environmental design. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
+  pensacola: "Pensacola — Panhandle coastal restoration, dune systems, and invasive removal. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
+  destin: "Destin — specializing in dune system restoration and coastal habitat work along the Emerald Coast. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
+  panamacity: "Panama City / Panama City Beach — dune and coastal habitat restoration for residential, municipal, and commercial sites. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
+  fortwalt: "Fort Walton Beach — coastal and dune restoration throughout the Okaloosa County area. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
+  apalachicola: "Apalachicola — bay and estuarine restoration in one of Florida's most ecologically significant regions. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
+  tallahassee: "Tallahassee — inland habitat restoration, native plant installation, and environmental design. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
+  jacksonville: "Jacksonville — Northeast Florida coastal and inland restoration services. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>"
 };
 function showArea(val) { var r = document.getElementById('areaResult'), t = document.getElementById('areaResultText'); if (val && areaInfo[val]) { t.innerHTML = areaInfo[val]; r.classList.add('show'); } else { r.classList.remove('show'); } }
 </script>
