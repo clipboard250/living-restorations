@@ -95,6 +95,8 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
   padding: 0 4% 8%;
 }
 .hero-bg { position: absolute; inset: 0; overflow: hidden; background: #6ca698; }
+.hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position: center 30%; }
+.hero-credit { position:absolute; bottom:8px; right:12px; z-index:3; font-size:0.7rem; color:rgba(255,255,255,0.5); letter-spacing:0.02em; }
 .hero-overlay {
   position: absolute; inset: 0;
   background: rgba(59,56,54,0.55);
@@ -232,6 +234,7 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
+  .hero-img { object-position: center 20%; }
   .nav-links { display: none; }
   .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: white; padding: 1.5rem; border-bottom: 1px solid #eee; gap: 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
   .hamburger { display: flex; }
@@ -271,9 +274,10 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 <section class="hero" id="home">
   <div class="hero-bg">
     <!-- SEO FIX #3/#4/#5: width, height, loading="eager", title -->
-    <img src="assets/LR-temp-hero.webp" alt="Living Restorations team restoring coastal dune habitat" title="Coastal dune habitat restoration in Florida" width="1920" height="1080" loading="eager" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 55%;">
+    <img src="assets/LR-temp-hero.webp" alt="Living Restorations team restoring coastal dune habitat in front of beachside home with American flag" title="Coastal dune habitat restoration in Florida" width="1920" height="1080" loading="eager" class="hero-img">
   </div>
   <div class="hero-overlay"></div>
+  <span class="hero-credit">Photo: Living Restorations</span>
   <div class="hero-content">
     <span class="hero-tag">Ecological Design & Coastal Restoration — Florida</span>
     <h1>Restore the natural beauty of the <em>Florida you grew up with.</em></h1>
