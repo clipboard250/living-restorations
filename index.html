@@ -531,7 +531,7 @@ var areaInfo = {
   tallahassee: "Tallahassee — inland habitat restoration, native plant installation, and environmental design. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>",
   jacksonville: "Jacksonville — Northeast Florida coastal and inland restoration services. <a href='sms:7277107400' onclick='openSMS(event)'>Text us →</a>"
 };
-function showArea(val) { var r = document.getElementById('areaResult'), t = document.getElementById('areaResultText'); if (val && areaInfo[val]) { t.innerHTML = areaInfo[val]; r.classList.add('show'); } else { r.classList.remove('show'); } }
+function showArea(val) {   var r = document.getElementById('areaResult'), t = document.getElementById('areaResultText');   if (val && areaInfo[val]) {     var txt = areaInfo[val];     if (!isMobile) txt = txt.replace(/Text us/gi, 'Email us');     t.innerHTML = txt;     r.classList.add('show');   } else { r.classList.remove('show'); } }  if (!isMobile) {   document.querySelectorAll('a[onclick*="openSMS"], button[onclick*="openSMS"]').forEach(function(el) {     el.innerHTML = el.innerHTML       .replace(/Text Us About Your Project/gi, 'Get in Touch')       .replace(/Text Us/gi, 'Get in Touch')       .replace(/Text us about your site/gi, 'Email us about your site');   }); }
 </script>
 </body>
 </html>
