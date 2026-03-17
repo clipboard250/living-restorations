@@ -220,6 +220,30 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 .sms-option { display: block; padding: 0.85rem 1.1rem; border: 1.5px solid rgba(108,166,152,0.2); border-radius: 3px; color: var(--charcoal); text-decoration: none; font-size: 0.85rem; transition: background 0.2s, border-color 0.2s; line-height: 1.4; font-weight: 400; }
 .sms-option:hover { background: var(--cream); border-color: var(--teal); }
 
+/* ── EMAIL MODAL (desktop) ── */
+.email-overlay { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
+.email-overlay.open { display: flex; }
+.email-modal { background: white; border-radius: 6px; padding: 2.5rem; max-width: 500px; width: 90%; position: relative; }
+.email-modal::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--terracotta), var(--teal)); border-radius: 6px 6px 0 0; }
+.email-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; }
+.email-close:hover { background: var(--cream); color: var(--charcoal); }
+.email-modal .section-eyebrow { margin-bottom: 0.5rem; }
+.email-modal h3 { font-family: 'Poppins', sans-serif; font-size: 1.4rem; color: var(--charcoal); margin-bottom: 0.4rem; font-weight: 700; }
+.email-modal .form-sub { font-size: 0.83rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; font-weight: 300; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.75rem; }
+.form-group label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+.form-group input,
+.form-group select,
+.form-group textarea { font-family: 'Poppins', sans-serif; font-size: 0.85rem; color: var(--charcoal); background: white; border: 1.5px solid rgba(108,166,152,0.25); border-radius: 3px; padding: 0.75rem 0.9rem; transition: border-color 0.2s; font-weight: 300; resize: none; }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { outline: none; border-color: var(--teal); }
+.form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236ca698' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; cursor: pointer; }
+.form-submit { width: 100%; background: var(--teal); color: white; border: none; padding: 0.9rem 2rem; border-radius: 3px; font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.2s; margin-top: 0.5rem; }
+.form-submit:hover { background: var(--terracotta); transform: translateY(-1px); }
+.form-note { font-size: 0.7rem; color: var(--sand); text-align: center; margin-top: 0.75rem; font-weight: 300; }
+
 /* ── ANIMATIONS ── */
 /* SEO FIX #7: Content visible by default for crawlers. JS adds .js-ready to enable animations */
 .js-ready .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -408,6 +432,47 @@ footer a:hover { color: rgba(255,255,255,0.8); }
   <p><a href="sms:7277107400" onclick="openSMS(event)">Text Us</a></p>
 </footer>
 
+<!-- EMAIL MODAL (desktop) -->
+<div class="email-overlay" id="emailModal">
+  <div class="email-modal" role="dialog" aria-label="Get in touch with Living Restorations" aria-modal="true">
+    <button class="email-close" onclick="closeEmail()" aria-label="Close">&times;</button>
+    <p class="section-eyebrow">Get in Touch</p>
+    <h3>Tell us about your site.</h3>
+    <p class="form-sub">We respond within one business day. This inquiry goes directly to Kiamesha.</p>
+    <form action="https://formspree.io/f/xeerprvo" method="POST">
+      <input type="hidden" name="_cc" value="info@gofercontent.com">
+      <input type="hidden" name="_subject" value="Living Restorations website inquiry">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">Name</label>
+          <input type="text" id="fname" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="femail">Email</label>
+          <input type="email" id="femail" name="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ftopic">What brings you here?</label>
+        <select id="ftopic" name="topic" required>
+          <option value="" disabled selected>Select a topic</option>
+          <option value="Coastal restoration project">🌊 I have a coastal restoration project</option>
+          <option value="Invasive species removal">🌿 I need invasive species removed</option>
+          <option value="Living shoreline">🪨 I want to learn about living shorelines</option>
+          <option value="Dune restoration">🏖️ I need dune restoration</option>
+          <option value="Not sure yet">💬 Not sure yet, let's talk</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fmessage">Tell us about your site</label>
+        <textarea id="fmessage" name="message" rows="4" placeholder="Location, size, what you're seeing, what you're hoping for..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message</button>
+      <p class="form-note">You'll hear back within one business day.</p>
+    </form>
+  </div>
+</div>
+
 <!-- SMS MODAL -->
 <div class="sms-overlay" id="smsModal">
   <div class="sms-modal">
@@ -432,10 +497,21 @@ document.documentElement.classList.add('js-ready');
 window.addEventListener('scroll', function() { document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40); });
 function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
 document.querySelectorAll('.nav-links a').forEach(function(link) { link.addEventListener('click', function() { document.getElementById('navLinks').classList.remove('open'); }); });
-function openSMS(e) { if (e) e.preventDefault(); document.getElementById('smsModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+var isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+function openSMS(e) {
+  if (e) e.preventDefault();
+  if (isMobile) {
+    document.getElementById('smsModal').classList.add('open');
+  } else {
+    document.getElementById('emailModal').classList.add('open');
+  }
+  document.body.style.overflow = 'hidden';
+}
 function closeSMS() { document.getElementById('smsModal').classList.remove('open'); document.body.style.overflow = ''; }
+function closeEmail() { document.getElementById('emailModal').classList.remove('open'); document.body.style.overflow = ''; }
 document.getElementById('smsModal').addEventListener('click', function(e) { if (e.target === this) closeSMS(); });
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeSMS(); });
+document.getElementById('emailModal').addEventListener('click', function(e) { if (e.target === this) closeEmail(); });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeSMS(); closeEmail(); } });
 var obs = new IntersectionObserver(function(entries) { entries.forEach(function(e, i) { if (e.isIntersecting) { setTimeout(function() { e.target.classList.add('visible'); }, i * 100); obs.unobserve(e.target); } }); }, { threshold: 0.12 });
 document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
 var areaInfo = {
