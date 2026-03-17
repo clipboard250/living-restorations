@@ -244,6 +244,23 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 .form-submit:hover { background: var(--terracotta); transform: translateY(-1px); }
 .form-note { font-size: 0.7rem; color: var(--sand); text-align: center; margin-top: 0.75rem; font-weight: 300; }
 
+  /* ── PICKER MODAL ── */
+.picker-overlay { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
+.picker-overlay.open { display: flex; }
+.picker-modal { background: white; border-radius: 6px; padding: 2.5rem; max-width: 380px; width: 90%; position: relative; text-align: center; }
+.picker-modal::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--terracotta), var(--teal)); border-radius: 6px 6px 0 0; }
+.picker-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; }
+.picker-close:hover { background: var(--cream); color: var(--charcoal); }
+.picker-modal .section-eyebrow { margin-bottom: 0.5rem; }
+.picker-modal h3 { font-family: 'Poppins', sans-serif; font-size: 1.3rem; color: var(--charcoal); margin-bottom: 0.4rem; font-weight: 700; }
+.picker-modal p { font-size: 0.83rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; font-weight: 300; }
+.picker-options { display: flex; flex-direction: column; gap: 0.75rem; }
+.picker-btn { display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem 1.25rem; border-radius: 3px; font-family: 'Poppins', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; border: none; transition: background 0.2s, transform 0.2s; min-height: 52px; }
+.picker-btn-text { background: var(--teal); color: white; }
+.picker-btn-text:hover { background: var(--terracotta); transform: translateY(-1px); }
+.picker-btn-email { background: white; color: var(--charcoal); border: 1.5px solid rgba(108,166,152,0.3); }
+.picker-btn-email:hover { border-color: var(--teal); background: var(--cream); }
+  
 /* ── ANIMATIONS ── */
 /* SEO FIX #7: Content visible by default for crawlers. JS adds .js-ready to enable animations */
 .js-ready .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -432,6 +449,20 @@ footer a:hover { color: rgba(255,255,255,0.8); }
   <p><a href="sms:7277107400" onclick="openSMS(event)">Text Us</a></p>
 </footer>
 
+  <!-- PICKER MODAL (mobile) -->
+<div class="picker-overlay" id="pickerModal">
+  <div class="picker-modal" role="dialog" aria-modal="true">
+    <button class="picker-close" onclick="closePicker()" aria-label="Close">&times;</button>
+    <p class="section-eyebrow">Get in Touch</p>
+    <h3>How would you like to reach us?</h3>
+    <p>Text us directly or send an email. Either works.</p>
+    <div class="picker-options">
+      <button onclick="closePicker();openSMSDirect();" class="picker-btn picker-btn-text">📱 Text us</button>
+      <button onclick="closePicker();openEmailDirect();" class="picker-btn picker-btn-email">📧 Send an email</button>
+    </div>
+  </div>
+</div>
+  
 <!-- EMAIL MODAL (desktop) -->
 <div class="email-overlay" id="emailModal">
   <div class="email-modal" role="dialog" aria-label="Get in touch with Living Restorations" aria-modal="true">
@@ -501,17 +532,21 @@ var isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(n
 function openSMS(e) {
   if (e) e.preventDefault();
   if (isMobile) {
-    document.getElementById('smsModal').classList.add('open');
+    document.getElementById('pickerModal').classList.add('open');
   } else {
     document.getElementById('emailModal').classList.add('open');
   }
   document.body.style.overflow = 'hidden';
 }
+function openSMSDirect() { document.getElementById('smsModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function openEmailDirect(e) { if (e) e.preventDefault(); document.getElementById('emailModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closePicker() { document.getElementById('pickerModal').classList.remove('open'); document.body.style.overflow = ''; }
 function closeSMS() { document.getElementById('smsModal').classList.remove('open'); document.body.style.overflow = ''; }
 function closeEmail() { document.getElementById('emailModal').classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('pickerModal').addEventListener('click', function(e) { if (e.target === this) closePicker(); });
 document.getElementById('smsModal').addEventListener('click', function(e) { if (e.target === this) closeSMS(); });
 document.getElementById('emailModal').addEventListener('click', function(e) { if (e.target === this) closeEmail(); });
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeSMS(); closeEmail(); } });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closePicker(); closeSMS(); closeEmail(); } });
 var obs = new IntersectionObserver(function(entries) { entries.forEach(function(e, i) { if (e.isIntersecting) { setTimeout(function() { e.target.classList.add('visible'); }, i * 100); obs.unobserve(e.target); } }); }, { threshold: 0.12 });
 document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
 var areaInfo = {
