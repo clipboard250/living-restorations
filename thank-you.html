@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Living Restorations</title>
+<meta name="description" content="Thank you for reaching out to Living Restorations. We'll be in touch within one business day.">
+<link rel="canonical" href="https://www.livingrestorations.com/thank-you">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/LR-favicon.png">
+<link rel="apple-touch-icon" href="assets/LR-favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --terracotta: #a5423b;
+  --teal: #6ca698;
+  --sand: #a69689;
+  --cream: #fbf6ed;
+  --charcoal: #3b3836;
+  --white: #ffffff;
+  --muted: #7a6f6a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 4%;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(108,166,152,0.15);
+}
+.nav-logo img { height: 44px; width: auto; }
+
+/* ── HERO BG ── */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.page-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  opacity: 0.18;
+}
+.page-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--cream) 0%, rgba(251,246,237,0.92) 60%, rgba(108,166,152,0.08) 100%);
+}
+
+/* ── MAIN ── */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 4% 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background: white;
+  border-radius: 6px;
+  padding: 4rem 3.5rem;
+  max-width: 560px;
+  width: 100%;
+  box-shadow: 0 8px 60px rgba(59,56,54,0.1), 0 2px 12px rgba(59,56,54,0.06);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top accent bar */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--terracotta), var(--teal));
+}
+
+/* Watermark mark */
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; right: -40px;
+  width: 200px; height: 200px;
+  background-image: url('assets/LR-favicon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.mark-wrap {
+  margin-bottom: 1.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+.mark-circle {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: rgba(108,166,152,0.1);
+  border: 1.5px solid rgba(108,166,152,0.25);
+  display: flex; align-items: center; justify-content: center;
+  animation: pulseIn 0.6s ease 0.2s both;
+}
+
+.checkmark {
+  width: 32px; height: 32px;
+  stroke: var(--teal);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.checkmark path {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: drawCheck 0.5s ease 0.6s forwards;
+}
+
+@keyframes drawCheck {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes pulseIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 600;
+  margin-bottom: 0.65rem;
+  animation: fadeUp 0.6s ease 0.4s both;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  animation: fadeUp 0.6s ease 0.5s both;
+}
+
+.message {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.85;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.6s ease 0.6s both;
+}
+
+.message strong {
+  color: var(--charcoal);
+  font-weight: 500;
+}
+
+.divider {
+  width: 48px; height: 1.5px;
+  background: linear-gradient(90deg, var(--terracotta), var(--teal));
+  margin: 0 auto 2rem;
+  animation: fadeUp 0.6s ease 0.65s both;
+}
+
+.next-steps {
+  background: var(--cream);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  animation: fadeUp 0.6s ease 0.7s both;
+}
+
+.next-steps p {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+}
+
+.next-steps ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.next-steps li {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.next-steps li::before {
+  content: '';
+  display: block;
+  width: 5px; height: 5px;
+  min-width: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+  margin-top: 0.45rem;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--teal);
+  color: white;
+  padding: 0.85rem 2rem;
+  border-radius: 3px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.2s;
+  animation: fadeUp 0.6s ease 0.8s both;
+}
+
+.btn-back:hover {
+  background: var(--terracotta);
+  transform: translateY(-2px);
+}
+
+.contact-line {
+  margin-top: 1.25rem;
+  font-size: 0.75rem;
+  color: var(--sand);
+  font-weight: 300;
+  animation: fadeUp 0.6s ease 0.85s both;
+}
+
+.contact-line a {
+  color: var(--teal);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-line a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── FOOTER ── */
+footer {
+  position: relative;
+  z-index: 1;
+  background: var(--charcoal);
+  padding: 1.75rem 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-logo img { height: 32px; width: auto; opacity: 0.7; }
+footer p { color: rgba(255,255,255,0.35); font-size: 0.72rem; font-weight: 300; }
+footer a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+footer a:hover { color: var(--teal); }
+
+@media (max-width: 600px) {
+  .card { padding: 2.5rem 1.5rem; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <a href="/">
+      <img src="assets/LR-logo-teal.png" alt="Living Restorations" title="Living Restorations" width="220" height="54" loading="eager">
+    </a>
+  </div>
+</nav>
+
+<!-- BG -->
+<div class="page-bg" aria-hidden="true">
+  <img src="assets/LR-temp-hero.webp" alt="" width="1920" height="1080" loading="eager">
+</div>
+
+<!-- MAIN -->
+<main>
+  <div class="card">
+
+    <div class="mark-wrap">
+      <div class="mark-circle">
+        <svg class="checkmark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M6 17 L13 24 L26 10"/>
+        </svg>
+      </div>
+    </div>
+
+    <p class="eyebrow">Message Received</p>
+    <h1>We'll be in touch soon.</h1>
+    <p class="message">
+      Thank you for reaching out to Living Restorations. <strong>We respond within one business day.</strong> In the meantime, here is what happens next.
+    </p>
+
+    <div class="divider"></div>
+
+    <div class="next-steps">
+      <p>What to expect</p>
+      <ul>
+        <li>Kiamesha or a team member will review your message and reach out directly</li>
+        <li>We may ask a few site-specific questions before recommending next steps</li>
+        <li>Initial consultations are conversation-based, not a sales call</li>
+      </ul>
+    </div>
+
+    <a href="/" class="btn-back">
+      Back to Living Restorations
+    </a>
+
+    <p class="contact-line">
+      Urgent? Text us directly at <a href="sms:7277107400">727-710-7400</a>
+    </p>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="assets/LR-logo-sand.png" alt="Living Restorations" width="180" height="44" loading="lazy">
+  </div>
+  <p>&copy; 2026 Living Restorations Inc. &middot; Ecological Design &amp; Restoration &middot; Florida</p>
+  <p><a href="/">Return home</a></p>
+</footer>
+
+</body>
+</html>
