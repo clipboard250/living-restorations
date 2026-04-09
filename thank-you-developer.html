@@ -86,14 +86,19 @@ footer p{font-size:.7rem;color:var(--muted);}
       </div>
     </div>
 
-    <div class="contact-card">
+<div class="contact-card">
       <p class="label">Your point of contact</p>
       <p class="name">Kiamesha Wray</p>
       <p class="title">Founder, Living Restorations</p>
-      <div class="links">
-        <a href="tel:+17277107400">📞 727-710-7400</a>
-        <a href="mailto:kiamesha@livingrestorations.com">✉ kiamesha@livingrestorations.com</a>
-        <a href="sms:7277107400">💬 Text is fine too</a>
+      <div class="links" id="mobile-links" style="display:none;">
+        <a href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AKiamesha%20Wray%0AORG%3ALiving%20Restorations%0ATEL%3BTYPE%3DCELL%3A%2B17277107400%0AEMAIL%3Akiamesha%40livingrestorations.com%0AURL%3Ahttps%3A%2F%2Fwww.livingrestorations.com%0AEND%3AVCARD" download="kiamesha-wray.vcf">Save Contact</a>
+        <a href="sms:7277107400">Text 727-710-7400</a>
+        <a href="mailto:kiamesha@livingrestorations.com">kiamesha@livingrestorations.com</a>
+      </div>
+      <div class="links" id="desktop-links" style="display:none;">
+        <p style="font-size:.82rem;color:var(--teal);font-weight:500;">727-710-7400</p>
+        <a href="mailto:kiamesha@livingrestorations.com">kiamesha@livingrestorations.com</a>
+        <p style="font-size:.75rem;color:rgba(255,255,255,.5);">Save that email — Kiamesha responds within one business day.</p>
       </div>
     </div>
 
@@ -103,5 +108,13 @@ footer p{font-size:.7rem;color:var(--muted);}
 <footer>
   <p>&copy; 2026 Living Restorations. St. Petersburg, FL</p>
 </footer>
+<script>
+var isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+if (isMobile) {
+  document.getElementById('mobile-links').style.display = 'flex';
+} else {
+  document.getElementById('desktop-links').style.display = 'flex';
+}
+</script>
 </body>
 </html>
