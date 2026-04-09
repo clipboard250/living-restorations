@@ -650,7 +650,7 @@ footer a:hover { color: var(--teal); }
         <label for="fscope">Ecological scope needed</label>
         <textarea id="fscope" name="message" rows="3" placeholder="Dune restoration, native planting, living shoreline, invasive removal — whatever applies."></textarea>
       </div>
-      <button type="button" class="form-submit" onclick="submitContractorForm()">Send Bid Inquiry</button>
+      <button type="submit" class="form-submit">Send Bid Inquiry</button>
       <p class="form-note">Responses within one business day. Urgent? Text 727-710-7400.</p>
     </form>
   </div>
@@ -673,13 +673,6 @@ footer a:hover { color: var(--teal); }
 </div>
 
 <script>
-function submitContractorForm() {
-  var form = document.querySelector('#emailModal form');
-  var data = new FormData(form);
-  fetch('https://formspree.io/f/xykbaojl', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
-    .then(function(r) { if (r.ok) { window.location.href = 'https://www.livingrestorations.com/thank-you-contractor.html'; } else { alert('Something went wrong. Please try again or text 727-710-7400.'); } })
-    .catch(function() { alert('Something went wrong. Please try again or text 727-710-7400.'); });
-}
 document.documentElement.classList.add('js-ready');
 if (!localStorage.getItem('cookies')) { document.getElementById('cookieBanner').style.display = 'flex'; }
 window.addEventListener('scroll', function() { document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40); });
