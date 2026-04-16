@@ -525,6 +525,7 @@ footer a:hover { color: var(--teal); }
 .js-ready .fade-up.visible { opacity: 1; transform: none; }
 
 /* ── RESPONSIVE ── */
+.nav-cta-mobile { display: none; }
 @media (max-width: 960px) {
   .hero { grid-template-columns: 1fr; }
   .hero-left { padding: 5rem 5% 4rem; min-height: auto; }
@@ -536,9 +537,12 @@ footer a:hover { color: var(--teal); }
   .compliance-label-col { position: static; }
   .about-inner { grid-template-columns: 1fr; gap: 3rem; }
   .about-img-wrap { aspect-ratio: 16/9; max-height: 340px; }
-  .hamburger { display: flex; }
   .nav-right { gap: 1rem; }
   .nav-back { display: none; }
+  .nav-cta-desktop { display: none; }
+  .nav-cta-mobile { display: inline-flex; padding: 0.55rem 1rem; font-size: 0.72rem; }
+  .nav-logo img { height: 34px; }
+  nav { padding: 0.75rem 5%; }
 }
 @media (max-width: 600px) {
   .services-grid { grid-template-columns: 1fr; }
@@ -559,11 +563,11 @@ footer a:hover { color: var(--teal); }
   </div>
   <div class="nav-right">
     <a href="/" class="nav-back">← Back to main site</a>
-    <a href="sms:7277107400" class="nav-cta" onclick="openContact(event)">Start a Conversation</a>
+    <a href="sms:7277107400" class="nav-cta nav-cta-desktop" onclick="openContact(event)">Start a Conversation</a>
+    <a href="sms:7277107400" class="nav-cta nav-cta-mobile" onclick="openContact(event)" aria-label="Contact us">Contact</a>
   </div>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-
+  
 <!-- HERO -->
 <section class="hero" id="home" aria-labelledby="hero-heading">
   <div class="hero-left">
