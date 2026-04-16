@@ -305,6 +305,7 @@ footer a:hover { color: var(--teal); }
 .js-ready .fade-up { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .js-ready .fade-up.visible { opacity: 1; transform: none; }
 
+.nav-cta-mobile { display: none; }
 @media (max-width: 960px) {
   .props-grid { grid-template-columns: 1fr 1fr; }
   .bring-inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -312,6 +313,10 @@ footer a:hover { color: var(--teal); }
   .step-arrow { display: none; }
   .projects-grid { grid-template-columns: 1fr; }
   .nav-back { display: none; }
+  .nav-cta-desktop { display: none; }
+  .nav-cta-mobile { display: inline-flex; padding: 0.55rem 1rem; font-size: 0.72rem; }
+  .nav-logo img { height: 34px; }
+  nav { padding: 0.75rem 5%; }
 }
 @media (max-width: 600px) {
   .props-grid { grid-template-columns: 1fr; }
@@ -328,7 +333,8 @@ footer a:hover { color: var(--teal); }
   <div class="nav-logo"><a href="/"><img src="assets/LR-logo-teal.png" alt="Living Restorations" width="200" height="49" loading="eager"></a></div>
   <div class="nav-right">
     <a href="/" class="nav-back">← Back to main site</a>
-    <a href="sms:7277107400" class="nav-cta" onclick="openContact(event)">Talk to Us About a Bid</a>
+    <a href="sms:7277107400" class="nav-cta nav-cta-desktop" onclick="openContact(event)">Talk to Us About a Bid</a>
+    <a href="sms:7277107400" class="nav-cta nav-cta-mobile" onclick="openContact(event)" aria-label="Contact us">Contact</a>
   </div>
 </nav>
 
