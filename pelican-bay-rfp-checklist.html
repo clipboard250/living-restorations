@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pelican Bay RFP Checklist — Living Restorations</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --terra:#9e4732;
+  --teal:#508e8a;
+  --teal-deep:#3a6b68;
+  --mustard:#c9802e;
+  --cocoa:#63403c;
+  --sand:#f8f5eb;
+  --charcoal:#3b3836;
+  --muted:#8a7a75;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans',sans-serif;background:var(--sand);color:var(--charcoal);line-height:1.6;}
+
+/* GATE */
+#pw-screen{position:fixed;inset:0;z-index:999;background:var(--charcoal);display:flex;align-items:center;justify-content:center;padding:1rem;}
+.pw-box{background:var(--sand);border-radius:3px;padding:3rem 2.5rem;max-width:380px;width:100%;text-align:center;position:relative;}
+.pw-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal-deep),var(--teal),var(--mustard));border-radius:3px 3px 0 0;}
+.pw-logo{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem;}
+.pw-box h2{font-size:1.4rem;font-weight:700;color:var(--charcoal);margin-bottom:.5rem;}
+.pw-box p{font-size:.82rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.6;}
+.pw-input-wrap{position:relative;margin-bottom:.75rem;}
+.pw-input-wrap input{width:100%;padding:.75rem 3rem .75rem 1rem;border:1.5px solid rgba(80,142,138,.3);border-radius:2px;font-family:'Noto Sans',sans-serif;font-size:.9rem;color:var(--charcoal);background:#fff;text-align:center;letter-spacing:.15em;}
+.pw-input-wrap input:focus{outline:none;border-color:var(--teal);}
+.pw-show{position:absolute;right:.75rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--muted);font-size:.7rem;font-weight:700;letter-spacing:.06em;padding:0;}
+.pw-btn{width:100%;background:var(--teal-deep);color:#fff;border:none;padding:.85rem;border-radius:2px;font-family:'Noto Sans',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;margin-top:.25rem;}
+.pw-btn:hover{background:var(--charcoal);}
+.pw-error{font-size:.75rem;color:var(--terra);margin-top:.6rem;display:none;}
+
+/* HEADER */
+.header{background:var(--charcoal);padding:2.5rem 5%;position:relative;}
+.header::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal-deep),var(--teal),var(--mustard));}
+.header-inner{max-width:820px;margin:0 auto;}
+.header-label{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem;display:block;}
+.header h1{font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:.5rem;line-height:1.3;}
+.header .subtitle{font-size:.82rem;color:rgba(255,255,255,.7);}
+.header .deadline{display:inline-block;margin-top:1rem;background:var(--terra);color:#fff;padding:.5rem 1rem;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;}
+
+/* MAIN */
+.container{max-width:820px;margin:0 auto;padding:2.5rem 5%;}
+.intro{font-size:.95rem;color:var(--charcoal);margin-bottom:2rem;line-height:1.75;}
+.intro strong{color:var(--terra);}
+
+/* SECTIONS */
+.section{margin-bottom:2.5rem;background:#fff;padding:1.75rem;border-left:4px solid var(--teal);border-radius:2px;}
+.section.done{border-left-color:var(--teal-deep);background:rgba(80,142,138,.04);}
+.section.todo{border-left-color:var(--mustard);}
+.section h2{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;}
+.section.done h2{color:var(--teal-deep);}
+.section.todo h2{color:var(--mustard);}
+.section h2 .icon{font-size:1rem;}
+
+/* CHECKLIST ITEMS */
+.item{display:flex;align-items:flex-start;gap:.85rem;padding:.85rem 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.item:last-child{border-bottom:none;padding-bottom:0;}
+.item:first-of-type{padding-top:0;}
+.checkbox{flex-shrink:0;width:22px;height:22px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;margin-top:2px;}
+.checkbox.checked{background:var(--teal-deep);color:#fff;}
+.checkbox.pending{background:transparent;border:2px solid var(--mustard);color:var(--mustard);}
+.item-content{flex:1;}
+.item-title{font-size:.9rem;font-weight:600;color:var(--charcoal);margin-bottom:.2rem;}
+.item-detail{font-size:.8rem;color:var(--muted);line-height:1.55;}
+.item-detail em{color:var(--terra);font-style:normal;font-weight:600;}
+
+/* DEADLINE BOX */
+.deadline-box{background:var(--charcoal);color:#fff;padding:1.5rem 1.75rem;border-radius:2px;margin-bottom:2rem;position:relative;overflow:hidden;}
+.deadline-box::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--mustard);}
+.deadline-box .label{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--mustard);margin-bottom:.5rem;}
+.deadline-box h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem;}
+.deadline-box p{font-size:.82rem;color:rgba(255,255,255,.75);line-height:1.65;}
+.deadline-box p strong{color:#fff;}
+
+/* CALLOUT */
+.callout{background:rgba(201,128,46,.08);border:1px solid rgba(201,128,46,.25);padding:1.25rem 1.5rem;border-radius:2px;margin-bottom:2rem;}
+.callout h4{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mustard);margin-bottom:.5rem;}
+.callout p{font-size:.85rem;color:var(--charcoal);line-height:1.65;}
+
+/* FOOTER */
+.footer{background:var(--cocoa);color:#fff;padding:2rem 5%;text-align:center;}
+.footer p{font-size:.75rem;color:rgba(255,255,255,.7);margin-bottom:.4rem;}
+.footer p strong{color:#fff;}
+.footer a{color:var(--mustard);text-decoration:none;font-weight:600;}
+
+/* PROGRESS STEPS */
+.progress-step{display:flex;align-items:center;gap:1rem;padding:.85rem 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.progress-step:last-child{border-bottom:none;padding-bottom:0;}
+.progress-step:first-of-type{padding-top:0;}
+.step-num{flex-shrink:0;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;}
+.step-num.done{background:var(--teal-deep);color:#fff;}
+.step-num.todo{background:transparent;border:2px solid var(--mustard);color:var(--mustard);}
+.step-content{flex:1;}
+.step-title{font-size:.92rem;font-weight:600;color:var(--charcoal);margin-bottom:.15rem;}
+.done-step .step-title{color:var(--teal-deep);}
+.step-status{font-size:.78rem;color:var(--muted);}
+.done-step .step-status{color:var(--teal);font-weight:600;}
+.todo-step .step-status{color:var(--charcoal);}
+
+/* PRICING WORKSHEET */
+.pricing-row{display:grid;grid-template-columns:1fr auto auto;gap:1.25rem;align-items:center;padding:1rem 0;border-bottom:1px solid rgba(0,0,0,.06);}
+.pricing-row:first-of-type{padding-top:0;}
+.pricing-row.done-row{}
+.pricing-row.pending-row{opacity:.85;}
+.pricing-species .species-name{font-size:.92rem;font-weight:600;color:var(--charcoal);margin-bottom:.2rem;}
+.pricing-species .latin{font-style:italic;font-weight:400;color:var(--muted);font-size:.78rem;}
+.pricing-species .species-meta{font-size:.75rem;color:var(--teal-deep);font-weight:500;}
+.pricing-species .species-meta.needed{color:var(--mustard);font-weight:600;}
+.pricing-qty{font-size:.82rem;color:var(--muted);font-weight:500;text-align:right;white-space:nowrap;}
+.pricing-total{font-size:1rem;font-weight:700;color:var(--teal-deep);text-align:right;white-space:nowrap;display:flex;flex-direction:column;align-items:flex-end;}
+.pricing-total .plus-labor{font-size:.65rem;font-weight:500;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-top:.15rem;}
+.pricing-total.pending-total{color:var(--mustard);font-weight:600;font-size:.85rem;}
+.pricing-subtotal{display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1.25rem;border-top:2px solid var(--charcoal);}
+.pricing-subtotal .subtotal-label{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--charcoal);}
+.pricing-subtotal .subtotal-amount{font-size:1.3rem;font-weight:700;color:var(--terra);}
+
+@media(max-width:640px){
+  .header h1{font-size:1.2rem;}
+  .container{padding:1.75rem 5%;}
+  .section{padding:1.25rem;}
+  .pricing-row{grid-template-columns:1fr;gap:.4rem;}
+  .pricing-qty,.pricing-total{text-align:left;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<div id="pw-screen">
+  <div class="pw-box">
+    <p class="pw-logo">Living Restorations</p>
+    <h2>RFP Checklist</h2>
+    <p>Private preview for Kiamesha. Enter the password to view.</p>
+    <div class="pw-input-wrap">
+      <input type="password" id="pw-input" placeholder="PASSWORD" onkeydown="if(event.key==='Enter')checkPW()">
+      <button class="pw-show" type="button" id="pw-show-btn" onclick="togglePW()">SHOW</button>
+    </div>
+    <button class="pw-btn" onclick="checkPW()">View checklist</button>
+    <p class="pw-error" id="pw-error">Incorrect password. Try again.</p>
+  </div>
+</div>
+
+<div id="main-content" style="display:none;">
+
+  <header class="header">
+    <div class="header-inner">
+      <span class="header-label">Pelican Bay Clam Bay Mangrove Restoration</span>
+      <h1>RFP Checklist — Collier County Quick Quote</h1>
+      <p class="subtitle">Project ID: QQ-2026-116 · Approximately 4,766 native plants</p>
+      <span class="deadline">Submission Due: May 12, 2026 · 3:00 PM ET</span>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <p class="intro">
+      Good news Kiamesha — based on what you confirmed (insurance, transport, commute) you are in good shape on the big stuff. Here is exactly where you stand on the application and what is left.
+    </p>
+
+    <div class="section">
+      <h2><span class="icon">◐</span> Where You Are On The Application</h2>
+      <p style="font-size:.82rem;color:var(--muted);margin-bottom:1.25rem;">Six steps in the Collier County portal. Here is your status:</p>
+
+      <div class="progress-step done-step">
+        <div class="step-num done">1</div>
+        <div class="step-content">
+          <div class="step-title">Contact Information</div>
+          <div class="step-status">Complete ✓</div>
+        </div>
+      </div>
+
+      <div class="progress-step done-step">
+        <div class="step-num done">2</div>
+        <div class="step-content">
+          <div class="step-title">Addenda Confirmation</div>
+          <div class="step-status">Complete ✓</div>
+        </div>
+      </div>
+
+      <div class="progress-step todo-step">
+        <div class="step-num todo">3</div>
+        <div class="step-content">
+          <div class="step-title">Vendor Questionnaire</div>
+          <div class="step-status">Check the 4 confirmation boxes + upload SunBiz, E-Verify, W-9</div>
+        </div>
+      </div>
+
+      <div class="progress-step todo-step">
+        <div class="step-num todo">4</div>
+        <div class="step-content">
+          <div class="step-title">Pricing Proposal</div>
+          <div class="step-status">Plug numbers into yellow cells: $25 red · $40 white · $24 black · $7 buttonwood</div>
+        </div>
+      </div>
+
+      <div class="progress-step done-step">
+        <div class="step-num done">5</div>
+        <div class="step-content">
+          <div class="step-title">Company Profile</div>
+          <div class="step-status">Complete ✓</div>
+        </div>
+      </div>
+
+      <div class="progress-step todo-step">
+        <div class="step-num todo">6</div>
+        <div class="step-content">
+          <div class="step-title">Submit</div>
+          <div class="step-status">Hit submit once 3 + 4 are done. Status changes from Incomplete to Submitted.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="deadline-box">
+      <div class="label">Internal Target</div>
+      <h3>Get everything submitted by Sunday, May 10</h3>
+      <p>The county deadline is <strong>Tuesday, May 12 at 3:00 PM</strong>. Aim for May 10 so we have a 48 hour buffer for any portal issues, addendum changes, or last minute fixes. Late submissions are not accepted under any circumstances.</p>
+    </div>
+
+    <div class="section done">
+      <h2><span class="icon">✓</span> Already Confirmed</h2>
+      <div class="item">
+        <div class="checkbox checked">✓</div>
+        <div class="item-content">
+          <div class="item-title">Liability + Workers Comp</div>
+          <div class="item-detail">Confirmed you can produce certificates if awarded. You will check Box 4 on the questionnaire.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="checkbox checked">✓</div>
+        <div class="item-content">
+          <div class="item-title">Naples commute</div>
+          <div class="item-detail">You confirmed the drive works for your team.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="checkbox checked">✓</div>
+        <div class="item-content">
+          <div class="item-title">Plant transport</div>
+          <div class="item-detail">Big truck handles the load — no third party hauler needed.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section todo">
+      <h2><span class="icon">○</span> Still Needed Before You Submit</h2>
+
+      <div class="item">
+        <div class="checkbox pending">1</div>
+        <div class="item-content">
+          <div class="item-title">Confirm nursery sourcing</div>
+          <div class="item-detail">
+            This is the biggest one. You need a nursery that can supply <em>4,051 red mangroves, 143 white, 95 black, and 477 buttonwood</em> in 3-gallon containers, FDACS Grades and Standards. Get written confirmation from the nursery — even a quick email saying "yes we can fulfill this in your timeline" — before you finalize pricing.
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="checkbox pending">2</div>
+        <div class="item-content">
+          <div class="item-title">Pull SunBiz Certificate of Status</div>
+          <div class="item-detail">
+            Go to <strong>sunbiz.org</strong>, search Living Restorations, download the Certificate of Status PDF. Upload to Question 5.
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="checkbox pending">3</div>
+        <div class="item-content">
+          <div class="item-title">E-Verify enrollment proof</div>
+          <div class="item-detail">
+            If already enrolled, log in at <strong>e-verify.gov</strong> and download Company Profile page. If not enrolled yet, do this first — required before submission. Upload to Question 6.
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="checkbox pending">4</div>
+        <div class="item-content">
+          <div class="item-title">W-9 form</div>
+          <div class="item-detail">
+            Current signed W-9 for Living Restorations. Upload to Question 7.
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="checkbox pending">5</div>
+        <div class="item-content">
+          <div class="item-title">Finish pricing worksheet</div>
+          <div class="item-detail">
+            See section below — red and white are locked. Still need black mangrove, buttonwood, and labor.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">$</span> Pricing Worksheet</h2>
+
+      <div class="pricing-row done-row">
+        <div class="pricing-species">
+          <div class="species-name">Red Mangrove <span class="latin">(Rhizophora mangle)</span></div>
+          <div class="species-meta">Cost: $12 · Markup: $25 + labor</div>
+        </div>
+        <div class="pricing-qty">4,051 plants</div>
+        <div class="pricing-total">$101,275<span class="plus-labor">+ labor</span></div>
+      </div>
+
+      <div class="pricing-row done-row">
+        <div class="pricing-species">
+          <div class="species-name">White Mangrove <span class="latin">(Laguncularia racemosa)</span></div>
+          <div class="species-meta">Cost: $20 · Markup: $40 + labor</div>
+        </div>
+        <div class="pricing-qty">143 plants</div>
+        <div class="pricing-total">$5,720<span class="plus-labor">+ labor</span></div>
+      </div>
+
+      <div class="pricing-row done-row">
+        <div class="pricing-species">
+          <div class="species-name">Black Mangrove <span class="latin">(Avicennia germinans)</span></div>
+          <div class="species-meta">Cost: $12 · Markup: $24 + labor</div>
+        </div>
+        <div class="pricing-qty">95 plants</div>
+        <div class="pricing-total">$2,280<span class="plus-labor">+ labor</span></div>
+      </div>
+
+      <div class="pricing-row done-row">
+        <div class="pricing-species">
+          <div class="species-name">Buttonwood <span class="latin">(Conocarpus erectus / sericeus)</span></div>
+          <div class="species-meta">Unit price: $7 + labor</div>
+        </div>
+        <div class="pricing-qty">477 plants</div>
+        <div class="pricing-total">$3,339<span class="plus-labor">+ labor</span></div>
+      </div>
+
+      <div class="pricing-row pending-row">
+        <div class="pricing-species">
+          <div class="species-name">Labor</div>
+          <div class="species-meta needed">Need: flat add-on, per-plant, or hourly?</div>
+        </div>
+        <div class="pricing-qty">—</div>
+        <div class="pricing-total pending-total">TBD</div>
+      </div>
+
+      <div class="pricing-subtotal">
+        <span class="subtotal-label">Plants confirmed</span>
+        <span class="subtotal-amount">$112,614</span>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h4>⚠ Check for Addendums Before You Submit</h4>
+      <p>Counties often post addendums — clarifications, scope changes, or new questions — between release and deadline. <strong>Log in to the OpenGov portal on May 10, May 11, and the morning of May 12.</strong> Check the "Addenda & Notices" tab. If anything was added, it changes what you have to acknowledge before submitting.</p>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">→</span> Order of Operations</h2>
+      <div class="item">
+        <div class="checkbox checked" style="background:var(--teal);">1</div>
+        <div class="item-content">
+          <div class="item-title">This week (by May 5)</div>
+          <div class="item-detail">Get nursery confirmation in writing. Pull SunBiz, E-Verify, W-9. Question deadline to county is May 5 at 3 PM if you have any questions about scope.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="checkbox checked" style="background:var(--teal);">2</div>
+        <div class="item-content">
+          <div class="item-title">By May 10 (internal target)</div>
+          <div class="item-detail">All checkboxes confirmed. Pricing entered. Documents uploaded. Submit.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="checkbox checked" style="background:var(--teal);">3</div>
+        <div class="item-content">
+          <div class="item-title">May 11 + 12 morning</div>
+          <div class="item-detail">Final addendum check on the portal. Confirm submission status shows "Submitted" not "Draft."</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p><strong>Living Restorations</strong> · St. Petersburg, FL</p>
+    <p>Questions? Email <a href="mailto:info@gofercontent.com">info@gofercontent.com</a></p>
+  </footer>
+
+</div>
+
+<script>
+function togglePW(){
+  var i=document.getElementById('pw-input');
+  var b=document.getElementById('pw-show-btn');
+  if(i.type==='password'){i.type='text';b.textContent='HIDE';}
+  else{i.type='password';b.textContent='SHOW';}
+}
+function checkPW(){
+  var val=document.getElementById('pw-input').value.trim().toLowerCase();
+  if(val==='nativerfp'){
+    document.getElementById('pw-screen').style.display='none';
+    document.getElementById('main-content').style.display='block';
+  } else {
+    document.getElementById('pw-error').style.display='block';
+  }
+}
+</script>
+</body>
+</html>
