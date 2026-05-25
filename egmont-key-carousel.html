@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Egmont Key Carousel — Download Slides</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  :root {
+    --terracotta: #a5423b;
+    --teal: #6ca698;
+    --sand: #fbf6ed;
+    --warm-sand: #a69689;
+    --charcoal: #3b3836;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #1a1a1a;
+    color: var(--sand);
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+  .page-header {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+  .page-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  .page-header p {
+    font-size: 16px;
+    color: rgba(251, 246, 237, 0.7);
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .download-all {
+    margin-top: 24px;
+    background: var(--teal);
+    color: var(--sand);
+    border: none;
+    padding: 14px 32px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .download-all:hover { opacity: 0.85; }
+  .slides-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .slide-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .slide-label {
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(251, 246, 237, 0.6);
+  }
+  /* Slide canvas - always rendered at 1080x1350 internally */
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+    transform-origin: top center;
+    /* Scale down for display */
+    transform: scale(0.42);
+    margin-bottom: -780px; /* compensate for scale */
+  }
+  @media (max-width: 600px) {
+    .slide { transform: scale(0.28); margin-bottom: -970px; }
+  }
+  .download-btn {
+    background: var(--terracotta);
+    color: var(--sand);
+    border: none;
+    padding: 12px 28px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .download-btn:hover { opacity: 0.85; }
+
+  /* ============ SLIDE 1 — COVER ============ */
+  .slide-1 {
+    background: var(--terracotta);
+    color: var(--sand);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 90px 90px 80px;
+  }
+  .slide-1::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 30%, rgba(251, 246, 237, 0.04) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 70%, rgba(59, 56, 54, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .s1-top-row { display: flex; justify-content: space-between; align-items: flex-start; position: relative; z-index: 2; }
+  .logo-placeholder { width: 200px; height: 80px; border: 1.5px dashed rgba(251, 246, 237, 0.4); display: flex; align-items: center; justify-content: center; font-size: 13px; letter-spacing: 0.08em; color: rgba(251, 246, 237, 0.6); text-transform: uppercase; }
+  .s1-date { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(251, 246, 237, 0.7); padding-top: 8px; }
+  .s1-main { position: relative; z-index: 2; }
+  .s1-eyebrow { font-size: 16px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--teal); margin-bottom: 32px; display: flex; align-items: center; gap: 16px; }
+  .s1-eyebrow::before { content: ''; width: 60px; height: 1.5px; background: var(--teal); }
+  .s1-h1 { font-weight: 700; font-size: 96px; line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase; margin-bottom: 40px; }
+  .s1-accent { color: var(--teal); font-style: italic; font-weight: 500; text-transform: lowercase; display: block; font-size: 84px; margin-top: 8px; }
+  .s1-subtitle { font-size: 26px; font-weight: 400; line-height: 1.4; max-width: 720px; color: rgba(251, 246, 237, 0.92); }
+  .s1-bottom-row { display: flex; justify-content: space-between; align-items: flex-end; position: relative; z-index: 2; }
+  .s1-swipe { font-size: 14px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(251, 246, 237, 0.85); }
+  .s1-credentials { text-align: right; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(251, 246, 237, 0.5); line-height: 1.8; }
+
+  /* ============ PLANT SLIDES (2, 3, 4) ============ */
+  .slide-plant { background: var(--sand); color: var(--charcoal); display: grid; grid-template-rows: 60% 40%; }
+  .photo-zone { background: var(--warm-sand); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .photo-placeholder { text-align: center; color: rgba(251, 246, 237, 0.95); padding: 40px; }
+  .photo-placeholder .icon { font-size: 56px; margin-bottom: 16px; opacity: 0.7; }
+  .photo-placeholder .label { font-size: 14px; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 8px; opacity: 0.7; }
+  .photo-placeholder .filename { font-size: 22px; font-weight: 500; font-family: 'Courier New', monospace; background: rgba(59, 56, 54, 0.25); padding: 10px 20px; display: inline-block; }
+  .slide-number { position: absolute; top: 50px; right: 50px; background: var(--terracotta); color: var(--sand); width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 22px; font-weight: 700; z-index: 3; }
+  .content-zone { padding: 60px 80px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+  .content-zone::before { content: ''; position: absolute; top: 0; left: 80px; right: 80px; height: 1.5px; background: var(--terracotta); opacity: 0.25; }
+  .plant-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; }
+  .common-name { font-size: 56px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; line-height: 1; color: var(--terracotta); }
+  .scientific { font-size: 20px; font-style: italic; font-weight: 400; color: var(--charcoal); opacity: 0.7; }
+  .role { font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--teal); font-weight: 500; margin-bottom: 18px; }
+  .description { font-size: 22px; line-height: 1.5; color: var(--charcoal); font-weight: 400; margin-bottom: 24px; }
+  .description strong { font-weight: 700; color: var(--terracotta); }
+  .footer-tag { display: flex; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-sand); padding-top: 16px; border-top: 1px solid rgba(166, 150, 137, 0.3); }
+
+  /* ============ SLIDE 5 — CLOSING ============ */
+  .slide-5 { background: var(--teal); color: var(--sand); display: flex; flex-direction: column; justify-content: space-between; padding: 90px 90px 80px; }
+  .slide-5::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 70% 20%, rgba(251, 246, 237, 0.06) 0%, transparent 50%), radial-gradient(circle at 20% 90%, rgba(59, 56, 54, 0.08) 0%, transparent 50%); pointer-events: none; }
+  .s5-top { display: flex; justify-content: space-between; align-items: flex-start; position: relative; z-index: 2; }
+  .s5-end { font-size: 14px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(251, 246, 237, 0.7); padding-top: 8px; }
+  .s5-main { position: relative; z-index: 2; }
+  .pull-quote { font-weight: 500; font-size: 76px; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 48px; max-width: 850px; }
+  .pull-quote .emphasis { color: var(--sand); font-weight: 700; text-transform: uppercase; display: block; font-size: 84px; margin-top: 12px; }
+  .body-text { font-size: 22px; line-height: 1.55; max-width: 760px; color: rgba(251, 246, 237, 0.92); margin-bottom: 36px; }
+  .author { display: flex; align-items: center; gap: 24px; padding-top: 28px; border-top: 1.5px solid rgba(251, 246, 237, 0.25); max-width: 760px; }
+  .author-name { font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .author-title { font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(251, 246, 237, 0.7); line-height: 1.5; }
+  .s5-bottom { display: flex; justify-content: space-between; align-items: flex-end; position: relative; z-index: 2; }
+  .cta { font-size: 16px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--sand); font-weight: 500; padding: 18px 28px; border: 1.5px solid var(--sand); display: inline-block; }
+  .handle { text-align: right; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(251, 246, 237, 0.7); line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Egmont Key Carousel</h1>
+  <p>Tap any download button to save that slide as a 1080×1350 PNG. Or download all five at once.</p>
+  <button class="download-all" onclick="downloadAll()">Download All 5 Slides</button>
+</div>
+
+<div class="slides-grid">
+
+  <!-- SLIDE 1 -->
+  <div class="slide-wrapper">
+    <div class="slide-label">Slide 1 — Cover</div>
+    <div class="slide slide-1" id="slide-1">
+      <div class="s1-top-row">
+        <div class="logo-placeholder">LR-logo-sand.png</div>
+        <div class="s1-date">May 25, 2026</div>
+      </div>
+      <div class="s1-main">
+        <div class="s1-eyebrow">A Field Note</div>
+        <div class="s1-h1">
+          There Was<br>a Fire on<br>Egmont Key
+          <span class="s1-accent">until we know more</span>
+        </div>
+        <p class="s1-subtitle">Here's what's out there. Three of the native plants that have always called this island home.</p>
+      </div>
+      <div class="s1-bottom-row">
+        <div class="s1-swipe">Swipe →</div>
+        <div class="s1-credentials">Living Restorations<br>Ecological Design &amp; Restoration</div>
+      </div>
+    </div>
+    <button class="download-btn" onclick="downloadSlide('slide-1', 'slide-1-cover.png')">Download Slide 1</button>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div class="slide-wrapper">
+    <div class="slide-label">Slide 2 — Sea Oats</div>
+    <div class="slide slide-plant" id="slide-2">
+      <div class="photo-zone">
+        <div class="slide-number">2</div>
+        <div class="photo-placeholder">
+          <div class="icon">⬡</div>
+          <div class="label">Drop photo here</div>
+          <div class="filename">images/sea-oats.jpg</div>
+        </div>
+      </div>
+      <div class="content-zone">
+        <div>
+          <div class="role">What Anchors the Dunes</div>
+          <div class="plant-header">
+            <div class="common-name">Sea Oats</div>
+            <span class="scientific">Uniola paniculata</span>
+          </div>
+          <p class="description">The dominant native on Egmont. Deep roots hold the dunes together through storms, and the U.S. Fish &amp; Wildlife Service has long used <strong>prescribed burns every 5–10 years</strong> to keep sea oat habitat healthy.</p>
+        </div>
+        <div class="footer-tag">
+          <span>01 of 03 · Native Plants of Egmont Key</span>
+          <span>Living Restorations</span>
+        </div>
+      </div>
+    </div>
+    <button class="download-btn" onclick="downloadSlide('slide-2', 'slide-2-sea-oats.png')">Download Slide 2</button>
+  </div>
+
+  <!-- SLIDE 3 -->
+  <div class="slide-wrapper">
+    <div class="slide-label">Slide 3 — Saw Palmetto</div>
+    <div class="slide slide-plant" id="slide-3">
+      <div class="photo-zone">
+        <div class="slide-number">3</div>
+        <div class="photo-placeholder">
+          <div class="icon">⬡</div>
+          <div class="label">Drop photo here</div>
+          <div class="filename">images/saw-palmetto.jpg</div>
+        </div>
+      </div>
+      <div class="content-zone">
+        <div>
+          <div class="role">What Survives Fire</div>
+          <div class="plant-header">
+            <div class="common-name">Saw Palmetto</div>
+            <span class="scientific">Serenoa repens</span>
+          </div>
+          <p class="description">One of the most fire-adapted plants in Florida. The growing tip sits at or below ground, so saw palmetto can <strong>resprout within weeks</strong> of a burn. Individual plants can live over 500 years.</p>
+        </div>
+        <div class="footer-tag">
+          <span>02 of 03 · Native Plants of Egmont Key</span>
+          <span>Living Restorations</span>
+        </div>
+      </div>
+    </div>
+    <button class="download-btn" onclick="downloadSlide('slide-3', 'slide-3-saw-palmetto.png')">Download Slide 3</button>
+  </div>
+
+  <!-- SLIDE 4 -->
+  <div class="slide-wrapper">
+    <div class="slide-label">Slide 4 — Cabbage Palm</div>
+    <div class="slide slide-plant" id="slide-4">
+      <div class="photo-zone">
+        <div class="slide-number">4</div>
+        <div class="photo-placeholder">
+          <div class="icon">⬡</div>
+          <div class="label">Drop photo here</div>
+          <div class="filename">images/cabbage-palm.jpg</div>
+        </div>
+      </div>
+      <div class="content-zone">
+        <div>
+          <div class="role">What Stands Through It</div>
+          <div class="plant-header">
+            <div class="common-name">Cabbage Palm</div>
+            <span class="scientific">Sabal palmetto</span>
+          </div>
+          <p class="description">Florida's state tree. The thick fibrous trunk insulates the living tissue inside, which is why cabbage palms can <strong>often survive ground fires</strong> while the surrounding scrub burns and regrows around them.</p>
+        </div>
+        <div class="footer-tag">
+          <span>03 of 03 · Native Plants of Egmont Key</span>
+          <span>Living Restorations</span>
+        </div>
+      </div>
+    </div>
+    <button class="download-btn" onclick="downloadSlide('slide-4', 'slide-4-cabbage-palm.png')">Download Slide 4</button>
+  </div>
+
+  <!-- SLIDE 5 -->
+  <div class="slide-wrapper">
+    <div class="slide-label">Slide 5 — Closing</div>
+    <div class="slide slide-5" id="slide-5">
+      <div class="s5-top">
+        <div class="logo-placeholder">LR-logo-sand.png</div>
+        <div class="s5-end">End · 05</div>
+      </div>
+      <div class="s5-main">
+        <div class="pull-quote">
+          This island
+          <span class="emphasis">has burned before.</span>
+        </div>
+        <p class="body-text">We don't know yet what burned on Sunday or what caused it. But the natives that hold this island together have always known how to come back.</p>
+        <div class="author">
+          <div>
+            <div class="author-name">Kiamesha Wray</div>
+            <div class="author-title">Florida Master Naturalist · FANN Credentialed<br>Living Restorations</div>
+          </div>
+        </div>
+      </div>
+      <div class="s5-bottom">
+        <div class="cta">Follow for more →</div>
+        <div class="handle">livingrestorations.com</div>
+      </div>
+    </div>
+    <button class="download-btn" onclick="downloadSlide('slide-5', 'slide-5-cta.png')">Download Slide 5</button>
+  </div>
+
+</div>
+
+<script>
+  async function downloadSlide(slideId, filename) {
+    const slide = document.getElementById(slideId);
+    // Temporarily reset transform so html2canvas captures at full size
+    const originalTransform = slide.style.transform;
+    const originalMargin = slide.style.marginBottom;
+    slide.style.transform = 'none';
+    slide.style.marginBottom = '0';
+
+    try {
+      const canvas = await html2canvas(slide, {
+        width: 1080,
+        height: 1350,
+        scale: 1,
+        useCORS: true,
+        backgroundColor: null
+      });
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    } catch (err) {
+      alert('Download failed: ' + err.message);
+    } finally {
+      slide.style.transform = originalTransform;
+      slide.style.marginBottom = originalMargin;
+    }
+  }
+
+  async function downloadAll() {
+    const slides = [
+      ['slide-1', 'slide-1-cover.png'],
+      ['slide-2', 'slide-2-sea-oats.png'],
+      ['slide-3', 'slide-3-saw-palmetto.png'],
+      ['slide-4', 'slide-4-cabbage-palm.png'],
+      ['slide-5', 'slide-5-cta.png']
+    ];
+    for (const [id, name] of slides) {
+      await downloadSlide(id, name);
+      await new Promise(r => setTimeout(r, 600));
+    }
+  }
+</script>
+</body>
+</html>
