@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Egmont Key Carousel Preview — Living Restorations</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --terracotta:#a5423b;
+  --teal:#6ca698;
+  --sand:#fbf6ed;
+  --warm-sand:#a69689;
+  --charcoal:#3b3836;
+  --muted:#8a7a75;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Poppins',sans-serif;background:var(--sand);color:var(--charcoal);}
+
+/* GATE */
+#pw-screen{position:fixed;inset:0;z-index:999;background:var(--charcoal);display:flex;align-items:center;justify-content:center;padding:1rem;}
+.pw-box{background:var(--sand);border-radius:3px;padding:3rem 2.5rem;max-width:400px;width:100%;text-align:center;position:relative;}
+.pw-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--terracotta),var(--warm-sand),var(--teal));border-radius:3px 3px 0 0;}
+.pw-logo{font-size:.62rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem;}
+.pw-box h2{font-size:1.45rem;font-weight:700;color:var(--charcoal);margin-bottom:.5rem;letter-spacing:-0.01em;}
+.pw-box p{font-size:.85rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.6;}
+.pw-input-wrap{position:relative;margin-bottom:.75rem;}
+.pw-input-wrap input{width:100%;padding:.85rem 3rem .85rem 1rem;border:1.5px solid rgba(108,166,152,.35);border-radius:2px;font-family:'Poppins',sans-serif;font-size:.9rem;color:var(--charcoal);background:#fff;text-align:center;letter-spacing:.15em;}
+.pw-input-wrap input:focus{outline:none;border-color:var(--teal);}
+.pw-show{position:absolute;right:.85rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--muted);font-size:.7rem;font-weight:700;letter-spacing:.08em;padding:0;}
+.pw-btn{width:100%;background:var(--terracotta);color:#fff;border:none;padding:.9rem;border-radius:2px;font-family:'Poppins',sans-serif;font-size:.8rem;font-weight:600;cursor:pointer;margin-top:.25rem;letter-spacing:.08em;text-transform:uppercase;}
+.pw-btn:hover{background:var(--charcoal);}
+.pw-error{font-size:.78rem;color:var(--terracotta);margin-top:.6rem;display:none;}
+
+/* CLIENT NOTE */
+.client-note{background:var(--charcoal);padding:2.75rem 5%;position:relative;}
+.client-note::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--terracotta),var(--warm-sand),var(--teal));}
+.note-inner{max-width:860px;margin:0 auto;}
+.note-label{font-size:.62rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--teal);margin-bottom:.85rem;display:block;}
+.client-note h2{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:1rem;line-height:1.3;letter-spacing:-0.01em;}
+.client-note p{font-size:.85rem;color:rgba(255,255,255,.72);line-height:1.85;margin-bottom:.65rem;}
+.client-note p strong{color:rgba(255,255,255,.95);}
+.client-note p em{color:var(--teal);font-style:normal;font-weight:600;}
+
+/* FORM */
+.form-wrap{margin-top:1.5rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:1.5rem;border-radius:3px;}
+.form-label{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:.65rem;display:block;}
+.form-wrap textarea{width:100%;min-height:90px;padding:.75rem;border:1px solid rgba(255,255,255,.15);background:rgba(0,0,0,.2);color:#fff;font-family:'Poppins',sans-serif;font-size:.85rem;border-radius:2px;resize:vertical;line-height:1.5;}
+.form-wrap textarea:focus{outline:none;border-color:var(--teal);}
+.form-wrap textarea::placeholder{color:rgba(255,255,255,.3);}
+.btn-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem;}
+.note-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.5rem;border-radius:2px;font-family:'Poppins',sans-serif;font-size:.72rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;min-height:46px;letter-spacing:.1em;text-transform:uppercase;flex:1;min-width:180px;}
+.note-btn-approve{background:var(--teal);color:#fff;}
+.note-btn-approve:hover{background:#5a8e82;}
+.note-btn-edits{background:transparent;color:rgba(255,255,255,.85);border:1.5px solid rgba(255,255,255,.3);}
+.note-btn-edits:hover{background:rgba(255,255,255,.06);}
+
+.form-status{display:none;margin-top:1rem;padding:.85rem 1rem;border-radius:2px;font-size:.82rem;font-weight:500;}
+.form-status.success{display:block;background:rgba(108,166,152,.18);border:1px solid var(--teal);color:#fff;}
+.form-status.error{display:block;background:rgba(165,66,59,.2);border:1px solid var(--terracotta);color:#fff;}
+
+.section-label{background:rgba(165,66,59,.08);border-bottom:1px solid rgba(165,66,59,.15);padding:.7rem 5%;font-size:.62rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--terracotta);text-align:center;}
+
+.page-iframe{display:block;width:100%;border:none;min-height:100vh;background:#1a1a1a;}
+</style>
+</head>
+<body>
+
+<div id="pw-screen">
+  <div class="pw-box">
+    <p class="pw-logo">Living Restorations</p>
+    <h2>Preview page</h2>
+    <p>Private preview for Kiamesha. Enter the password to view.</p>
+    <div class="pw-input-wrap">
+      <input type="password" id="pw-input" placeholder="PASSWORD" onkeydown="if(event.key==='Enter')checkPW()">
+      <button class="pw-show" type="button" id="pw-show-btn" onclick="togglePW()">SHOW</button>
+    </div>
+    <button class="pw-btn" onclick="checkPW()">View preview</button>
+    <p class="pw-error" id="pw-error">Incorrect password. Try again.</p>
+  </div>
+</div>
+
+<div class="client-note" id="main-content" style="display:none;">
+  <div class="note-inner">
+    <span class="note-label">For Kiamesha — Preview Only</span>
+    <h2>Possible Instagram post for Living Restorations — wanted your eyes on it first.</h2>
+    <p>Not sure if you saw, but there was a fire on Egmont Key Sunday afternoon. Cause is still under investigation. I drafted a soft educational carousel that <em>doesn't speculate about what burned</em> — just highlights three natives that grow on the island.</p>
+    <p>Five slides below. Scroll down to see them in order.</p>
+    <p><strong>Two notes:</strong> The sea oats and saw palmetto photos are placeholders from Unsplash (free to use). The cabbage palm photo I found online. If you have your own photos of any of these — especially cabbage palm — I'd love to swap them in. Feels more authentic with your real work.</p>
+    <p><strong>Caption draft:</strong></p>
+    <p style="background:rgba(255,255,255,.05);padding:1rem;border-left:2px solid var(--teal);font-style:italic;color:rgba(255,255,255,.85);">There was a fire on Egmont Key Sunday afternoon. We don't know yet what burned or what caused it.<br><br>What we do know is what's growing out there. Three of the natives that have always called this island home. Same plants we work with every day.<br><br>Thinking of the crews working to protect it. And the wildlife that calls this island home.</p>
+
+    <form class="form-wrap" action="https://formspree.io/f/mzdankle" method="POST" id="approval-form">
+      <label class="form-label" for="response">Your response</label>
+      <textarea name="response" id="response" placeholder="Approve as-is, or share any edits / swap-outs you'd like to see..."></textarea>
+      <input type="hidden" name="_subject" value="Egmont Key Carousel — Kiamesha Response">
+      <input type="hidden" name="page" value="Egmont Key Native Plants Carousel">
+      <input type="hidden" name="decision" id="decision-field" value="">
+      <div class="btn-row">
+        <button type="submit" class="note-btn note-btn-approve" onclick="setDecision('APPROVED')">✓ Looks good, publish it</button>
+        <button type="submit" class="note-btn note-btn-edits" onclick="setDecision('NEEDS EDITS')">✏️ Send edits / swap photos</button>
+      </div>
+      <div class="form-status" id="form-status"></div>
+    </form>
+  </div>
+</div>
+
+<div class="section-label" id="section-label" style="display:none;">↓ Preview the 5 slides below ↓</div>
+
+<iframe
+  id="page-iframe"
+  class="page-iframe"
+  src="/egmont-key-carousel.html"
+  title="Egmont Key Carousel Preview"
+  style="display:none;"
+></iframe>
+
+<script>
+function togglePW(){
+  var i=document.getElementById('pw-input');
+  var b=document.getElementById('pw-show-btn');
+  if(i.type==='password'){i.type='text';b.textContent='HIDE';}
+  else{i.type='password';b.textContent='SHOW';}
+}
+function checkPW(){
+  var val=document.getElementById('pw-input').value.trim().toLowerCase();
+  if(val==='livingrestorations'){
+    document.getElementById('pw-screen').style.display='none';
+    document.getElementById('main-content').style.display='block';
+    document.getElementById('section-label').style.display='block';
+    document.getElementById('page-iframe').style.display='block';
+  } else {
+    document.getElementById('pw-error').style.display='block';
+  }
+}
+function setDecision(val){
+  document.getElementById('decision-field').value = val;
+}
+
+// Async form submit so we can show status without leaving the page
+document.getElementById('approval-form').addEventListener('submit', async function(e){
+  e.preventDefault();
+  var form = e.target;
+  var status = document.getElementById('form-status');
+  var formData = new FormData(form);
+  try {
+    var response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      status.className = 'form-status success';
+      status.textContent = '✓ Sent. Dayna will follow up shortly.';
+      form.reset();
+    } else {
+      status.className = 'form-status error';
+      status.textContent = 'Something went wrong. Please email info@gofercontent.com directly.';
+    }
+  } catch (err) {
+    status.className = 'form-status error';
+    status.textContent = 'Network issue. Please email info@gofercontent.com directly.';
+  }
+});
+</script>
+</body>
+</html>
