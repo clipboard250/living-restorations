@@ -215,7 +215,7 @@
   .press-links a:hover{border-color:var(--teal);color:var(--teal-deep)}
 
   /* RAFFLE animated marquee */
-  .marquee{overflow:hidden;position:relative;margin-top:4px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+  .marquee{overflow:hidden;position:relative;margin-top:44px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}90deg,transparent,#000 5%,#000 95%,transparent)}
   .marquee-track{display:flex;gap:20px;width:max-content;align-items:stretch;will-change:transform;backface-visibility:hidden;animation:scrollx 55s linear infinite}
   .marquee:hover .marquee-track{animation-play-state:paused}
   .marquee .prize{width:280px;flex:0 0 280px}
@@ -290,7 +290,6 @@
       <a href="#auction">Silent Auction</a>
       <a href="#raffle">Raffle</a>
       <a href="#faq">FAQ</a>
-      <a href="#signin">Sign In</a>
       <a class="btn btn-gold" href="https://donorbox.org/events/948209/steps/choose_tickets" target="_blank" rel="noopener noreferrer">Purchase Tickets</a>
     </div>
   </div>
@@ -362,7 +361,7 @@
   <div class="wrap">
     <div class="sec-head">
       <div><div class="lab">The Evening Program</div><h2>How the night unfolds</h2></div>
-      <p class="lead">Doors at six, close-up magic, a talk on the Cockroach Bay restoration, a painting created live, and raffle drawings. Here is the run of show.</p>
+      <p class="lead">John Williams hosts the evening. The raffle and West's live painting run the whole night and resolve at 8:30. Here is the run of show.</p>
     </div>
     <div class="prog-grid">
       <aside class="glance reveal">
@@ -375,12 +374,11 @@
         </dl>
         <a class="btn btn-gold" href="https://donorbox.org/events/948209/steps/choose_tickets" target="_blank" rel="noopener noreferrer">Purchase Tickets</a>
       </aside>
-      <div class="timeline">
-        <div class="slot reveal"><div class="time">6:00 PM</div><h3>Doors Open</h3><p>Arrive to a complimentary glass of champagne and close-up magic from John Williams, your host and MC for the evening. Artist West Evans sets up and begins painting live.</p></div>
-        <div class="slot reveal"><div class="time">6:45 PM</div><h3>The Cockroach Bay Project</h3><p>Tom Ries presents the Cockroach Bay living shoreline restoration, the very landscape West Evans is painting live tonight, and why ongoing maintenance decides whether these projects last.</p></div>
-        <div class="slot reveal"><div class="time">7:15 PM</div><h3>Raffle &amp; Auction Showcase</h3><p>A first look at the raffle prizes, plus the live painting as it takes shape and opens for silent auction bidding.</p></div>
-        <div class="slot reveal"><div class="time">7:30 PM</div><h3>Raffle &amp; Bidding Open</h3><p>Buy raffle tickets and drop them toward the prizes you want, place your bids on the painting, and explore The Study's wine and bourbon on a pay-as-you-go basis.</p></div>
-        <div class="slot reveal"><div class="time">8:30 PM</div><h3>Drawings &amp; Auction Close</h3><p>Raffle winners are drawn and West's finished Cockroach Bay painting goes to the highest bidder. You must be present to win.</p></div>
+     <div class="timeline">
+        <div class="slot reveal"><div class="time">6:00 PM</div><h3>Doors Open</h3><p>Arrive to a complimentary glass of champagne and close-up magic from John Williams, your host and MC for the evening. The raffle buckets and West Evans's live painting are already going, so you can buy tickets and place bids the moment you walk in.</p></div>
+        <div class="slot reveal"><div class="time">6:45 PM</div><h3>The Cockroach Bay Project</h3><p>John introduces Tom Ries, who presents the Cockroach Bay living shoreline restoration, the very landscape West is painting live tonight, and why ongoing maintenance decides whether these projects last.</p></div>
+        <div class="slot reveal"><div class="time">All Evening</div><h3>Raffle &amp; Silent Auction</h3><p>Buy raffle tickets and drop them in the bucket for whatever prize you want, watch West's painting take shape, and place your bids on the sheet beside it. Mingle and enjoy The Study's wine and bourbon on a pay-as-you-go basis.</p></div>
+        <div class="slot reveal"><div class="time">8:30 PM</div><h3>Drawings &amp; Auction Close</h3><p>John draws the raffle winners bucket by bucket, and West's finished Cockroach Bay painting goes to the highest bidder. You must be present to win.</p></div>
         <div class="slot reveal"><div class="time">9:00 PM</div><h3>Program Concludes</h3><p>The formal program wraps, but you are welcome to stay, relax, and keep enjoying the evening.</p></div>
       </div>
     </div>
@@ -476,24 +474,6 @@
       <a class="thank" href="https://jawscustomwood.com/" target="_blank" rel="noopener noreferrer"><div class="media"><img src="assets/events/jaws-logo-seaglass-4k.png" alt="JAW's Custom Wood and Interiors"></div><div class="cap"><div class="name">JAW's Custom Wood &amp; Interiors</div><div class="role">Donor</div></div></a>
       <a class="thank" href="https://www.playgolfology.com/" target="_blank" rel="noopener noreferrer"><div class="media"><img src="assets/events/golfology-logo.png" alt="Golfology Indoor Golf"></div><div class="cap"><div class="name">Golfology</div><div class="role">Donor</div></div></a>
     </div>
-  </div>
-</section>
-
-<!-- SIGN IN (virtual sign-in sheet, Formspree) -->
-<section class="signin" id="signin">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><div class="lab">At the Event</div><h2>Sign in and stay in the loop</h2></div>
-      <p class="lead">Add your name so we can share event updates, restoration news, and future gatherings. No spam, ever.</p>
-    </div>
-    <form class="signin-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="hidden" name="_cc" value="info@gofercontent.com">
-      <input type="hidden" name="_subject" value="Living Shoreline Fundraiser sign-in">
-      <label>Name<input type="text" name="name" required></label>
-      <label>Email<input type="email" name="email" required></label>
-      <label>Phone (optional)<input type="tel" name="phone"></label>
-      <button class="btn btn-gold" type="submit">Sign In</button>
-    </form>
   </div>
 </section>
 
