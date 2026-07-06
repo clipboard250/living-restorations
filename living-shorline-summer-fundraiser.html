@@ -121,8 +121,11 @@
   .band a.logo:hover img{transform:scale(1.05)}
   .band .sep{width:1px;height:38px;background:#e2e6df}
   @media(max-width:640px){
-    .band .row{flex-direction:column;gap:16px}
-    .band .grp{flex-direction:column;gap:8px;text-align:center}
+    .band{padding:20px 0}
+    .band .row{flex-direction:column;gap:14px}
+    .band .grp{flex-direction:row;align-items:center;justify-content:center;gap:12px;text-align:left;width:100%}
+    .band .lab{flex:0 0 84px;text-align:right}
+    .band img{height:38px}
     .band .sep{display:none}
   }
 
@@ -255,9 +258,6 @@
 </head>
 <body>
 
-<!-- EVENT BAR -->
-<div class="eventbar"><div class="wrap">$10 of every ticket is tax-deductible &bull; Seats are limited</div></div>
-
 <!-- NAV -->
 <nav class="nav">
   <div class="wrap nav-in">
@@ -309,6 +309,7 @@
       <h2>Raise a glass for our coastlines</h2>
       <p>This is an intimate evening at The Study, St. Petersburg's pour-your-own wine and bourbon lounge, where community, conversation, and conservation come together. Every ticket supports local living shoreline projects that protect and restore the coastal ecosystems the Tampa Bay region depends on.</p>
       <p>Living shorelines are natural coastal restoration efforts that strengthen habitat, improve water quality, and build resilience against storms and erosion. Keeping them healthy takes ongoing maintenance and monitoring, and that is exactly what your support helps make possible.</p>
+      <p style="margin-top:16px;font-family:'Poppins',sans-serif;font-weight:600;font-size:.95rem;color:#9e4732">$10 of every ticket is tax-deductible &bull; Seats are limited.</p>
     </div>
     <div class="coast" aria-hidden="true">
       <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
