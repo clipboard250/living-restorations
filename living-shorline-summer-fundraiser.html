@@ -73,6 +73,10 @@
   .btn-outline{border:1.5px solid var(--cream);color:var(--cream)}
   .btn-outline:hover{background:var(--cream);color:var(--deep2)}
 
+  /* ===== EVENT BAR ===== */
+  .eventbar{background:var(--deep3);color:var(--gold);text-align:center;font-family:'Poppins',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:1.5px;padding:9px 0}
+  @media(max-width:420px){.eventbar{font-size:.7rem;letter-spacing:1px}}
+
   /* ===== TOP NAV ===== */
   .nav{position:sticky;top:0;z-index:50;background:rgba(16,48,50,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
@@ -251,6 +255,9 @@
 </head>
 <body>
 
+<!-- EVENT BAR -->
+<div class="eventbar"><div class="wrap">Thursday, July 30, 2026 &bull; The Study, St. Petersburg</div></div>
+
 <!-- NAV -->
 <nav class="nav">
   <div class="wrap nav-in">
@@ -269,15 +276,13 @@
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="wrap">
-    <p class="eyebrow">A Benefit Evening for Tampa Bay's Coastline</p>
     <h1>Living Shoreline Summer Fundraiser</h1>
-    <p class="tagline">Sip bourbon, catch close-up magic, and take home original art, all to help keep Tampa Bay's coastline alive.</p>
-    <p class="hero-when">Thursday, July 30, 2026 &bull; 6:00&ndash;9:00 PM &bull; The Study, St. Petersburg</p>
+    <p class="tagline">Bourbon, magic, and original art, all to keep Tampa Bay's coastline alive.</p>
     <div class="cta-row">
       <a class="btn btn-gold" href="https://donorbox.org/events/948209/steps/choose_tickets" target="_blank" rel="noopener noreferrer">Purchase Tickets &bull; $20</a>
       <a class="btn btn-outline" href="#program">See the Evening</a>
     </div>
-    <p class="price-note">Just $20 to attend &bull; $10 of every ticket is tax-deductible &bull; Seats are limited.</p>
+    <p class="price-note">$10 of every ticket is tax-deductible &bull; Seats are limited.</p>
   </div>
 </header>
 
