@@ -1,5 +1,8 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/living-shoreline-summer-fundraiser", "destination": "/shoreline", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/for-developers", "destination": "/for-developers.html" },
     { "source": "/for-contractors", "destination": "/for-contractors.html" }
