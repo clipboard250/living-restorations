@@ -10,6 +10,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/events/favicon.svg">
 <link rel="icon" type="image/png" href="assets/events/favicon.png">
 <link rel="apple-touch-icon" href="assets/events/apple-touch-icon.png">
+<link rel="shortcut icon" href="assets/events/favicon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Living Shoreline Summer Fundraiser | July 30, 2026">
@@ -124,11 +125,12 @@
 
   section{padding:64px 0}
   /* section header spread like the band */
-  .sec-head{display:grid;grid-template-columns:1fr;gap:10px;padding-bottom:22px;border-bottom:1px solid rgba(63,114,111,.22);margin-bottom:34px}
-  @media(min-width:860px){.sec-head{grid-template-columns:1.15fr 1fr;align-items:end;gap:40px}}
+  .sec-head{max-width:800px;margin:0 auto 42px;text-align:center}
+  .sec-head>div{margin-bottom:14px}
   .sec-head .lab{font-family:'Poppins',sans-serif;font-weight:600;letter-spacing:3px;text-transform:uppercase;font-size:.7rem;color:var(--terracotta);margin-bottom:8px}
   .sec-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);color:var(--deep2)}
-  .sec-head .lead{font-size:1.05rem;color:#4f5b58;max-width:52ch}
+  .sec-head h2::after{content:"";display:block;width:60px;height:3px;background:var(--gold);border-radius:2px;margin:16px auto 0}
+  .sec-head .lead{font-size:1.05rem;color:#4f5b58;max-width:58ch;margin:0 auto}
   .on-dark .sec-head{border-color:var(--line)}
   .on-dark .sec-head .lab{color:var(--gold)}
   .on-dark .sec-head h2{color:var(--cream)}
@@ -166,6 +168,7 @@
   .auction{background:linear-gradient(180deg,#eef3ef 0%,#e7efe9 100%)}
   .raffle{background:linear-gradient(180deg,#f8f5eb 0%,#eef3ef 100%)}
   .prize-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+  @media(min-width:860px){.auction .prize-grid{grid-template-columns:repeat(3,minmax(240px,300px));justify-content:center}}
   .prize{background:#fff;border:1px solid #e4e9e2;border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
   .prize a.media{display:block;position:relative}
   .prize a.media::after{content:"\2197";position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;background:rgba(16,48,50,.82);color:#fff;font-size:.9rem;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .15s}
@@ -185,7 +188,7 @@
 
   /* RAFFLE animated marquee */
   .marquee{overflow:hidden;position:relative;margin-top:4px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-  .marquee-track{display:flex;gap:20px;width:max-content;animation:scrollx 42s linear infinite}
+  .marquee-track{display:flex;gap:20px;width:max-content;align-items:stretch;will-change:transform;backface-visibility:hidden;animation:scrollx 55s linear infinite}
   .marquee:hover .marquee-track{animation-play-state:paused}
   .marquee .prize{width:280px;flex:0 0 280px}
   @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -203,7 +206,8 @@
 
   /* THANKS */
   .thanks{background:var(--seaglass);color:var(--cream);text-align:center}
-  .thanks-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:16px;margin-top:8px}
+  .thanks-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px}
+  @media(min-width:640px){.thanks-grid{grid-template-columns:repeat(4,1fr)}}
   a.thank{background:#fff;border-radius:12px;overflow:hidden;color:var(--charcoal);text-decoration:none;display:block;transition:transform .15s,box-shadow .15s}
   a.thank:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.22)}
   .thank .media{height:116px;display:flex;align-items:center;justify-content:center;padding:14px;background:#fff}
@@ -415,7 +419,7 @@
 <!-- THANKS (Ecosphere first, all cards link out) -->
 <section class="thanks on-dark">
   <div class="wrap">
-    <div class="sec-head" style="text-align:left">
+    <div class="sec-head">
       <div><div class="lab">With Gratitude</div><h2>Our hosts, donors &amp; performers</h2></div>
       <p class="lead">Tap any partner to visit their site. This evening happens because of them.</p>
     </div>
