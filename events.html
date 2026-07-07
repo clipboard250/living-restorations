@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ELP3HD718P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { 'analytics_storage': 'denied' });
+  gtag('js', new Date());
+  gtag('config', 'G-ELP3HD718P');
+  if (localStorage.getItem('cookies') === 'accepted') {
+    gtag('consent', 'update', { 'analytics_storage': 'granted' });
+  }
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="canonical" href="https://www.livingrestorations.com/events">
+
+<title>Events | Living Restorations — Florida Ecological Design & Coastal Restoration</title>
+<meta name="description" content="Upcoming events from Living Restorations. Join us at the Living Shoreline Summer Fundraiser — July 30, 2026 at The Study, St. Petersburg — benefiting coastal restoration in Tampa Bay.">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://www.livingrestorations.com/events">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Events | Living Restorations">
+<meta property="og:description" content="Upcoming events from Living Restorations, including the Living Shoreline Summer Fundraiser benefiting coastal restoration in Tampa Bay.">
+<meta property="og:image" content="https://www.livingrestorations.com/assets/events/events-og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="livingrestorations.com">
+<meta property="twitter:url" content="https://www.livingrestorations.com/events">
+<meta name="twitter:title" content="Events | Living Restorations">
+<meta name="twitter:description" content="Upcoming events from Living Restorations, including the Living Shoreline Summer Fundraiser benefiting coastal restoration in Tampa Bay.">
+<meta name="twitter:image" content="https://www.livingrestorations.com/assets/events/events-og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="assets/LR-favicon.png">
+<link rel="apple-touch-icon" href="assets/LR-favicon.png">
+
+<!-- Schema: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.livingrestorations.com/"},
+    {"@type":"ListItem","position":2,"name":"Events","item":"https://www.livingrestorations.com/events"}
+  ]
+}
+</script>
+<!-- Schema: Upcoming Event -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Event",
+  "name":"Living Shoreline Summer Fundraiser",
+  "description":"An evening of fine spirits, great company, and coastal stewardship benefiting living shoreline restoration in the Tampa Bay region. Featuring close-up magic, a talk on living shorelines, a live-painted original by West Evans, a raffle, and a silent auction.",
+  "startDate":"2026-07-30T18:00:00-04:00","endDate":"2026-07-30T21:00:00-04:00",
+  "eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+  "location":{"@type":"Place","name":"The Study Wine & Bourbon Tasting Lounge","address":{"@type":"PostalAddress","streetAddress":"3100 3rd Avenue North","addressLocality":"St. Petersburg","addressRegion":"FL","postalCode":"33713","addressCountry":"US"}},
+  "image":"https://www.livingrestorations.com/assets/events/og-image.png",
+  "url":"https://www.livingrestorations.com/shoreline",
+  "offers":{"@type":"Offer","name":"Single Attendee","price":"20","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://donorbox.org/events/948209/steps/choose_tickets","validThrough":"2026-07-30T23:59:00-04:00"},
+  "organizer":[{"@type":"Organization","name":"Living Restorations","url":"https://www.livingrestorations.com/"},{"@type":"Organization","name":"Ecosphere Restoration Institute","url":"https://www.ecosphererestoration.org/"}]
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --terracotta: #a5423b;
+  --teal: #6ca698;
+  --sand: #a69689;
+  --cream: #fbf6ed;
+  --charcoal: #3b3836;
+  --white: #ffffff;
+  --muted: #7a6f6a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; color: var(--charcoal); background: var(--white); overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 4%;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(108,166,152,0.15);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.nav-logo img { height: 44px; width: auto; display: block; }
+.nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+.nav-links a { font-size: 0.82rem; font-weight: 500; color: var(--charcoal); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: var(--teal); }
+.nav-links a.active { color: var(--teal); }
+.nav-call {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: var(--teal); color: white !important;
+  padding: 0.65rem 1.4rem; border-radius: 3px;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-call:hover { background: var(--terracotta) !important; transform: translateY(-1px); }
+.nav-partner { position: relative; } .nav-partner > a { cursor: pointer; }
+.partner-dropdown { display: none; position: absolute; top: 100%; left: 0; background: white; list-style: none; padding: 0.5rem 0; min-width: 240px; border-radius: 3px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border: 1px solid rgba(108,166,152,0.15); margin-top: 0.75rem; }
+.partner-dropdown.open { display: block; }
+.partner-dropdown li { padding: 0; } .partner-dropdown a { display: block; padding: 0.75rem 1.25rem; font-size: 0.78rem; color: var(--charcoal); letter-spacing: 0.04em; text-transform: uppercase; transition: background 0.2s, color 0.2s; }
+.partner-dropdown a:hover { background: var(--cream); color: var(--teal); }
+@media (max-width: 960px) {
+  .nav-partner { width: 100%; }
+  .nav-partner > a { display: block; }
+  .partner-dropdown { background: transparent; position: static; box-shadow: none; border: none; margin-top: 0.5rem; padding: 0 0 0 1rem; min-width: 0; }
+  .partner-dropdown a { padding: 0.5rem 0; }
+}
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 0.5rem; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--charcoal); transition: 0.3s; }
+
+/* ── EVENTS HERO ── */
+.ev-hero {
+  padding: 9rem 4% 4.5rem;
+  background: linear-gradient(135deg, var(--charcoal) 0%, var(--teal) 130%);
+  color: white; position: relative; overflow: hidden;
+}
+.ev-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 0%, rgba(108,166,152,0.18) 0%, transparent 55%); }
+.ev-hero-inner { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; }
+.ev-eyebrow { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: #b8d8d3; font-weight: 600; margin-bottom: 1rem; }
+.ev-hero h1 { font-size: clamp(2.1rem, 4.5vw, 3.4rem); line-height: 1.12; font-weight: 700; margin-bottom: 1.1rem; max-width: 16ch; }
+.ev-hero h1 em { font-style: italic; color: #b8d8d3; font-weight: 300; }
+.ev-hero p { font-size: 0.95rem; color: rgba(255,255,255,0.78); font-weight: 300; line-height: 1.8; max-width: 52ch; }
+
+/* ── EVENTS SECTION ── */
+.events { padding: 5rem 4% 6rem; background: var(--cream); }
+.events-inner { max-width: 1100px; margin: 0 auto; }
+.section-eyebrow { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-bottom: 0.75rem; }
+.section-title { font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.2; color: var(--charcoal); margin-bottom: 2.75rem; font-weight: 700; }
+
+.event-card {
+  background: white; border-radius: 6px; overflow: hidden;
+  display: grid; grid-template-columns: 1.05fr 1fr;
+  box-shadow: 0 10px 40px rgba(59,56,54,0.10);
+  border: 1px solid rgba(108,166,152,0.12);
+}
+.event-media { position: relative; min-height: 340px; background: linear-gradient(135deg, #6ca698, #3b3836); }
+.event-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.date-badge {
+  position: absolute; top: 1.1rem; left: 1.1rem; z-index: 2;
+  background: var(--terracotta); color: white; text-align: center;
+  border-radius: 5px; padding: 0.5rem 0.85rem; line-height: 1;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+}
+.date-badge .m { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; opacity: 0.92; }
+.date-badge .d { font-size: 1.6rem; font-weight: 700; margin-top: 2px; }
+.event-body { padding: 2.75rem 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+.event-meta { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-bottom: 0.75rem; }
+.event-body h3 { font-size: 1.55rem; line-height: 1.2; font-weight: 700; color: var(--charcoal); margin-bottom: 0.5rem; }
+.event-venue { font-size: 0.85rem; color: var(--muted); font-weight: 500; margin-bottom: 1.1rem; }
+.event-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.75; font-weight: 300; margin-bottom: 1.25rem; }
+.event-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.6rem; }
+.tag { font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; color: var(--teal); background: rgba(108,166,152,0.12); border: 1px solid rgba(108,166,152,0.25); padding: 0.32rem 0.7rem; border-radius: 999px; }
+.event-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  background: var(--teal); color: white;
+  padding: 0.9rem 1.75rem; border-radius: 3px;
+  font-size: 0.82rem; font-weight: 600; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-primary:hover { background: var(--terracotta); transform: translateY(-2px); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  border: 1.5px solid rgba(108,166,152,0.45); color: var(--charcoal);
+  padding: 0.9rem 1.75rem; border-radius: 3px;
+  font-size: 0.82rem; font-weight: 600; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: var(--teal); background: var(--cream); color: var(--teal); }
+.event-note { font-size: 0.75rem; color: var(--sand); font-weight: 400; letter-spacing: 0.02em; }
+.event-note strong { color: var(--muted); font-weight: 600; }
+
+/* ── MORE / EMPTY STATE ── */
+.more-events { margin-top: 2.5rem; padding: 1.75rem 2rem; background: white; border: 1px dashed rgba(108,166,152,0.4); border-radius: 6px; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: space-between; }
+.more-events p { font-size: 0.85rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
+.more-events p strong { color: var(--charcoal); font-weight: 600; }
+.more-link { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal); text-decoration: none; border-bottom: 1px solid rgba(108,166,152,0.3); padding-bottom: 0.2rem; white-space: nowrap; }
+.more-link:hover { border-color: var(--teal); }
+
+/* ── CTA ── */
+.cta-section { padding: 7rem 4%; background: var(--teal); text-align: center; position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.08) 0%, transparent 60%); }
+.cta-inner { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
+.cta-section .section-eyebrow { color: rgba(255,255,255,0.7); }
+.cta-section .section-title { color: white; margin-bottom: 1rem; }
+.cta-section p { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; }
+.cta-phone { display: inline-flex; align-items: center; gap: 0.75rem; background: white; color: var(--charcoal); padding: 1.1rem 2.5rem; border-radius: 3px; font-size: 0.9rem; font-weight: 700; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; letter-spacing: 0.08em; text-transform: uppercase; }
+.cta-phone:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.2); }
+
+/* ── FOOTER ── */
+footer { background: var(--charcoal); padding: 3rem 4%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-logo img { height: 36px; width: auto; display: block; }
+footer p { color: rgba(255,255,255,0.35); font-size: 0.75rem; font-weight: 300; }
+footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+footer a:hover { color: rgba(255,255,255,0.8); }
+
+/* ── MODALS (shared with homepage) ── */
+.sms-overlay, .email-overlay, .picker-overlay { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
+.sms-overlay.open, .email-overlay.open, .picker-overlay.open { display: flex; }
+.sms-modal, .email-modal, .picker-modal { background: white; border-radius: 6px; padding: 2.5rem; max-width: 480px; width: 90%; position: relative; }
+.picker-modal { max-width: 380px; text-align: center; }
+.email-modal { max-width: 500px; }
+.email-modal::before, .picker-modal::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--terracotta), var(--teal)); border-radius: 6px 6px 0 0; }
+.sms-close, .email-close, .picker-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; }
+.sms-close:hover, .email-close:hover, .picker-close:hover { background: var(--cream); color: var(--charcoal); }
+.sms-modal .section-eyebrow, .email-modal .section-eyebrow, .picker-modal .section-eyebrow { margin-bottom: 0.5rem; }
+.sms-modal h3, .picker-modal h3 { font-size: 1.4rem; color: var(--charcoal); margin-bottom: 0.5rem; font-weight: 700; }
+.email-modal h3 { font-size: 1.4rem; color: var(--charcoal); margin-bottom: 0.4rem; font-weight: 700; }
+.sms-sub, .form-sub, .picker-modal p { font-size: 0.83rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; font-weight: 300; }
+.sms-options, .picker-options { display: flex; flex-direction: column; gap: 0.75rem; }
+.sms-option { display: block; padding: 0.85rem 1.1rem; border: 1.5px solid rgba(108,166,152,0.2); border-radius: 3px; color: var(--charcoal); text-decoration: none; font-size: 0.85rem; transition: background 0.2s, border-color 0.2s; line-height: 1.4; font-weight: 400; }
+.sms-option:hover { background: var(--cream); border-color: var(--teal); }
+.picker-btn { display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem 1.25rem; border-radius: 3px; font-family: 'Poppins', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; border: none; transition: background 0.2s, transform 0.2s; min-height: 52px; }
+.picker-btn-text { background: var(--teal); color: white; }
+.picker-btn-text:hover { background: var(--terracotta); transform: translateY(-1px); }
+.picker-btn-email { background: white; color: var(--charcoal); border: 1.5px solid rgba(108,166,152,0.3); }
+.picker-btn-email:hover { border-color: var(--teal); background: var(--cream); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 0.75rem; }
+.form-group label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+.form-group input, .form-group select, .form-group textarea { font-family: 'Poppins', sans-serif; font-size: 0.85rem; color: var(--charcoal); background: white; border: 1.5px solid rgba(108,166,152,0.25); border-radius: 3px; padding: 0.75rem 0.9rem; transition: border-color 0.2s; font-weight: 300; resize: none; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--teal); }
+.form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236ca698' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; cursor: pointer; }
+.form-submit { width: 100%; background: var(--teal); color: white; border: none; padding: 0.9rem 2rem; border-radius: 3px; font-family: 'Poppins', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.2s; margin-top: 0.5rem; }
+.form-submit:hover { background: var(--terracotta); transform: translateY(-1px); }
+.form-note { font-size: 0.7rem; color: var(--sand); text-align: center; margin-top: 0.75rem; font-weight: 300; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: white; padding: 1.5rem; border-bottom: 1px solid #eee; gap: 1.25rem; box-shadow: 0 8px 24px rgba(0,0,0,0.08); align-items: flex-start; }
+  .nav-links li { width: 100%; }
+  .hamburger { display: flex; }
+  .event-card { grid-template-columns: 1fr; }
+  .event-media { min-height: 240px; }
+}
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+  .sms-modal, .email-modal, .picker-modal { padding: 2rem 1.5rem; }
+  .event-body { padding: 2rem 1.5rem; }
+  .event-actions .btn-primary, .event-actions .btn-ghost { width: 100%; justify-content: center; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="/"><img src="assets/LR-logo-teal.png" alt="Living Restorations" title="Living Restorations" width="220" height="54" loading="eager"></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#about">Our Work</a></li>
+    <li><a href="/#areas">Service Areas</a></li>
+    <li><a href="/events" class="active">Events</a></li>
+    <li class="nav-partner">
+      <a href="#" onclick="togglePartner(event)" aria-haspopup="true" aria-expanded="false">Partner With Us ▾</a>
+      <ul class="partner-dropdown" id="partnerDropdown">
+        <li><a href="/for-developers">For Developers</a></li>
+        <li><a href="/for-contractors">For General Contractors</a></li>
+      </ul>
+    </li>
+    <li><a href="sms:7277107400" onclick="openSMS(event)" class="nav-call">Get in Touch</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<header class="ev-hero">
+  <div class="ev-hero-inner">
+    <p class="ev-eyebrow">Events &amp; Community</p>
+    <h1>Where restoration meets <em>community.</em></h1>
+    <p>Restoring Florida's coasts is bigger than any one project. From fundraisers to community gatherings, these are the moments we come together for the water, the habitat, and the people who love them.</p>
+  </div>
+</header>
+
+<!-- UPCOMING EVENTS -->
+<section class="events" id="upcoming">
+  <div class="events-inner">
+    <p class="section-eyebrow">Upcoming</p>
+    <h2 class="section-title">What's happening</h2>
+
+    <!-- Event: Living Shoreline Summer Fundraiser -->
+    <article class="event-card">
+      <div class="event-media">
+        <span class="date-badge" aria-hidden="true"><span class="m">Jul</span><span class="d">30</span></span>
+        <img src="assets/events/og-image.png" alt="Living Shoreline Summer Fundraiser at The Study, St. Petersburg" title="Living Shoreline Summer Fundraiser" width="1200" height="630" loading="lazy">
+      </div>
+      <div class="event-body">
+        <p class="event-meta">Thursday, July 30, 2026 · 6:00–9:00 PM</p>
+        <h3>Living Shoreline Summer Fundraiser</h3>
+        <p class="event-venue">The Study Wine &amp; Bourbon Tasting Lounge · St. Petersburg, FL</p>
+        <p class="event-desc">An elegant evening of fine spirits, close-up magic, and an original coastal painting created live — plus a raffle and silent auction, all benefiting living shoreline restoration in the Tampa Bay region.</p>
+        <div class="event-tags">
+          <span class="tag">Fundraiser</span>
+          <span class="tag">Silent Auction</span>
+          <span class="tag">Raffle</span>
+          <span class="tag">Live Magic</span>
+        </div>
+        <div class="event-actions">
+          <a href="/shoreline" class="btn-primary">Event Details</a>
+          <a href="https://donorbox.org/events/948209/steps/choose_tickets" target="_blank" rel="noopener noreferrer" class="btn-ghost">Get Tickets · $20</a>
+        </div>
+        <p class="event-note"><strong>$10 of every ticket is tax-deductible.</strong> Benefiting Ecosphere Restoration Institute.</p>
+      </div>
+    </article>
+
+    <!-- More events -->
+    <div class="more-events">
+      <p><strong>More events are on the way.</strong> We host and partner on community gatherings across Florida's coast throughout the year — check back soon.</p>
+      <a href="sms:7277107400" onclick="openSMS(event)" class="more-link">Get notified →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <p class="section-eyebrow">Get Involved</p>
+    <h2 class="section-title">Want to be part of the next one?</h2>
+    <p>Whether you'd like to attend, sponsor, or host an event with us, we'd love to hear from you.</p>
+    <a href="sms:7277107400" onclick="openSMS(event)" class="cta-phone">Get in Touch</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><a href="/"><img src="assets/LR-logo-sand.png" alt="Living Restorations" title="Living Restorations" width="180" height="44" loading="lazy"></a></div>
+  <p>&copy; 2026 Living Restorations Inc. &middot; Ecological Design &amp; Restoration &middot; Florida</p>
+  <p><a href="sms:7277107400" onclick="openSMS(event)">Text Us</a></p>
+</footer>
+
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;background:#3b3836;padding:1rem 5%;font-size:.78rem;color:rgba(255,255,255,.85);">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+    <p style="margin:0;line-height:1.6;">We use cookies to see how people find us and what helps. Hit "Got it" if that works for you. "Decline" is fine too. <a href="privacy.html" style="color:#6bb3ae;text-decoration:underline;">Privacy Policy</a></p>
+    <div style="display:flex;gap:.5rem;">
+      <button onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookies','accepted');gtag('consent','update',{'analytics_storage':'granted'})" style="background:#6bb3ae;color:#1a1a1a;border:none;padding:.45rem 1rem;border-radius:2px;font-size:.72rem;font-weight:600;cursor:pointer;">Got it</button>
+      <button onclick="document.getElementById('cookieBanner').style.display='none';localStorage.setItem('cookies','declined')" style="background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.35);padding:.45rem 1rem;border-radius:2px;font-size:.72rem;cursor:pointer;">Decline</button>
+    </div>
+  </div>
+</div>
+
+<!-- PICKER MODAL (mobile) -->
+<div class="picker-overlay" id="pickerModal">
+  <div class="picker-modal" role="dialog" aria-modal="true">
+    <button class="picker-close" onclick="closePicker()" aria-label="Close">&times;</button>
+    <p class="section-eyebrow">Get in Touch</p>
+    <h3>How would you like to reach us?</h3>
+    <p>Text us directly or send an email. Either works.</p>
+    <div class="picker-options">
+      <button onclick="closePicker();openSMSDirect();" class="picker-btn picker-btn-text">📱 Text us</button>
+      <button onclick="closePicker();openEmailDirect();" class="picker-btn picker-btn-email">📧 Send an email</button>
+    </div>
+  </div>
+</div>
+
+<!-- EMAIL MODAL (desktop) -->
+<div class="email-overlay" id="emailModal">
+  <div class="email-modal" role="dialog" aria-label="Get in touch with Living Restorations" aria-modal="true">
+    <button class="email-close" onclick="closeEmail()" aria-label="Close">&times;</button>
+    <p class="section-eyebrow">Get in Touch</p>
+    <h3>Tell us about your site.</h3>
+    <p class="form-sub">We respond within one business day. This inquiry goes directly to Kiamesha.</p>
+    <form action="https://formspree.io/f/xeerprvo" method="POST">
+      <input type="hidden" name="_cc" value="kiamesha@livingspacesgardening.com">
+      <input type="hidden" name="_subject" value="Living Restorations website inquiry">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">Name</label>
+          <input type="text" id="fname" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="femail">Email</label>
+          <input type="email" id="femail" name="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="ftopic">What brings you here?</label>
+        <select id="ftopic" name="topic" required>
+          <option value="" disabled selected>Select a topic</option>
+          <option value="Living Shoreline Summer Fundraiser">🥂 Living Shoreline Summer Fundraiser</option>
+          <option value="Coastal restoration project">🌊 I have a coastal restoration project</option>
+          <option value="Invasive species removal">🌿 I need invasive species removed</option>
+          <option value="Living shoreline">🪨 I want to learn about living shorelines</option>
+          <option value="Dune restoration">🏖️ I need dune restoration</option>
+          <option value="Not sure yet">💬 Not sure yet, let's talk</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fmessage">Tell us about your site</label>
+        <textarea id="fmessage" name="message" rows="4" placeholder="Location, size, what you're seeing, what you're hoping for..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message</button>
+      <p class="form-note">You'll hear back within one business day.</p>
+    </form>
+  </div>
+</div>
+
+<!-- SMS MODAL -->
+<div class="sms-overlay" id="smsModal">
+  <div class="sms-modal">
+    <button class="sms-close" onclick="closeSMS()" aria-label="Close">&times;</button>
+    <p class="section-eyebrow">Get in Touch</p>
+    <h3>What brings you here?</h3>
+    <p class="sms-sub">Choose a message below and we'll open your texts — ready to send.</p>
+    <div class="sms-options">
+      <a href="sms:7277107400?body=Hi!%20I'd%20like%20to%20come%20to%20the%20Living%20Shoreline%20Summer%20Fundraiser." class="sms-option">🥂 I'm interested in the fundraiser</a>
+      <a href="sms:7277107400?body=Hi!%20I'd%20like%20to%20talk%20about%20a%20coastal%20restoration%20project%20on%20my%20property." class="sms-option">🌊 I have a coastal restoration project</a>
+      <a href="sms:7277107400?body=Hi!%20I'm%20dealing%20with%20invasive%20species%20on%20my%20property%20and%20need%20help." class="sms-option">🌿 I need invasive species removed</a>
+      <a href="sms:7277107400?body=Hi!%20I'm%20interested%20in%20a%20living%20shoreline%20for%20my%20property." class="sms-option">🪨 I want to learn about living shorelines</a>
+      <a href="sms:7277107400?body=Hi!%20I'm%20not%20sure%20what%20I%20need%20yet%E2%80%94can%20we%20talk?" class="sms-option">💬 I'm not sure yet — let's talk</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.documentElement.classList.add('js-ready');
+if(!localStorage.getItem('cookies')){document.getElementById('cookieBanner').style.display='flex';}
+
+window.addEventListener('scroll', function() { document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40); });
+function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+function togglePartner(e) { e.preventDefault(); document.getElementById('partnerDropdown').classList.toggle('open'); }
+document.addEventListener('click', function(e) { var dropdown = document.getElementById('partnerDropdown'); var partnerItem = e.target.closest('.nav-partner'); if (!partnerItem && dropdown) { dropdown.classList.remove('open'); } });
+document.querySelectorAll('.nav-links a').forEach(function(link) { link.addEventListener('click', function(e) { if (e.target.closest('.nav-partner > a')) return; document.getElementById('navLinks').classList.remove('open'); }); });
+
+var isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+function openSMS(e) {
+  if (e) e.preventDefault();
+  if (isMobile) { document.getElementById('pickerModal').classList.add('open'); }
+  else { document.getElementById('emailModal').classList.add('open'); }
+  document.body.style.overflow = 'hidden';
+}
+function openSMSDirect() { document.getElementById('smsModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function openEmailDirect(e) { if (e) e.preventDefault(); document.getElementById('emailModal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closePicker() { document.getElementById('pickerModal').classList.remove('open'); document.body.style.overflow = ''; }
+function closeSMS() { document.getElementById('smsModal').classList.remove('open'); document.body.style.overflow = ''; }
+function closeEmail() { document.getElementById('emailModal').classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('pickerModal').addEventListener('click', function(e) { if (e.target === this) closePicker(); });
+document.getElementById('smsModal').addEventListener('click', function(e) { if (e.target === this) closeSMS(); });
+document.getElementById('emailModal').addEventListener('click', function(e) { if (e.target === this) closeEmail(); });
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closePicker(); closeSMS(); closeEmail(); } });
+
+/* Desktop: relabel "Text us" CTAs to "Get in Touch" to match homepage behavior */
+if (!isMobile) {
+  document.querySelectorAll('a[onclick*="openSMS"], button[onclick*="openSMS"]').forEach(function(el) {
+    el.innerHTML = el.innerHTML.replace(/Text Us/gi, 'Get in Touch');
+  });
+}
+</script>
+</body>
+</html>
