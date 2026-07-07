@@ -124,17 +124,39 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--charcoal); transition: 0.3s; }
 
 /* ── EVENTS HERO ── */
-.ev-hero {
-  padding: 9rem 4% 4.5rem;
-  background: linear-gradient(135deg, var(--charcoal) 0%, var(--teal) 130%);
-  color: white; position: relative; overflow: hidden;
-}
-.ev-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 0%, rgba(108,166,152,0.18) 0%, transparent 55%); }
-.ev-hero-inner { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; }
+.ev-hero { position: relative; padding: 9rem 4% 4.5rem; color: white; overflow: hidden; }
+.ev-hero-bg { position: absolute; inset: 0; background: var(--charcoal); }
+.ev-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block; }
+.ev-hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(59,56,54,0.85) 0%, rgba(59,56,54,0.62) 48%, rgba(59,56,54,0.35) 100%); }
+.ev-hero-inner { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: center; }
+.ev-hero-copy { max-width: 34rem; }
 .ev-eyebrow { font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase; color: #b8d8d3; font-weight: 600; margin-bottom: 1rem; }
-.ev-hero h1 { font-size: clamp(2.1rem, 4.5vw, 3.4rem); line-height: 1.12; font-weight: 700; margin-bottom: 1.1rem; max-width: 16ch; }
+.ev-hero h1 { font-size: clamp(2.1rem, 4.5vw, 3.4rem); line-height: 1.12; font-weight: 700; margin-bottom: 1.1rem; }
 .ev-hero h1 em { font-style: italic; color: #b8d8d3; font-weight: 300; }
-.ev-hero p { font-size: 0.95rem; color: rgba(255,255,255,0.78); font-weight: 300; line-height: 1.8; max-width: 52ch; }
+.ev-hero-copy p { font-size: 0.95rem; color: rgba(255,255,255,0.82); font-weight: 300; line-height: 1.8; }
+
+/* calendar card */
+.ev-cal { background: var(--cream); color: var(--charcoal); border-radius: 8px; padding: 1.5rem 1.5rem 1.35rem; box-shadow: 0 18px 50px rgba(0,0,0,0.30); }
+.cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.9rem; }
+.cal-month { font-weight: 700; font-size: 1rem; letter-spacing: 0.02em; color: var(--charcoal); }
+.cal-nav { background: none; border: 1px solid rgba(108,166,152,0.4); color: var(--teal); width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 1.05rem; line-height: 1; display: flex; align-items: center; justify-content: center; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+.cal-nav:hover { background: var(--teal); border-color: var(--teal); color: #fff; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+.cal-dow { font-size: 0.58rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-align: center; font-weight: 600; padding-bottom: 0.35rem; }
+.cal-cell { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--charcoal); border-radius: 5px; }
+.cal-cell.blank { visibility: hidden; }
+.cal-cell.is-today { outline: 1.5px solid rgba(108,166,152,0.6); outline-offset: -1.5px; }
+.cal-cell.has-event a { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; background: var(--terracotta); color: #fff; font-weight: 700; text-decoration: none; border-radius: 5px; transition: transform 0.15s; }
+.cal-cell.has-event a:hover { transform: scale(1.08); }
+.cal-caption { margin-top: 1rem; font-size: 0.78rem; line-height: 1.55; text-align: center; }
+.cal-caption.muted { color: var(--muted); font-weight: 300; }
+.cal-caption a { color: var(--terracotta); font-weight: 600; text-decoration: none; }
+.cal-caption a:hover { text-decoration: underline; }
+@media (max-width: 860px) {
+  .ev-hero-inner { grid-template-columns: 1fr; gap: 2.25rem; }
+  .ev-hero-overlay { background: rgba(59,56,54,0.72); }
+  .ev-cal { max-width: 360px; }
+}
 
 /* ── EVENTS SECTION ── */
 .events { padding: 5rem 4% 6rem; background: var(--cream); }
@@ -282,10 +304,25 @@ footer a:hover { color: rgba(255,255,255,0.8); }
 
 <!-- HERO -->
 <header class="ev-hero">
+  <div class="ev-hero-bg">
+    <img src="assets/LR-temp-hero.webp" alt="Coastal dune habitat restored by Living Restorations" title="Living Restorations coastal restoration" width="1920" height="1080" loading="eager">
+  </div>
+  <div class="ev-hero-overlay"></div>
   <div class="ev-hero-inner">
-    <p class="ev-eyebrow">Events &amp; Community</p>
-    <h1>Where restoration meets <em>community.</em></h1>
-    <p>Restoring Florida's coasts is bigger than any one project. From fundraisers to community gatherings, these are the moments we come together for the water, the habitat, and the people who love them.</p>
+    <div class="ev-hero-copy">
+      <p class="ev-eyebrow">Events &amp; Community</p>
+      <h1>Where restoration meets <em>community.</em></h1>
+      <p>Restoring Florida's coasts is bigger than any one project. From fundraisers to community gatherings, these are the moments we come together for the water, the habitat, and the people who love them.</p>
+    </div>
+    <aside class="ev-cal" aria-label="Events calendar">
+      <div class="cal-head">
+        <button id="calPrev" class="cal-nav" type="button" aria-label="Previous month">&lsaquo;</button>
+        <span id="calMonth" class="cal-month">&mdash;</span>
+        <button id="calNext" class="cal-nav" type="button" aria-label="Next month">&rsaquo;</button>
+      </div>
+      <div id="calGrid" class="cal-grid"></div>
+      <p id="calCaption" class="cal-caption muted">Loading events&hellip;</p>
+    </aside>
   </div>
 </header>
 
@@ -461,6 +498,67 @@ if (!isMobile) {
     el.innerHTML = el.innerHTML.replace(/Text Us/gi, 'Get in Touch');
   });
 }
+
+/* Events calendar — auto-shows the current month, highlights event dates.
+   To add an event: drop another {date:'YYYY-MM-DD', title:'...', url:'...'} into the array. */
+(function(){
+  var events = [
+    { date: '2026-07-30', title: 'Living Shoreline Summer Fundraiser', url: '/shoreline' }
+  ];
+  var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var dowLabels = ['S','M','T','W','T','F','S'];
+  var grid = document.getElementById('calGrid');
+  var monthEl = document.getElementById('calMonth');
+  var capEl = document.getElementById('calCaption');
+  if (!grid || !monthEl || !capEl) return;
+  var today = new Date(); today.setHours(0,0,0,0);
+  var view = new Date(today.getFullYear(), today.getMonth(), 1);
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function render(){
+    var y = view.getFullYear(), m = view.getMonth();
+    monthEl.textContent = monthNames[m] + ' ' + y;
+    grid.innerHTML = '';
+    dowLabels.forEach(function(d){ var h = document.createElement('div'); h.className = 'cal-dow'; h.textContent = d; grid.appendChild(h); });
+    var firstDay = new Date(y, m, 1).getDay();
+    var totalDays = new Date(y, m + 1, 0).getDate();
+    for (var i = 0; i < firstDay; i++){ var b = document.createElement('div'); b.className = 'cal-cell blank'; grid.appendChild(b); }
+    var monthEvents = [];
+    for (var day = 1; day <= totalDays; day++){
+      var cell = document.createElement('div');
+      cell.className = 'cal-cell';
+      var dateStr = y + '-' + pad(m + 1) + '-' + pad(day);
+      var cellDate = new Date(y, m, day); cellDate.setHours(0,0,0,0);
+      if (cellDate.getTime() === today.getTime()) cell.classList.add('is-today');
+      var ev = null;
+      for (var e = 0; e < events.length; e++){ if (events[e].date === dateStr){ ev = events[e]; break; } }
+      if (ev){
+        cell.classList.add('has-event');
+        var a = document.createElement('a');
+        a.href = ev.url; a.textContent = day; a.title = ev.title;
+        a.setAttribute('aria-label', ev.title + ' — ' + monthNames[m] + ' ' + day);
+        cell.appendChild(a);
+        monthEvents.push(ev);
+      } else {
+        cell.textContent = day;
+      }
+      grid.appendChild(cell);
+    }
+    if (monthEvents.length){
+      capEl.classList.remove('muted');
+      capEl.innerHTML = monthEvents.map(function(e){
+        var d = new Date(e.date + 'T00:00:00');
+        return '<a href="' + e.url + '">' + monthNames[d.getMonth()] + ' ' + d.getDate() + ' — ' + e.title + ' &rarr;</a>';
+      }).join('<br>');
+    } else {
+      capEl.classList.add('muted');
+      capEl.textContent = 'No events scheduled this month — check back soon.';
+    }
+  }
+  var prev = document.getElementById('calPrev'), next = document.getElementById('calNext');
+  if (prev) prev.addEventListener('click', function(){ view.setMonth(view.getMonth() - 1); render(); });
+  if (next) next.addEventListener('click', function(){ view.setMonth(view.getMonth() + 1); render(); });
+  render();
+})();
 </script>
 </body>
 </html>
