@@ -5,6 +5,7 @@
   ],
   "rewrites": [
     { "source": "/for-developers", "destination": "/for-developers.html" },
-    { "source": "/for-contractors", "destination": "/for-contractors.html" }
+    { "source": "/for-contractors", "destination": "/for-contractors.html" },
+    { "source": "/events", "destination": "/events.html" }
   ]
 }
