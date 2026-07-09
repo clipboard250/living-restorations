@@ -41,10 +41,11 @@
 {
   "@context":"https://schema.org","@type":"FAQPage",
   "mainEntity":[
-    {"@type":"Question","name":"When and where is the Living Shoreline Summer Fundraiser?","acceptedAnswer":{"@type":"Answer","text":"The fundraiser is Thursday, July 30, 2026, from 6:00 to 9:00 PM at The Study Wine & Bourbon Tasting Lounge, 3100 3rd Avenue North, St. Petersburg, FL 33713."}},
+    {"@type":"Question","name":"When and where is the Living Shoreline Summer Fundraiser?","acceptedAnswer":{"@type":"Answer","text":"The fundraiser is Thursday, July 30, 2026, from 6:00 to 9:00 PM at The Study Wine & Bourbon Tasting Lounge, 3100 3rd Avenue North, St. Petersburg, FL 33713, in the Historic Kenwood / Grand Central District."}},
     {"@type":"Question","name":"How much are tickets?","acceptedAnswer":{"@type":"Answer","text":"Tickets are $20 per person, and $10 of each ticket is tax-deductible. Tickets can be purchased online through Donorbox."}},
-    {"@type":"Question","name":"What is the difference between the raffle and the silent auction?","acceptedAnswer":{"@type":"Answer","text":"Almost every prize is raffled, including a private magic show, handcrafted charcuterie boards, native plants, a design consultation, a Golfology gift bag, and a bottle of bourbon. Each prize has its own bucket and tickets cost 1 for $10, 3 for $25, 8 for $50, or 20 for $100. You must be present to win. The one silent auction item is West Evans original painting of the Cockroach Bay restoration, created live during the event, with bidding starting at a $400 minimum."}},
-    {"@type":"Question","name":"Is food and drink included?","acceptedAnswer":{"@type":"Answer","text":"Guests receive a complimentary glass of champagne on arrival and a charcuterie spread. The Study's wine and bourbon selections are available on a pay-as-you-go basis."}},
+    {"@type":"Question","name":"What is the difference between the raffle and the silent auction?","acceptedAnswer":{"@type":"Answer","text":"Almost every prize is raffled, including ZooTampa at Lowry Park tickets, a private magic show, handcrafted charcuterie boards, native plants, a design consultation, a Golfology gift bag, and a bottle of bourbon. Each prize has its own bucket and tickets cost 1 for $10, 3 for $25, 8 for $50, or 20 for $100. You must be present to win. The one silent auction item is West Evans original painting of the Cockroach Bay restoration, created live during the event, with bidding starting at a $400 minimum."}},
+    {"@type":"Question","name":"Is food and drink included?","acceptedAnswer":{"@type":"Answer","text":"Guests receive a complimentary glass of champagne on arrival and a charcuterie spread. The Study's wine and bourbon selections are available on a pay-as-you-go basis, and you can browse the full drink menu ahead of time at thestudystpete.com/drink-menu."}},
+    {"@type":"Question","name":"Where do I park, and how do I get there?","acceptedAnswer":{"@type":"Answer","text":"The Study is in the walkable Historic Kenwood and Grand Central District, with a parking lot on site. On a busy night, give yourself a few extra minutes, and it is a great excuse to carpool with friends. If you would rather leave the car at home, there is a bus stop on Central Avenue about an 8-minute walk away."}},
     {"@type":"Question","name":"What does the event support?","acceptedAnswer":{"@type":"Answer","text":"Proceeds support living shoreline restoration in the Tampa Bay region, benefiting Ecosphere Restoration Institute's ongoing maintenance and monitoring work."}},
     {"@type":"Question","name":"Can I support the cause if I cannot attend?","acceptedAnswer":{"@type":"Answer","text":"Yes. An online donation drive runs alongside the event for supporters who cannot attend in person."}}
   ]
@@ -214,9 +215,20 @@
   .press-links a{background:#fff;border:1px solid #d8ddd4;border-radius:999px;padding:11px 20px;text-decoration:none;color:var(--deep2);font-family:'Poppins',sans-serif;font-weight:600;font-size:.9rem;transition:.15s}
   .press-links a:hover{border-color:var(--teal);color:var(--teal-deep)}
 
+  /* GETTING THERE */
+  .getthere{background:var(--seaglass);color:var(--cream)}
+  .gt-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:6px}
+  @media(min-width:760px){.gt-grid{grid-template-columns:repeat(3,1fr)}}
+  .gt-card{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:12px;padding:22px 22px}
+  .gt-card .ic{font-size:1.5rem;margin-bottom:8px}
+  .gt-card h3{font-size:1.1rem;color:var(--cream);margin-bottom:6px}
+  .gt-card p{color:rgba(248,245,235,.82);font-size:.95rem}
+  .gt-card a{color:var(--gold);font-weight:600;text-decoration:none}
+  .gt-card a:hover{text-decoration:underline}
+
   /* RAFFLE animated marquee */
   .marquee{overflow:hidden;position:relative;margin-top:44px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-  .marquee-track{display:flex;gap:20px;width:max-content;align-items:stretch;will-change:transform;backface-visibility:hidden;animation:scrollx 55s linear infinite}
+  .marquee-track{display:flex;gap:20px;width:max-content;align-items:stretch;will-change:transform;backface-visibility:hidden;animation:scrollx 60s linear infinite}
   .marquee:hover .marquee-track{animation-play-state:paused}
   .marquee .prize{width:280px;flex:0 0 280px}
   @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -231,6 +243,7 @@
   details.q summary::after{content:"+";font-size:1.5rem;color:var(--teal);font-weight:400;line-height:1;transition:transform .2s}
   details.q[open] summary::after{transform:rotate(45deg)}
   details.q .a{padding:0 22px 20px;color:#5c574f;font-size:.98rem;max-width:70ch}
+  details.q .a a{color:var(--teal-deep);font-weight:600}
 
   /* THANKS */
   .thanks{background:var(--seaglass);color:var(--cream);text-align:center}
@@ -299,7 +312,7 @@
 <header class="hero" id="top">
   <div class="wrap">
     <h1>Living Shoreline Summer Fundraiser</h1>
-    <p class="tagline">Bourbon, magic, and original art, all to keep Tampa Bay's coastline alive.</p>
+    <p class="tagline">Fine spirits, close-up magic, and original art, all to keep Tampa Bay's coastline alive.</p>
     <div class="cta-row">
       <a class="btn btn-gold" href="https://donorbox.org/events/948209/steps/choose_tickets" target="_blank" rel="noopener noreferrer">Purchase Tickets &bull; $20</a>
       <a class="btn btn-outline" href="#program">See the Evening</a>
@@ -329,7 +342,7 @@
     <div>
       <p class="sec-eyebrow">Why We Gather</p>
       <h2>Raise a glass for our coastlines</h2>
-      <p>This is an intimate evening at The Study, St. Petersburg's pour-your-own wine and bourbon lounge, where community, conversation, and conservation come together. Every ticket supports local living shoreline projects that protect and restore the coastal ecosystems the Tampa Bay region depends on.</p>
+      <p>This is an intimate evening at The Study, St. Petersburg's pour-your-own wine and bourbon lounge in the heart of Historic Kenwood, where community, conversation, and conservation come together. Every ticket supports local living shoreline projects that protect and restore the coastal ecosystems the Tampa Bay region depends on.</p>
       <p>Living shorelines are natural coastal restoration efforts that strengthen habitat, improve water quality, and build resilience against storms and erosion. Keeping them healthy takes ongoing maintenance and monitoring, and that is exactly what your support helps make possible.</p>
       <p style="margin-top:16px;font-family:'Poppins',sans-serif;font-weight:600;font-size:.95rem;color:#9e4732">$10 of every ticket is tax-deductible &bull; Seats are limited.</p>
     </div>
@@ -424,18 +437,48 @@
   <div class="marquee" aria-label="Raffle prizes">
    <div class="marquee-track">
       <div class="prize"><a class="media" href="https://johnwilliamsmagician.com/" target="_blank" rel="noopener noreferrer"><span class="imgwrap photo foc-john"><img loading="lazy" width="710" height="863" src="assets/events/john-williams-magician.jpg" alt="Magician John Williams"></span></a><div class="body"><span class="val">Approx. $600 value</span><h3>Private One-Hour Magic Show</h3><p>An in-person show by John Williams, who also hosts the evening.</p></div></div>
+      <div class="prize"><a class="media" href="https://zootampa.org/" target="_blank" rel="noopener noreferrer"><span class="imgwrap"><img loading="lazy" width="1200" height="480" src="assets/events/zootampa-logo-horizontal.png" alt="ZooTampa at Lowry Park"></span></a><div class="body"><span class="val">Donated by ZooTampa</span><h3>ZooTampa at Lowry Park Tickets</h3><p>Admission to one of the country's top-rated zoos.</p></div></div>
+      <div class="prize"><a class="media" href="https://www.livingspacesgardening.com/" target="_blank" rel="noopener noreferrer"><span class="imgwrap"><img loading="lazy" width="1300" height="800" src="assets/events/Living-Spaces-Gardening-Mark-Terracota-2.jpg" alt="Living Spaces Gardening"></span></a><div class="body"><span class="val">$125 value each &bull; two available</span><h3>Native Landscape Design Consultations</h3><p>Donated by Living Spaces Gardening.</p></div></div>
       <div class="prize"><a class="media" href="https://www.playgolfology.com/" target="_blank" rel="noopener noreferrer"><span class="imgwrap"><img loading="lazy" width="741" height="735" src="assets/events/golfology-logo.png" alt="Golfology Indoor Golf"></span></a><div class="body"><span class="val">Gift bag</span><h3>Golfology Gift Bag</h3><p>From St. Petersburg's premier indoor golf lounge.</p></div></div>
       <div class="prize"><a class="media" href="https://thestudystpete.com/" target="_blank" rel="noopener noreferrer"><span class="imgwrap contain-tall"><img loading="lazy" width="1296" height="1833" src="assets/events/Gold-Bar-Original-Premium-Blend.jpg" alt="Gold Bar Original Premium Blend bourbon bottle"></span></a><div class="body"><span class="val">Featured spirit</span><h3>Gold Bar Bourbon</h3><p>Donated by The Study.</p></div></div>
-      <div class="prize"><a class="media" href="https://jawscustomwood.com/" target="_blank" rel="noopener noreferrer"><span class="imgwrap"><img loading="lazy" width="1024" height="1024" src="assets/events/jaws-logo-seaglass-4k.png" alt="JAW's Custom Wood and Interiors logo"></span></a><div class="body"><span class="val">Approx. $250 value each</span><h3>Handcrafted Rosewood Charcuterie Boards</h3><p>Handmade by JAW's Custom Wood and Interiors.</p></div></div>
-      <div class="prize"><a class="media" href="https://www.livingspacesgardening.com/" target="_blank" rel="noopener noreferrer"><span class="imgwrap"><img loading="lazy" width="1300" height="800" src="assets/events/Living-Spaces-Gardening-Mark-Terracota-2.jpg" alt="Living Spaces Gardening"></span></a><div class="body"><span class="val">$125 value each &bull; two available</span><h3>Native Landscape Design Consultations</h3><p>Donated by Living Spaces Gardening.</p></div></div>
       <div class="prize"><a class="media" href="https://www.livingspacesgardening.com/" target="_blank" rel="noopener noreferrer"><span class="imgwrap"><img loading="lazy" width="1300" height="800" src="assets/events/Living-Spaces-Gardening-Mark-Terracota-2.jpg" alt="Living Spaces Gardening"></span></a><div class="body"><span class="val">Seasonal selection</span><h3>Native Florida Plants</h3><p>Scarlet hibiscus, wild coffee, and more from the seasonal selection.</p></div></div>
+      <div class="prize"><a class="media" href="https://jawscustomwood.com/" target="_blank" rel="noopener noreferrer"><span class="imgwrap"><img loading="lazy" width="1024" height="1024" src="assets/events/jaws-logo-seaglass-4k.png" alt="JAW's Custom Wood and Interiors logo"></span></a><div class="body"><span class="val">Approx. $250 value each</span><h3>Handcrafted Rosewood Charcuterie Boards</h3><p>Handmade by JAW's Custom Wood and Interiors.</p></div></div>
       <div class="prize" aria-hidden="true"><a class="media" href="https://johnwilliamsmagician.com/" target="_blank" rel="noopener noreferrer" tabindex="-1"><span class="imgwrap photo foc-john"><img loading="lazy" width="710" height="863" src="assets/events/john-williams-magician.jpg" alt=""></span></a><div class="body"><span class="val">Approx. $600 value</span><h3>Private One-Hour Magic Show</h3><p>An in-person show by John Williams, who also hosts the evening.</p></div></div>
+      <div class="prize" aria-hidden="true"><a class="media" href="https://zootampa.org/" target="_blank" rel="noopener noreferrer" tabindex="-1"><span class="imgwrap"><img loading="lazy" width="1200" height="480" src="assets/events/zootampa-logo-horizontal.png" alt=""></span></a><div class="body"><span class="val">Donated by ZooTampa</span><h3>ZooTampa at Lowry Park Tickets</h3><p>Admission to one of the country's top-rated zoos.</p></div></div>
+      <div class="prize" aria-hidden="true"><a class="media" href="https://www.livingspacesgardening.com/" target="_blank" rel="noopener noreferrer" tabindex="-1"><span class="imgwrap"><img loading="lazy" width="1300" height="800" src="assets/events/Living-Spaces-Gardening-Mark-Terracota-2.jpg" alt=""></span></a><div class="body"><span class="val">$125 value each &bull; two available</span><h3>Native Landscape Design Consultations</h3><p>Donated by Living Spaces Gardening.</p></div></div>
       <div class="prize" aria-hidden="true"><a class="media" href="https://www.playgolfology.com/" target="_blank" rel="noopener noreferrer" tabindex="-1"><span class="imgwrap"><img loading="lazy" width="741" height="735" src="assets/events/golfology-logo.png" alt=""></span></a><div class="body"><span class="val">Gift bag</span><h3>Golfology Gift Bag</h3><p>From St. Petersburg's premier indoor golf lounge.</p></div></div>
       <div class="prize" aria-hidden="true"><a class="media" href="https://thestudystpete.com/" target="_blank" rel="noopener noreferrer" tabindex="-1"><span class="imgwrap contain-tall"><img loading="lazy" width="1296" height="1833" src="assets/events/Gold-Bar-Original-Premium-Blend.jpg" alt=""></span></a><div class="body"><span class="val">Featured spirit</span><h3>Gold Bar Bourbon</h3><p>Donated by The Study.</p></div></div>
-      <div class="prize" aria-hidden="true"><a class="media" href="https://jawscustomwood.com/" target="_blank" rel="noopener noreferrer" tabindex="-1"><span class="imgwrap"><img loading="lazy" width="1024" height="1024" src="assets/events/jaws-logo-seaglass-4k.png" alt=""></span></a><div class="body"><span class="val">Approx. $250 value each</span><h3>Handcrafted Rosewood Charcuterie Boards</h3><p>Handmade by JAW's Custom Wood and Interiors.</p></div></div>
-      <div class="prize" aria-hidden="true"><a class="media" href="https://www.livingspacesgardening.com/" target="_blank" rel="noopener noreferrer" tabindex="-1"><span class="imgwrap"><img loading="lazy" width="1300" height="800" src="assets/events/Living-Spaces-Gardening-Mark-Terracota-2.jpg" alt=""></span></a><div class="body"><span class="val">$125 value each &bull; two available</span><h3>Native Landscape Design Consultations</h3><p>Donated by Living Spaces Gardening.</p></div></div>
       <div class="prize" aria-hidden="true"><a class="media" href="https://www.livingspacesgardening.com/" target="_blank" rel="noopener noreferrer" tabindex="-1"><span class="imgwrap"><img loading="lazy" width="1300" height="800" src="assets/events/Living-Spaces-Gardening-Mark-Terracota-2.jpg" alt=""></span></a><div class="body"><span class="val">Seasonal selection</span><h3>Native Florida Plants</h3><p>Scarlet hibiscus, wild coffee, and more from the seasonal selection.</p></div></div>
+      <div class="prize" aria-hidden="true"><a class="media" href="https://jawscustomwood.com/" target="_blank" rel="noopener noreferrer" tabindex="-1"><span class="imgwrap"><img loading="lazy" width="1024" height="1024" src="assets/events/jaws-logo-seaglass-4k.png" alt=""></span></a><div class="body"><span class="val">Approx. $250 value each</span><h3>Handcrafted Rosewood Charcuterie Boards</h3><p>Handmade by JAW's Custom Wood and Interiors.</p></div></div>
     </div>
+  </div>
+</section>
+
+<!-- GETTING THERE -->
+<section class="getthere on-dark" id="getting-there">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="lab">Getting There</div><h2>Parking &amp; how to arrive</h2></div>
+      <p class="lead">The Study sits in the walkable Historic Kenwood and Grand Central District. Here's the easiest way to make the evening yours from the moment you arrive.</p>
+    </div>
+    <div class="gt-grid reveal">
+      <div class="gt-card">
+        <div class="ic" aria-hidden="true">&#128663;</div>
+        <h3>Park at the lounge</h3>
+        <p>The Study has a parking lot on site, so you can pull right in. On a busy night, give yourself a few extra minutes.</p>
+      </div>
+      <div class="gt-card">
+        <div class="ic" aria-hidden="true">&#129309;</div>
+        <h3>Carpool with friends</h3>
+        <p>Half the fun is the ride over. Grab a few friends, split the drive, and roll in together, one car, one great night.</p>
+      </div>
+      <div class="gt-card">
+        <div class="ic" aria-hidden="true">&#128652;</div>
+        <h3>Hop the bus</h3>
+        <p>Rather leave the car at home? There's a stop on Central Avenue about an 8-minute walk away, near the Grand Central station.</p>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:26px"><a class="btn btn-gold" href="https://thestudystpete.com/drink-menu" target="_blank" rel="noopener noreferrer">See The Study's Drink Menu</a></p>
   </div>
 </section>
 
@@ -447,10 +490,11 @@
       <p class="lead">Everything you need before the evening at The Study.</p>
     </div>
     <div class="faq-list">
-      <details class="q" open><summary>When and where is the fundraiser?</summary><div class="a">Thursday, July 30, 2026, from 6:00 to 9:00 PM at The Study Wine &amp; Bourbon Tasting Lounge, 3100 3rd Avenue North, St. Petersburg, FL 33713.</div></details>
+      <details class="q" open><summary>When and where is the fundraiser?</summary><div class="a">Thursday, July 30, 2026, from 6:00 to 9:00 PM at The Study Wine &amp; Bourbon Tasting Lounge, 3100 3rd Avenue North, St. Petersburg, FL 33713, in the Historic Kenwood / Grand Central District.</div></details>
       <details class="q"><summary>How much are tickets?</summary><div class="a">Tickets are $20 per person, and $10 of each ticket is tax-deductible. You can purchase online through Donorbox.</div></details>
-      <details class="q"><summary>What is the difference between the raffle and the silent auction?</summary><div class="a">Almost everything is raffled: a private magic show, handcrafted charcuterie boards, native plants, a design consultation, a Golfology gift bag, and a bottle of Gold Bar Bourbon. Each prize has its own bucket, so you drop your tickets toward what you want to win. Tickets are 1 for $10, 3 for $25, 8 for $50, or 20 for $100, and you must be present to win. The one silent auction item is West Evans's original painting of Cockroach Bay, created live during the event, with bidding starting at a $400 minimum.</div></details>
-      <details class="q"><summary>Is food and drink included?</summary><div class="a">Guests receive a complimentary glass of champagne on arrival and a charcuterie spread. The Study's wine and bourbon selections are available on a pay-as-you-go basis.</div></details>
+      <details class="q"><summary>What is the difference between the raffle and the silent auction?</summary><div class="a">Almost everything is raffled: ZooTampa at Lowry Park tickets, a private magic show, handcrafted charcuterie boards, native plants, a design consultation, a Golfology gift bag, and a bottle of Gold Bar Bourbon. Each prize has its own bucket, so you drop your tickets toward what you want to win. Tickets are 1 for $10, 3 for $25, 8 for $50, or 20 for $100, and you must be present to win. The one silent auction item is West Evans's original painting of Cockroach Bay, created live during the event, with bidding starting at a $400 minimum.</div></details>
+      <details class="q"><summary>Is food and drink included?</summary><div class="a">Guests receive a complimentary glass of champagne on arrival and a charcuterie spread. The Study's wine and bourbon selections are available on a pay-as-you-go basis, and you can browse the full <a href="https://thestudystpete.com/drink-menu" target="_blank" rel="noopener noreferrer">wine &amp; bourbon menu</a> before you come.</div></details>
+      <details class="q"><summary>Where do I park, and how do I get there?</summary><div class="a">The Study is in the walkable Historic Kenwood and Grand Central District, with a parking lot on site. On a busy night, give yourself a few extra minutes, and it's a great excuse to carpool with friends. If you'd rather leave the car at home, there's a bus stop on Central Avenue about an 8-minute walk away.</div></details>
       <details class="q"><summary>What does the event support?</summary><div class="a">Proceeds support living shoreline restoration in the Tampa Bay region, benefiting Ecosphere Restoration Institute's ongoing maintenance and monitoring work.</div></details>
       <details class="q"><summary>Can I help if I cannot attend?</summary><div class="a">Yes. An online donation drive runs alongside the event for supporters who cannot make it in person.</div></details>
     </div>
@@ -467,6 +511,7 @@
     <div class="thanks-grid">
       <a class="thank" href="https://www.ecosphererestoration.org/" target="_blank" rel="noopener noreferrer"><div class="media"><img loading="lazy" width="1871" height="607" src="assets/events/Ecosphere%20-%20Clear%20Background.png" alt="Ecosphere Restoration Institute"></div><div class="cap"><div class="name">Ecosphere Restoration Institute</div><div class="role">Beneficiary</div></div></a>
       <a class="thank" href="https://www.livingrestorations.com/" target="_blank" rel="noopener noreferrer"><div class="media"><img loading="lazy" width="1200" height="400" src="assets/events/Living-Restorations-Logo-Teal.jpg" alt="Living Restorations"></div><div class="cap"><div class="name">Living Restorations</div><div class="role">Host</div></div></a>
+      <a class="thank" href="https://zootampa.org/" target="_blank" rel="noopener noreferrer"><div class="media"><img loading="lazy" width="1200" height="480" src="assets/events/zootampa-logo-horizontal.png" alt="ZooTampa at Lowry Park"></div><div class="cap"><div class="name">ZooTampa at Lowry Park</div><div class="role">Donor</div></div></a>
       <a class="thank" href="https://www.livingspacesgardening.com/" target="_blank" rel="noopener noreferrer"><div class="media"><img loading="lazy" width="1300" height="1600" src="assets/events/Living-Spaces-Gardening-Logo-Terracota-2.jpg" alt="Living Spaces Gardening"></div><div class="cap"><div class="name">Living Spaces Gardening</div><div class="role">Host &amp; Donor</div></div></a>
       <a class="thank" href="https://thestudystpete.com/" target="_blank" rel="noopener noreferrer"><div class="media"><img loading="lazy" width="1080" height="1080" src="assets/events/study.webp" alt="The Study Wine and Bourbon Tasting Lounge"></div><div class="cap"><div class="name">The Study</div><div class="role">Venue &amp; Donor</div></div></a>
       <a class="thank" href="https://johnwilliamsmagician.com/" target="_blank" rel="noopener noreferrer"><div class="media photo"><img loading="lazy" width="710" height="863" src="assets/events/john-williams-magician.jpg" alt="Magician John Williams"></div><div class="cap"><div class="name">John Williams</div><div class="role">Performer</div></div></a>
@@ -487,6 +532,7 @@
    <div class="press-links">
       <a href="assets/events/Ecosphere%20-%20Clear%20Background.png" download>Ecosphere logo</a>
       <a href="assets/events/Living-Restorations-Logo-Teal.jpg" download>Living Restorations logo</a>
+      <a href="assets/events/zootampa-logo-horizontal.png" download>ZooTampa logo</a>
       <a href="assets/events/Living-Spaces-Gardening-Logo-Terracota-2.jpg" download>Living Spaces Gardening logo</a>
       <a href="assets/events/study.webp" download>The Study logo</a>
       <a href="assets/events/jaws-logo-seaglass-4k.png" download>JAW's logo</a>
